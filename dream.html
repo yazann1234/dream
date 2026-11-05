@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مهام المذاكرة للفاينل</title>
+<style>
+:root{--bg:#f3f6f4;--card:#fff;--tx:#17302b;--mu:#5d716c;--ln:#d9e3df;--ac:#1f7a63;--ac2:#e8f3ef;--hl:#f2b441;--bad:#b4462f;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a17;--card:#16241f;--tx:#e6f1ed;--mu:#8fa8a1;--ln:#26382f;--ac:#4cc4a0;--ac2:#1b2f28;--hl:#e0a93a;--bad:#e27a62}}
+:root[data-theme="dark"]{--bg:#0f1a17;--card:#16241f;--tx:#e6f1ed;--mu:#8fa8a1;--ln:#26382f;--ac:#4cc4a0;--ac2:#1b2f28;--hl:#e0a93a;--bad:#e27a62}
+*{box-sizing:border-box}
+html{scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"IBM Plex Sans Arabic","Noto Naskh Arabic",Tahoma,system-ui,sans-serif;line-height:1.6}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding:12px 16px 10px;border-bottom:1px solid var(--ln);z-index:5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+h1{font-size:20px;margin:0 0 8px}
+.bar{height:10px;background:var(--ln);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--ac);transition:width .25s}
+.st{display:flex;justify-content:space-between;font-size:13px;color:var(--mu);margin-top:6px}
+.tabs{display:flex;gap:8px;margin-top:8px}
+.tabs button{flex:1;padding:7px;border:1px solid var(--ln);background:var(--card);color:var(--tx);border-radius:8px;font:inherit;font-size:14px}
+.tabs button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+main{padding:12px 14px 40px;max-width:640px;margin:auto}
+.wk{margin:22px 0 8px;font-weight:700;font-size:15px;color:var(--ac)}
+.note{display:inline-block;margin-top:4px;font-size:13px;font-weight:600;background:var(--hl);color:#2a1d00;padding:2px 10px;border-radius:12px}
+.day{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.day.today{border:2px solid var(--ac)}
+.day.done{opacity:.6}
+.dh{display:flex;justify-content:space-between;font-size:14px;font-weight:700;margin-bottom:4px}
+.dh span{color:var(--mu);font-weight:500;font-size:13px}
+.late .dh b{color:var(--bad)}
+label{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer;font-size:15px}
+label+label{border-top:1px dashed var(--ln)}
+input{width:22px;height:22px;margin:2px 0 0;accent-color:var(--ac);flex:none}
+input:checked+span{text-decoration:line-through;color:var(--mu)}
+.reset{display:block;margin:24px auto 0;background:none;border:1px solid var(--ln);color:var(--mu);padding:8px 16px;border-radius:8px;font:inherit;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>مهام المذاكرة للفاينل</h1>
+<div class="bar"><i id="pb"></i></div>
+<div class="st"><span id="pt"></span><span id="pp"></span></div>
+<div class="tabs"><button id="t1" class="on">اليوم وما بعده</button><button id="t2">الكل</button></div>
+</header>
+<main id="m"></main>
+<script>
+var D=[
+["كيمياء: Chapter 6","حل التجميعات","كيمياء: Chapter 7 (Lecture 1)"],
+["English"],
+["كيمياء: Chapter 7 (Lecture 1+2)"],
+["مهارات اتصال: مراجعة + دراسة محاضرة جديدة"],
+["كيمياء: مراجعة كاملة لجزئية الميد من الملخصات","مراجعة شابتر 6 / 7","English"],
+["مبادئ طبية: Chapter 8","English"],
+["English","مبادئ طبية: Chapter 9 (إضافة محاضرة)"],
+["كيمياء: تسمية (Chapter 8، Lecture 1)","حل التجميعات"],
+["English"],
+["كيمياء: تفاعلات (Chapter 8، Lecture 2)","حل التجميعات"],
+["مهارات اتصال: مراجعة + دراسة محاضرة جديدة"],
+["كيمياء: مراجعة كاملة لجزئية الميد من الملخصات","مراجعة شابتر 6 / 7 / 8 (التركيز على العضوية)","English"],
+["مبادئ طبية: Chapter 10","English"],
+["English"],
+["كيمياء: Chapter 9","حل التجميعات"],
+["English"],
+["كيمياء: تفاعلات (Chapter 10، Lecture 1)","حل التجميعات"],
+["مهارات اتصال: مراجعة + دراسة محاضرة جديدة"],
+["كيمياء: مراجعة كاملة لجزئية الميد من الملخصات","مراجعة شابتر 6 / 7 / 8 / 9","English"],
+["مبادئ طبية: Chapter 11","English"],
+["English"],
+["كيمياء: تفاعلات (Chapter 10، Lecture 2)","حل التجميعات"],
+["English"],
+["كيمياء: تسمية (Chapter 11، Lecture 1)","كيمياء: Chapter 11 (Lecture 2) علشان الإجازة","حل التجميعات"],
+["مهارات اتصال: مراجعة + دراسة محاضرة جديدة"],
+["كيمياء: Chapter 12 (آخر شابتر بالمادة)","English"],
+["مبادئ طبية: Chapter 12 + Chapter 13 (آخر شابتر بالمنهج)","English"],
+["English"],
+["كيمياء: مراجعة فاينل (1) Chapter 6 / 7"],
+["English"],
+["كيمياء: مراجعة فاينل (2) Chapter 8 / 9"],
+["مهارات اتصال: مراجعة + دراسة محاضرة جديدة"],
+["كيمياء: مراجعة فاينل Chapter 6 / 7 / 8 / 9","English"],
+["مبادئ طبية: مراجعة فاينل Chapter 8 / 9 / 10 / 11","English"],
+["English"],
+["كيمياء: مراجعة فاينل (4) Chapter 10"],
+["English"],
+["كيمياء: مراجعة فاينل (5) Chapter 11 / 12"],
+["مهارات اتصال: مراجعة + دراسة محاضرة جديدة"],
+["كيمياء: مراجعة فاينل شاملة (6) — حل تجميعات الفاينل","English"],
+["مبادئ طبية: مراجعة فاينل Chapter 12 / 13","English"],
+["English"],
+["كيمياء: مراجعة فاينل (7)"],
+["English"],
+["كيمياء: مراجعة فاينل (8)"],
+["مهارات اتصال: مراجعة + دراسة محاضرة جديدة"],
+["كيمياء: مراجعة فاينل شاملة (9) — حل تجميعات الفاينل","English"],
+["مبادئ طبية: مراجعة فاينل Chapter 12 / 13","English"]
+];
+var W={0:["الأسبوع 1: 2 إلى 7 نوفمبر",""],6:["الأسبوع 2: 8 إلى 14 نوفمبر",""],13:["الأسبوع 3: 15 إلى 21 نوفمبر","كويز الكيمياء: Chapter 6 + 7 (ممكن 8)"],20:["الأسبوع 4: 22 إلى 28 نوفمبر","إجازة الخريف"],27:["الأسبوع 5: 29 نوفمبر إلى 5 ديسمبر","كويز مبادئ طبية: Chapter 9 + 10"],34:["الأسبوع 6: 6 إلى 12 ديسمبر",""],41:["الأسبوع 7: 13 إلى 19 ديسمبر","آخر أسبوع قبل الفاينل"]};
+var DN=["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"];
+var MN=["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"];
+var K="study-final-2026",S={},all=false;
+try{S=JSON.parse(localStorage.getItem(K)||"{}")}catch(e){S={}}
+function save(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}}
+function dt(i){return new Date(2026,10,2+i)}
+function key(d){return d.getFullYear()+"-"+d.getMonth()+"-"+d.getDate()}
+var now=new Date(),tk=key(now),t0=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+function render(){
+var h="",tot=0,dn=0;
+D.forEach(function(ts,i){
+var d=dt(i),past=d<t0,isT=key(d)===tk,c=0;
+ts.forEach(function(_,j){tot++;if(S[i+"_"+j]){dn++;c++}});
+var fin=c===ts.length;
+if(!all&&past&&fin)return;
+if(!all&&past&&!fin){}
+if(W[i]&&(all||d>=t0||D.slice(i,i+7).some(function(_,k){return dt(i+k)>=t0}))){h+='<div class="wk">'+W[i][0]+(W[i][1]?'<br><span class="note">'+W[i][1]+'</span>':'')+'</div>'}
+h+='<div class="day'+(isT?' today':'')+(fin?' done':'')+(past&&!fin?' late':'')+'" id="'+(isT?'today':'d'+i)+'"><div class="dh"><b>'+DN[d.getDay()]+(isT?' (اليوم)':'')+'</b><span>'+d.getDate()+' '+MN[d.getMonth()]+'</span></div>';
+ts.forEach(function(t,j){var id=i+"_"+j;h+='<label><input type="checkbox" data-id="'+id+'"'+(S[id]?' checked':'')+'><span>'+t+'</span></label>'});
+h+='</div>'});
+if(!h)h='<p style="text-align:center;color:var(--mu)">لا توجد مهام قادمة. اضغط «الكل» للمراجعة.</p>';
+h+='<button class="reset" id="rs">مسح كل العلامات</button>';
+document.getElementById("m").innerHTML=h;
+var p=Math.round(dn/tot*100);
+document.getElementById("pb").style.width=p+"%";
+document.getElementById("pt").textContent=dn+" من "+tot+" مهمة";
+document.getElementById("pp").textContent=p+"%";
+}
+document.getElementById("m").addEventListener("change",function(e){
+var id=e.target.getAttribute("data-id");if(!id)return;
+if(e.target.checked)S[id]=1;else delete S[id];
+save();var y=window.scrollY;render();window.scrollTo(0,y)});
+document.getElementById("m").addEventListener("click",function(e){
+if(e.target.id==="rs"&&confirm("مسح كل العلامات؟")){S={};save();render()}});
+function tab(a){all=a;document.getElementById("t1").className=a?"":"on";document.getElementById("t2").className=a?"on":"";render();window.scrollTo(0,0)}
+document.getElementById("t1").onclick=function(){tab(false)};
+document.getElementById("t2").onclick=function(){tab(true)};
+render();
+</script>
+</body>
+</html>
