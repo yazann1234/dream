@@ -48,7 +48,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .st b{display:block;font:700 22px "Readex Pro",sans-serif;color:var(--ac);line-height:1.3}
 /* cards */
 .card{background:var(--card);border:1px solid var(--ln);border-radius:22px;padding:16px 18px;margin-bottom:14px;box-shadow:var(--sh);animation:up .4s both}
-@keyframes up{from{opacity:0;transform:translateY(8px)}}
+@keyframes up{from{transform:translateY(8px)}}
 .ch2{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
 h2{font:700 19px "El Messiri",serif;margin:0}
 .pill{font-size:12.5px;font-weight:700;border-radius:20px;padding:1px 10px;background:var(--bg2);color:var(--mu)}
@@ -195,6 +195,54 @@ textarea{width:100%;min-height:70px;margin-top:10px;border:1px solid var(--ln);b
 #zenT{font:700 clamp(80px,22vw,180px) "Readex Pro",sans-serif;font-variant-numeric:tabular-nums;line-height:1}
 #zen small{opacity:.6}
 #zenQ{font:400 22px Amiri,serif;opacity:.8;max-width:600px;text-align:center;padding:0 20px}
+/* ===== ambient background ===== */
+body::before,body::after{content:"";position:fixed;z-index:-1;width:46vmax;height:46vmax;border-radius:50%;filter:blur(70px);opacity:.16;pointer-events:none;animation:blob 26s ease-in-out infinite alternate}
+body::before{background:var(--ac);top:-18vmax;right:-14vmax}
+body::after{background:#5b63e0;bottom:-20vmax;left:-16vmax;animation-delay:-13s}
+@keyframes blob{to{transform:translate(-8vmax,10vmax) scale(1.15)}}
+/* ===== planner ===== */
+.pf{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:8px;margin:10px 0}
+.pf label{display:flex;flex-direction:column;gap:4px;font-size:12.5px;color:var(--mu);font-weight:500}
+.pf .inp{width:100%;font-size:15px;font-weight:700;color:var(--tx);text-align:center;padding:8px}
+.pf.cust{background:var(--bg2);border-radius:16px;padding:12px;margin:0 0 12px;text-align:start}
+.pf .tg{flex-direction:row;color:var(--tx);font-size:13.5px}
+h3.sub{font-size:13px;color:var(--mu);margin:14px 2px 6px;font-weight:700}
+.prow{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:14px;border:1px solid var(--ln);margin:6px 0;transition:.2s;opacity:.7}
+.prow.on{opacity:1;border-color:color-mix(in srgb,var(--c) 55%,var(--ln));background:color-mix(in srgb,var(--c) 7%,transparent)}
+.prow .pn{flex:1;font-size:14px;min-width:0;overflow-wrap:anywhere}
+.stp{display:flex;align-items:center;gap:2px;background:var(--bg2);border-radius:12px;padding:3px;flex:none}
+.stp button{width:30px;height:30px;border:0;border-radius:9px;background:var(--card);cursor:pointer;font-size:18px;line-height:1;color:var(--tx)}
+.stp button:hover{background:var(--c);color:#fff}
+.stp b{min-width:24px;text-align:center;font-variant-numeric:tabular-nums}
+.sumg{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin:12px 0 8px}
+.sumg div{background:var(--bg2);border-radius:14px;padding:8px 6px;text-align:center;font-size:12px;color:var(--mu)}
+.sumg b{display:block;font-size:17px;color:var(--tx);font-variant-numeric:tabular-nums}
+.segb{display:flex;gap:3px;height:12px;margin:8px 0;border-radius:8px;overflow:hidden}
+.segb i{display:block;min-width:4px;border-radius:4px;background:var(--c)}
+.segb i.br{background:var(--ln);opacity:.7}
+.segb i.dn{opacity:.35}
+.segb i.now{animation:pu 1.4s infinite;box-shadow:0 0 0 2px var(--card) inset}
+.tl{position:relative;margin-top:8px}
+.tlr{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:14px;font-size:14px;position:relative;transition:.2s}
+.tlr .tm{width:66px;flex:none;font-size:12px;color:var(--mu);font-variant-numeric:tabular-nums}
+.tlr .ti{width:30px;height:30px;border-radius:10px;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 14%,transparent);flex:none}
+.tlr .tx{flex:1;min-width:0}.tlr .tx small{color:var(--mu);font-size:11.5px;margin-inline-start:4px}
+.tlr .st{width:22px;text-align:center;font-weight:700;color:var(--ok)}
+.tlr.br{opacity:.75;font-size:13px}.tlr.br .ti{background:var(--bg2)}
+.tlr.dn{opacity:.45}.tlr.dn .tx{text-decoration:line-through}
+.tlr.now{background:color-mix(in srgb,var(--c) 10%,var(--bg2));opacity:1;box-shadow:inset 3px 0 0 var(--c)}
+.tlr.now .st{color:var(--ac);animation:pu 1.2s infinite}
+.okk{color:var(--ok)!important;font-weight:700}
+.now-task{display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px;border-radius:18px;margin-bottom:6px;background:color-mix(in srgb,var(--c,var(--ac)) 10%,var(--bg2));border:1px solid color-mix(in srgb,var(--c,var(--ac)) 35%,transparent)}
+.now-task b{font-size:17px}.now-task small{color:var(--mu);font-size:12.5px}
+.now-task.br{--c:#1fa597}
+.dots{display:flex;gap:6px;justify-content:center;margin-top:6px}
+.dots i{width:9px;height:9px;border-radius:50%;background:var(--bg2);border:1.5px solid var(--mu)}
+.dots i.on{background:var(--ac);border-color:var(--ac)}
+.fin{text-align:center;background:radial-gradient(80% 100% at 50% 0%,color-mix(in srgb,var(--ac) 16%,transparent),transparent 70%),var(--card)}
+.wc.fd{position:relative}
+.wc.fd::before{content:"";position:absolute;left:0;right:0;bottom:calc(var(--gl) * .82 + 18px);border-top:2px dashed color-mix(in srgb,var(--ac) 70%,transparent);pointer-events:none}
+.wc i.gl{background:linear-gradient(180deg,var(--ok),color-mix(in srgb,var(--ok) 55%,transparent))}
 /* ===== companion (owl) ===== */
 #pet{position:fixed;left:14px;bottom:84px;width:84px;height:91px;z-index:35;cursor:pointer;filter:drop-shadow(0 8px 14px rgba(40,40,120,.35));transition:transform .2s;user-select:none;-webkit-user-select:none;outline:0}
 #pet:hover{transform:scale(1.06)}#pet:focus-visible{outline:2px solid var(--ac);border-radius:20px}
@@ -374,6 +422,8 @@ const P=(k,v)=>{try{localStorage.setItem(k,typeof v==="string"?v:JSON.stringify(
 const J=(k,d)=>{try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}};
 let S=J("study-final-2026",{}),FS=J("study-focus",{}),FM=J("study-focus-min",{}),NT=J("study-notes",{}),MD=J("study-mood",{}),CU=J("study-custom",{}),MV=J("study-moved",{}),BD=J("study-bd",[]);
 let CFG=Object.assign({acc:"gold",snd:1,rem:"",pre:0,fsub:"ch",lastRem:"",pet:1,petTalk:1},J("study-cfg",{}));
+CFG=Object.assign({cw:PRE[CFG.pre]?PRE[CFG.pre][0]:25,cb:PRE[CFG.pre]?PRE[CFG.pre][1]:5,clb:15,every:4,autoW:0,goal:120},CFG);
+let FMD=J("study-focus-day",{}),PLN=J("study-dplan",null)||null;
 let PET=Object.assign({name:"نبيه",food:70,last:Date.now(),talk:{},hist:[]},J("study-pet",{})),CHD=J("study-ch",{});
 let NAME=gs("study-name",""),V=gs("study-view","home"),flt="",tab="up",q="",qi=0,T=[],M={};
 function save(){P("study-final-2026",S);P("study-focus",FS);P("study-focus-min",FM);P("study-notes",NT);P("study-mood",MD);P("study-custom",CU);P("study-moved",MV);P("study-bd",BD);P("study-cfg",CFG)}
@@ -433,7 +483,7 @@ const chime=()=>[523,659,784,1047].forEach((f,i)=>tone(f,i*.11,.35,.1,"triangle"
 function noise(type){const a=ac();if(!a)return null;const n=a.sampleRate*4,b=a.createBuffer(1,n,a.sampleRate),d=b.getChannelData(0);let l=0;for(let i=0;i<n;i++){const w=Math.random()*2-1;if(type==="brown"){l=(l+.02*w)/1.02;d[i]=l*3.5}else d[i]=w}const s=a.createBufferSource();s.buffer=b;s.loop=true;const f=a.createBiquadFilter();f.type="lowpass";f.frequency.value=type==="rain"?1500:type==="brown"?700:9000;const g=a.createGain();g.gain.value=type==="white"?.04:type==="rain"?.13:.4;s.connect(f).connect(g).connect(a.destination);s.start();return s}
 function setAmb(t){if(amb){try{amb.stop()}catch(e){}amb=null}ambT=t===ambT?"":t;if(ambT)amb=noise(ambT);render(true)}
 function conf(n=70){const C=[ACC[CFG.acc],"#4f8cff","#e0567c","#1fa597","#8b6cf0","#ffd166"];for(let i=0;i<n;i++){const s=document.createElement("i");s.className="fx";const z=6+Math.random()*8;s.style.cssText=`left:${Math.random()*100}vw;width:${z}px;height:${z*(Math.random()>.5?1.6:1)}px;background:${C[i%C.length]};border-radius:${Math.random()>.6?"50%":"2px"};animation-duration:${1.8+Math.random()*1.6}s;animation-delay:${Math.random()*.5}s`;document.body.appendChild(s);setTimeout(()=>s.remove(),4200)}}
-let tsH;function toast(m,undo){const t=$("#ts");t.innerHTML='<span>'+esc(m)+'</span>'+(undo?'<button>تراجع</button>':'');if(undo)t.querySelector("button").onclick=()=>{restore(undo);t.className="";toast("تم التراجع")};t.className="on";clearTimeout(tsH);tsH=setTimeout(()=>t.className="",undo?5000:2600)}
+let tsH;function toast(m,undo,act){const t=$("#ts");t.innerHTML='<span>'+esc(m)+'</span>'+(undo?'<button>تراجع</button>':act?'<button>'+esc(act[0])+'</button>':'');if(undo)t.querySelector("button").onclick=()=>{restore(undo);t.className="";toast("تم التراجع")};else if(act)t.querySelector("button").onclick=()=>{t.className="";act[1]()};t.className="on";clearTimeout(tsH);tsH=setTimeout(()=>t.className="",undo?5000:act?9000:2600)}
 function notify(t,b){try{if(CFG.notif&&"Notification"in window&&Notification.permission==="granted")new Notification(t,{body:b||""})}catch(e){}}
 
 /* ===== Views ===== */
@@ -461,7 +511,7 @@ function vHome(){
     h+=`<section class="card"><div class="ch2"><h2>مهام اليوم</h2><span class="pill">${d} / ${ts.length}</span></div><div class="minibar"><i style="width:${ts.length?d/ts.length*100:0}%"></i></div>${ts.map(x=>row(x,m.idx)).join("")||'<p class="mu">ما عندك مهام اليوم، استمتع أو أضف مهمة 👇</p>'}
     <form class="add" id="addf" data-d="${m.idx}"><input id="addt" placeholder="أضف مهمة لليوم…" maxlength="120" aria-label="مهمة جديدة"><select id="adds" aria-label="المادة">${Object.keys(SB).map(s=>`<option value="${s}">${SB[s][2]} ${SB[s][0]}</option>`).join("")}</select><button aria-label="إضافة">+</button></form>
     <div class="mood">كيف طاقتك اليوم؟ ${MOODS.map((e,i)=>`<button data-mood="${i}" class="${MD[k]===i?"on":""}" aria-label="مزاج ${i+1}">${e}</button>`).join("")}</div>
-    <textarea id="nt" placeholder="ملاحظة اليوم: وش تعلمت؟ وش تحتاج تراجعه؟">${esc(NT[k])}</textarea></section>`+vChallenges();
+    <textarea id="nt" placeholder="ملاحظة اليوم: وش تعلمت؟ وش تحتاج تراجعه؟">${esc(NT[k])}</textarea></section>`+vPlanHome()+vChallenges();
     if(m.idx<LAST){const tm=T[m.idx+1];h+=`<section class="card"><div class="ch2"><h2>بكرة</h2><span class="pill">${DN[dt(m.idx+1).getDay()]} ${fmt(dt(m.idx+1))}</span></div>${tm.map(x=>row(x,m.idx+1)).join("")||'<p class="mu">يوم خفيف 🎉</p>'}</section>`}
   }else h+=`<section class="card"><p class="mu">${m.idx<0?"الجدول يبدأ يوم 2 نوفمبر. جهّز نفسك!":"انتهى الجدول. بالتوفيق في الفاينل! 🎓"}</p></section>`;
   h+=`<div class="grid2"><section class="card"><h2>🎯 وتيرتك</h2><p class="mu">عشان تخلص في الوقت تحتاج تقريبًا</p><div class="big">${m.need} <small style="font-size:15px;color:var(--mu)">مهمة يوميًا</small></div><p class="mu">${m.proj?(m.proj<=dt(LAST)?"✅ بمعدلك الحالي بتخلص قبل الموعد ("+fmt(m.proj)+")":"⚡ بمعدلك الحالي بتخلص "+fmt(m.proj)+"، زِد شوي"):"ابدأ أول مهمة عشان نحسب وتيرتك"}</p></section>
@@ -508,6 +558,9 @@ function vStats(){
   const mx=Math.max(1,...Object.keys(SB).map(k=>FM[k]||0));
   for(const k in SB)h+=`<div class="sb"><span>${SB[k][0]}</span><div class="bar"><i style="width:${(FM[k]||0)/mx*100}%;background:${SB[k][1]}"></i></div><em>${FM[k]||0}د</em></div>`;
   h+=`</section></div>`;
+  // last 7 days focus minutes
+  {const days=[];for(let i=6;i>=0;i--){const d=new Date(+day0()-i*864e5);days.push([d,FMD[dk(d)]||0])}const mx2=Math.max(CFG.goal,...days.map(x=>x[1]));
+   h+=`<section class="card"><div class="ch2"><h2>⏱ تركيزك آخر 7 أيام</h2><span class="pill">${durTxt(days.reduce((a,x)=>a+x[1],0))}</span></div><div class="wc fd" style="--gl:${(CFG.goal/mx2*100).toFixed(1)}%">${days.map(([d,v],i)=>`<div title="${DN[d.getDay()]} ${fmt(d)}: ${durTxt(v)}"><small>${v?durTxt(v):""}</small><i class="${i===6?"cur":""}${v>=CFG.goal?" gl":""}" style="height:${v/mx2*100}%"></i>${DN[d.getDay()].replace("ال","").slice(0,3)}</div>`).join("")}</div><p class="mu" style="margin-top:6px">الخط المنقط = هدفك اليومي (${durTxt(CFG.goal)})</p></section>`}
   // badges
   const all=k=>m.sc[k]>0&&m.sd[k]===m.sc[k],nc=Object.values(NT).filter(x=>x&&x.trim()).length;
   const B=[["🌱","الانطلاقة","أول مهمة",m.dn>=1],["🔥","ثلاثة أيام","3 أيام متتالية",m.best>=3],["⚡","أسبوع ناري","7 أيام متتالية",m.best>=7],["📚","50 مهمة","أنجزت 50 مهمة",m.dn>=50],["🎯","100 مهمة","أنجزت 100 مهمة",m.dn>=100],["🌓","نصف الطريق","وصلت 50%",m.pc>=50],["⚗️","سيد الكيمياء","كل مهام الكيمياء",all("ch")],["🩺","طبيب المستقبل","كل مهام مبادئ طبية",all("md")],["🗣️","متحدث لبق","كل مهام مهارات الاتصال",all("sk")],["🇬🇧","English Pro","كل مهام English",all("en")],["⏱","مركّز","4 جلسات تركيز",m.fsTot>=4],["🧠","ماراثون","10 ساعات تركيز",m.fmTot>=600],["📝","المدوّن","5 ملاحظات يومية",nc>=5],["⭐","المستوى 5","وصلت المستوى 5",m.lvl>=5],["🦉","بومة الليل","جلسة تركيز بعد 11 مساءً",!!CFG.owl],["🏆","الختام","أنهيت الخطة",m.pc===100]];
@@ -521,16 +574,102 @@ function badgeCheck(){ // run silently each render so new badges celebrate where
   if(nw.length){BD.push(...nw);save();setTimeout(()=>{toast("🏅 وسام جديد: "+nw[0]);conf();chime();petOn("badge",nw[0])},700)}
 }
 
+/* ===== Focus page: timer + day session planner ===== */
+let custOpen=false,DR=null;
+const hm12=d=>{const h=d.getHours();return (h%12||12)+":"+pad(d.getMinutes())+" "+(h<12?"ص":"م")};
+const durTxt=m=>{m=Math.round(m);const h=Math.floor(m/60),r=m%60;return h?(h+" س"+(r?" "+r+" د":"")):r+" د"};
+const atTime=s=>{const [a,b]=(s||"0:0").split(":").map(Number),d=day0();d.setHours(a||0,b||0,0,0);return d};
+function nowHM(){const d=new Date();return pad(d.getHours())+":"+pad(d.getMinutes())}
+const planOn=()=>!!(PLN&&PLN.d===dk(day0())&&PLN.cur<PLN.blocks.length);
+const planDoneToday=()=>!!(PLN&&PLN.d===dk(day0())&&PLN.cur>=PLN.blocks.length);
+const savePlan=()=>P("study-dplan",PLN||"");
+function draft(){
+  const k=dk(day0());
+  if(!DR||DR.d!==k){DR={d:k,start:nowHM(),items:{},free:0};if(M.idx>=0&&M.idx<=LAST)T[M.idx].forEach(x=>{if(!S[x.id])DR.items[x.id]=1});}
+  return DR;
+}
+function draftItems(){
+  const dr=draft(),out=[],seen={};
+  const add=(x,late)=>{if(seen[x.id]||S[x.id])return;seen[x.id]=1;out.push({id:x.id,t:x.t,s:x.s,n:dr.items[x.id]||0,late})};
+  if(M.idx>=0&&M.idx<=LAST)T[M.idx].forEach(x=>add(x,0));
+  M.late.forEach(x=>add(x,1));
+  return out;
+}
+function buildBlocks(items,free){
+  const bl=[];let c=0;
+  const push=(it,k,n)=>{if(bl.length){const L=c%CFG.every===0;bl.push({k:L?"lb":"b",m:L?CFG.clb:CFG.cb})}bl.push({k:"w",m:CFG.cw,id:it.id,t:it.t,s:it.s,p:k+1,of:n});c++};
+  items.forEach(it=>{for(let k=0;k<it.n;k++)push(it,k,it.n)});
+  for(let k=0;k<free;k++)push({id:"",t:"جلسة حرة / مراجعة",s:CFG.fsub},k,free);
+  return bl;
+}
+function segBar(bl,cur){const tot=bl.reduce((a,b)=>a+b.m,0)||1;return `<div class="segb">${bl.map((b,i)=>`<i class="${b.k==="w"?"w":"br"}${cur!==undefined?(i<cur?" dn":i===cur?" now":""):""}" style="flex:${b.m/tot};--c:${b.k==="w"?SB[b.s][1]:"var(--ln)"}" title="${b.k==="w"?esc(b.t):"استراحة"} · ${b.m} د"></i>`).join("")}</div>`}
+function planSummary(){
+  const bl=buildBlocks(draftItems(),draft().free),ws=bl.filter(b=>b.k==="w"),st=ws.length*CFG.cw,br=bl.filter(b=>b.k!=="w").reduce((a,b)=>a+b.m,0);
+  if(!ws.length)return `<p class="mu" style="text-align:center">اختر جلسة وحدة على الأقل 👆</p>`;
+  const s0=atTime(draft().start),end=new Date(+s0+(st+br)*6e4);
+  return `<div class="sumg"><div><b>${ws.length}</b>جلسات</div><div><b>${durTxt(st)}</b>مذاكرة صافية</div><div><b>${durTxt(br)}</b>استراحات</div><div><b>${hm12(end)}</b>تخلص الساعة</div></div>${segBar(bl)}`;
+}
+function vPlanner(){
+  const dr=draft(),its=draftItems(),pn=esc(PET.name);
+  if(M.idx<0||M.idx>LAST)return "";
+  const row=x=>`<div class="prow${x.n?" on":""}" style="--c:${SB[x.s][1]}"><span class="dot"></span><span class="pn">${esc(x.t)}${x.late?' <small class="mvd">متأخرة</small>':""}</span><div class="stp"><button data-st="${x.id}" data-dv="-1" aria-label="أقل">−</button><b>${x.n}</b><button data-st="${x.id}" data-dv="1" aria-label="أكثر">+</button></div></div>`;
+  const td=its.filter(x=>!x.late),lt=its.filter(x=>x.late);
+  return `<section class="card" id="planner"><div class="ch2"><h2>🗓️ خطط جلسات اليوم</h2></div><p class="mu">حدد متى تبدأ وكم جلسة لكل مهمة، و${pn} يمشيك جلسة جلسة ويقولك وش تنجز في كل وحدة 🦉</p>
+  <div class="pf"><label>🕐 أبدأ الساعة<input type="time" class="inp" id="pS" value="${dr.start}"></label><label>📚 الجلسة (دقيقة)<input type="number" class="inp" id="pW" min="5" max="180" step="5" value="${CFG.cw}"></label><label>☕ الاستراحة<input type="number" class="inp" id="pB" min="1" max="60" value="${CFG.cb}"></label><label>🌴 الطويلة<input type="number" class="inp" id="pLB" min="5" max="90" step="5" value="${CFG.clb}"></label><label>🔁 الطويلة كل<input type="number" class="inp" id="pE" min="2" max="8" value="${CFG.every}"></label></div>
+  <h3 class="sub">مهام اليوم — كم جلسة لكل وحدة؟</h3>${td.map(row).join("")||'<p class="mu">خلصت مهام اليوم كلها 🎉 تقدر تضيف جلسات حرة.</p>'}
+  ${lt.length?`<h3 class="sub">متأخرة — تبي تدخلها؟</h3>${lt.map(row).join("")}`:""}
+  <div class="prow${dr.free?" on":""}" style="--c:var(--ac)"><span class="dot"></span><span class="pn">✨ جلسة حرة / مراجعة</span><div class="stp"><button data-st="free" data-dv="-1">−</button><b>${dr.free}</b><button data-st="free" data-dv="1">+</button></div></div>
+  <div id="psum">${planSummary()}</div>
+  <div class="row" style="justify-content:center"><button class="btn pr go" data-x="plGo">🚀 ابدأ الخطة</button><button class="btn" data-x="plAuto" title="جلسة لكل مهمة تبدأ الحين">⚡ رتّبها لي تلقائيًا</button></div></section>`;
+}
+function planTimes(){
+  const bl=PLN.blocks,r=[];let t=+atTime(PLN.start);
+  if(PLN.started||+t<Date.now())t=Math.max(t,Date.now());
+  const dn={};PLN.done.forEach(d=>dn[d.i]=d);
+  let prevEnd=null;
+  bl.forEach((b,i)=>{
+    let s,e;
+    if(dn[i]){e=dn[i].at;s=dn[i].st||e-b.m*6e4}
+    else if(i===PLN.cur){if(TM.run){e=TM.end;s=e-TM.dur*1e3}else{s=Math.max(prevEnd||0,Date.now(),PLN.started?0:+atTime(PLN.start));e=s+TM.rem*1e3}}
+    else{s=prevEnd||t;e=s+b.m*6e4}
+    r.push([s,e]);prevEnd=e;
+  });
+  return r;
+}
+function vPlanActive(){
+  const bl=PLN.blocks,tm=planTimes(),ws=bl.filter(b=>b.k==="w"),wd=PLN.done.filter(d=>bl[d.i].k==="w"&&!d.skip),mins=wd.reduce((a,d)=>a+bl[d.i].m,0);
+  const rows=bl.map((b,i)=>{const st=i<PLN.cur?"dn":i===PLN.cur?"now":"";const sk=PLN.done.find(d=>d.i===i&&d.skip);
+    return `<div class="tlr ${st}${b.k!=="w"?" br":""}" style="--c:${b.k==="w"?SB[b.s][1]:"var(--mu)"}"><span class="tm">${hm12(new Date(tm[i][0]))}</span><span class="ti">${b.k==="w"?SB[b.s][2]:b.k==="lb"?"🌴":"☕"}</span><span class="tx">${b.k==="w"?`${esc(b.t)}${b.of>1?` <small>جلسة ${b.p} من ${b.of}</small>`:""}${b.id&&S[b.id]?' <small class="okk">✓ منجزة</small>':""}`:(b.k==="lb"?"استراحة طويلة":"استراحة")} <small>${b.m} د</small></span><span class="st">${st==="dn"?(sk?"⏭":"✓"):st==="now"?"▶":""}</span></div>`}).join("");
+  return `<section class="card" id="planner"><div class="ch2"><h2>🗓️ خطة اليوم</h2><span class="pill">${wd.length} / ${ws.length} جلسات</span></div>${segBar(bl,PLN.cur)}
+  <div class="sumg"><div><b>${durTxt(mins)}</b>درست</div><div><b>${durTxt(ws.length*0+ws.reduce((a,b)=>a+b.m,0)-mins)}</b>باقي مذاكرة</div><div><b>${hm12(new Date(tm[tm.length-1][1]))}</b>تخلص تقريبًا</div></div>
+  <div class="tl">${rows}</div><div class="row" style="justify-content:center"><button class="btn sm" data-x="plEnd">إنهاء الخطة</button></div></section>`;
+}
+function vPlanDone(){const bl=PLN.blocks,wd=PLN.done.filter(d=>bl[d.i].k==="w"&&!d.skip),mins=wd.reduce((a,d)=>a+bl[d.i].m,0);
+  return `<section class="card fin"><div style="font-size:44px">🏆</div><h2>خلصت خطة اليوم!</h2><p class="mu">درست <b>${durTxt(mins)}</b> في <b>${wd.length}</b> جلسات. ${esc(PET.name)} فخور فيك 🦉💜</p><div class="row" style="justify-content:center"><button class="btn pr" data-x="plNew">خطة جديدة</button></div></section>`}
 function vFocus(){
-  const pr=PRE[CFG.pre];
-  let h=`<section class="card fc"><div class="seg">${PRE.map((p,i)=>`<button data-pre="${i}"${CFG.pre===i?' class="on"':""}>${p[0]} / ${p[1]}</button>`).join("")}</div>`;
-  h+=`<div class="chips" style="justify-content:center">${Object.keys(SB).map(k=>`<button data-fs="${k}" style="--c:${SB[k][1]}"${CFG.fsub===k?' class="on"':""}><span class="dot"></span>${SB[k][0]}</button>`).join("")}</div>`;
-  h+=`<div class="tring"><svg viewBox="0 0 220 220"><circle cx="110" cy="110" r="98" fill="none" stroke="var(--bg2)" stroke-width="12"/><circle id="tmR" cx="110" cy="110" r="98" fill="none" stroke="${SB[CFG.fsub][1]}" stroke-width="12" stroke-linecap="round" stroke-dasharray="615.8" stroke-dashoffset="0" transform="rotate(-90 110 110)"/></svg><div class="in"><div id="tmM">وقت التركيز</div><div id="tmT">${pad(pr[0])}:00</div><div class="mu">${SB[CFG.fsub][2]} ${SB[CFG.fsub][0]}</div></div></div>`;
-  h+=`<div class="ctl"><button class="btn" data-x="trs">إعادة</button><button class="btn pr go" id="tmGo" data-x="tgo">ابدأ</button><button class="btn" data-x="tsk">تخطي</button></div>`;
-  h+=`<div class="row" style="justify-content:center"><button class="btn sm" data-x="zen">🧘 وضع الزن (ملء الشاشة)</button></div>`;
-  h+=`<h3 class="mu" style="margin-top:16px">أصوات تساعدك تركز</h3><div class="row" style="justify-content:center;margin-top:4px">${[["rain","🌧️ مطر"],["brown","🌊 ضجيج بني"],["white","📻 ضجيج أبيض"]].map(a=>`<button class="btn sm${ambT===a[0]?" pr":""}" data-amb="${a[0]}">${a[1]}</button>`).join("")}</div></section>`;
-  h+=`<div class="grid2"><section class="card"><h2>اليوم</h2><div class="big">${M.fT} <small style="font-size:15px;color:var(--mu)">جلسة</small></div><p class="mu">${"🍅".repeat(Math.min(M.fT,12))||"ابدأ أول جلسة!"}</p></section><section class="card"><h2>نصيحة</h2><p class="mu">حط جوالك بعيد، اختر مادة، واضغط ابدأ. بعد كل جلسة تاخذ استراحة تلقائيًا، وكل جلسة تعطيك <b>15 XP</b>.</p></section></div>`;
+  const cb=planOn()?PLN.blocks[PLN.cur]:null,subj=cb&&cb.k==="w"?cb.s:CFG.fsub;
+  const isP=PRE.findIndex(p=>p[0]===CFG.cw&&p[1]===CFG.cb);
+  let h=`<section class="card fc">`;
+  if(!planOn())h+=`<div class="seg">${PRE.map((p,i)=>`<button data-pre="${i}"${isP===i&&!custOpen?' class="on"':""}>${p[0]} / ${p[1]}</button>`).join("")}<button data-x="cust"${isP<0||custOpen?' class="on"':""}>⚙️ مخصص</button></div>`;
+  if(custOpen&&!planOn())h+=`<div class="pf cust"><label>📚 التركيز (د)<input type="number" class="inp" id="cW" min="1" max="180" value="${CFG.cw}"></label><label>☕ الاستراحة (د)<input type="number" class="inp" id="cB" min="1" max="60" value="${CFG.cb}"></label><label>🌴 الطويلة (د)<input type="number" class="inp" id="cLB" min="1" max="90" value="${CFG.clb}"></label><label>🔁 الطويلة كل<input type="number" class="inp" id="cE" min="2" max="8" value="${CFG.every}"></label><label>🎯 هدفي اليومي (د)<input type="number" class="inp" id="cG" min="10" max="900" step="10" value="${CFG.goal}"></label><label class="tg" style="grid-column:1/-1">ابدأ جلسة التركيز تلقائيًا بعد الاستراحة<input type="checkbox" id="cA"${CFG.autoW?" checked":""}></label></div>`;
+  if(cb){const wi=PLN.blocks.slice(0,PLN.cur+1).filter(b=>b.k==="w").length,wn=PLN.blocks.filter(b=>b.k==="w").length;
+    h+=cb.k==="w"?`<div class="now-task" style="--c:${SB[cb.s][1]}"><small>الجلسة ${wi} من ${wn} · المطلوب منك الحين:</small><b>${SB[cb.s][2]} ${esc(cb.t)}</b>${cb.of>1?`<small>جلسة ${cb.p} من ${cb.of} لهذي المهمة</small>`:""}${cb.id&&!S[cb.id]?`<button class="btn sm" data-pdone="${cb.id}">✓ خلصت المهمة</button>`:cb.id?'<small class="okk">✓ المهمة منجزة، استغل الجلسة بمراجعة</small>':""}</div>`
+    :`<div class="now-task br"><small>استراحة ${cb.k==="lb"?"طويلة 🌴":"☕"}</small><b>قوم تمغّط واشرب موية 💧</b>${(()=>{const nx=PLN.blocks.slice(PLN.cur).find(b=>b.k==="w");return nx?`<small>الجاية: ${SB[nx.s][2]} ${esc(nx.t)}</small>`:""})()}</div>`;
+  }else h+=`<div class="chips" style="justify-content:center">${Object.keys(SB).map(k=>`<button data-fs="${k}" style="--c:${SB[k][1]}"${CFG.fsub===k?' class="on"':""}><span class="dot"></span>${SB[k][0]}</button>`).join("")}</div>`;
+  h+=`<div class="tring"><svg viewBox="0 0 220 220"><defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${SB[subj][1]}"/><stop offset="1" stop-color="var(--ac)"/></linearGradient></defs><circle cx="110" cy="110" r="98" fill="none" stroke="var(--bg2)" stroke-width="12"/><circle id="tmR" cx="110" cy="110" r="98" fill="none" stroke="url(#rg)" stroke-width="12" stroke-linecap="round" stroke-dasharray="615.8" stroke-dashoffset="0" transform="rotate(-90 110 110)"/></svg><div class="in"><div id="tmM">وقت التركيز</div><div id="tmT">00:00</div><div class="mu">${cb?"":SB[CFG.fsub][2]+" "+SB[CFG.fsub][0]}</div>${!cb?`<div class="dots">${Array.from({length:CFG.every},(_,i)=>`<i class="${i<(TM.n||0)%CFG.every?"on":""}"></i>`).join("")}</div>`:""}</div></div>`;
+  h+=`<div class="ctl"><button class="btn" data-x="trs">إعادة</button><button class="btn pr go" id="tmGo" data-x="tgo">ابدأ</button><button class="btn" data-x="tsk">تخطي ⏭</button></div>`;
+  h+=`<div class="row" style="justify-content:center"><button class="btn sm" data-x="zen">🧘 وضع الزن</button>${[["rain","🌧️ مطر"],["brown","🌊 بني"],["white","📻 أبيض"]].map(a=>`<button class="btn sm${ambT===a[0]?" pr":""}" data-amb="${a[0]}">${a[1]}</button>`).join("")}</div></section>`;
+  h+=planOn()?vPlanActive():planDoneToday()?vPlanDone():vPlanner();
+  const fm=FMD[dk(day0())]||0,gp=Math.min(100,Math.round(fm/CFG.goal*100));
+  h+=`<div class="grid2"><section class="card"><h2>🎯 هدف اليوم</h2><div class="big">${durTxt(fm)} <small style="font-size:14px;color:var(--mu)">من ${durTxt(CFG.goal)}</small></div><div class="minibar" style="margin-top:8px"><i style="width:${gp}%"></i></div><p class="mu">${gp>=100?"حققت هدفك اليوم! 🏆":"باقي "+durTxt(CFG.goal-fm)+" وتوصل هدفك"}</p></section><section class="card"><h2>🍅 جلسات اليوم</h2><div class="big">${M.fT}</div><p class="mu">${"🍅".repeat(Math.min(M.fT,12))||"ابدأ أول جلسة!"}</p></section></div>`;
   return h;
+}
+function vPlanHome(){
+  if(M.idx<0||M.idx>LAST)return "";
+  if(planOn()){const cb=PLN.blocks[PLN.cur],ws=PLN.blocks.filter(b=>b.k==="w"),wd=PLN.done.filter(d=>PLN.blocks[d.i].k==="w").length,nx=PLN.blocks.slice(PLN.cur).find(b=>b.k==="w");
+    return `<section class="card"><div class="ch2"><h2>🗓️ خطة جلساتك</h2><span class="pill">${wd} / ${ws.length}</span></div>${segBar(PLN.blocks,PLN.cur)}<p class="mu">${cb.k==="w"?"الحين: ":"استراحة، والجاية: "}<b>${nx?esc(nx.t):""}</b></p><div class="row"><button class="btn pr" data-v="focus">${TM.run?"⏱ كمّل الجلسة":"▶️ ابدأ الجلسة"}</button></div></section>`}
+  if(planDoneToday())return `<section class="card"><div class="ch2"><h2>🏆 خلصت خطة جلسات اليوم</h2></div><p class="mu">كفو! تقدر تسوي خطة ثانية من صفحة التركيز.</p></section>`;
+  return `<section class="card"><div class="ch2"><h2>🗓️ نظّم يومك بالجلسات</h2></div><p class="mu">حدد متى تبدأ وكم جلسة، و${esc(PET.name)} يقولك في كل جلسة وش تنجز ومتى تخلص 🦉</p><div class="row"><button class="btn pr" data-x="toPlanner">🚀 خطط جلساتي</button><button class="btn" data-x="plAuto">⚡ رتّبها لي تلقائيًا</button></div></section>`;
 }
 
 /* ===== Render ===== */
@@ -547,26 +686,61 @@ function go(v){V=v;P("study-view",v);render();scrollTo(0,0)}
 function tickCD(){const nx=EV.find(e=>e.d>new Date());if(!nx||!$("#cd0"))return;let s=Math.floor((nx.d-new Date())/1000);const v=[Math.floor(s/86400),Math.floor(s%86400/3600),Math.floor(s%3600/60),s%60];v.forEach((x,i)=>{const e=$("#cd"+i);if(e)e.textContent=x})}
 
 /* ===== Timer ===== */
-let TM=Object.assign({m:"w",rem:PRE[CFG.pre][0]*60,end:0,run:false},J("study-timer",{}));
-const tlen=()=>(TM.m==="w"?PRE[CFG.pre][0]:PRE[CFG.pre][1])*60;
+let TM=Object.assign({m:"w",rem:CFG.cw*60,dur:CFG.cw*60,end:0,run:false,n:0},J("study-timer",{}));
+const blen=k=>planOn()?PLN.blocks[PLN.cur].m*60:(k==="w"?CFG.cw:k==="lb"?CFG.clb:CFG.cb)*60;
+const tlen=()=>TM.dur||blen(TM.m);
+function tSet(k){TM.m=k;TM.dur=blen(k);TM.rem=TM.dur}
 const saveT=()=>P("study-timer",TM);
-function tStart(){ac();TM.end=Date.now()+TM.rem*1000;TM.run=true;saveT();tDraw()}
+function tStart(){ac();if(planOn()&&!PLN.started){PLN.started=Date.now();savePlan()}if(planOn()&&TM.rem===TM.dur){PLN.bst=Date.now();savePlan()}TM.end=Date.now()+TM.rem*1000;TM.run=true;saveT();tDraw()}
 function tPause(){TM.rem=Math.max(0,Math.ceil((TM.end-Date.now())/1000));TM.run=false;saveT();tDraw()}
-function tReset(){TM.run=false;TM.m="w";TM.rem=tlen();saveT();tDraw()}
+function tReset(){TM.run=false;if(planOn())tSet(PLN.blocks[PLN.cur].k);else{TM.n=0;tSet("w")}saveT();tDraw()}
 function tDone(skip){
-  if(TM.m==="w"){
-    if(!skip){const k=dk(day0());FS[k]=(FS[k]||0)+1;FM[CFG.fsub]=(FM[CFG.fsub]||0)+PRE[CFG.pre][0];if(new Date().getHours()>=23||new Date().getHours()<4)CFG.owl=1;save();chime();conf(40);toast("🍅 جلسة رائعة! +15 XP — استراحة "+PRE[CFG.pre][1]+" دقائق");notify("انتهت جلسة التركيز 🍅","خذ استراحة "+PRE[CFG.pre][1]+" دقائق")}
-    TM.m="b";TM.rem=tlen();tStart();
-  }else{TM.m="w";TM.rem=tlen();TM.run=false;if(!skip){chime();toast("هيا نرجع للتركيز 💪");notify("انتهت الاستراحة","يلا نرجع للمذاكرة")}}
+  const was=TM.m,mins=Math.round(TM.dur/60),k=dk(day0()),cb=planOn()?PLN.blocks[PLN.cur]:null,subj=cb&&cb.k==="w"?cb.s:CFG.fsub;
+  if(was==="w"){
+    if(!skip){FS[k]=(FS[k]||0)+1;FM[subj]=(FM[subj]||0)+mins;FMD[k]=(FMD[k]||0)+mins;P("study-focus-day",FMD);if(new Date().getHours()>=23||new Date().getHours()<4)CFG.owl=1;save();chime();conf(40);notify("انتهت جلسة التركيز 🍅","وقت الاستراحة")}
+    TM.n=(TM.n||0)+1;
+  }
+  let msg="";
+  if(cb){
+    PLN.done.push({i:PLN.cur,at:Date.now(),st:PLN.bst||null,skip:!!skip});PLN.cur++;PLN.bst=null;
+    if(PLN.cur>=PLN.blocks.length){TM.run=false;TM.n=0;tSet("w");savePlan();saveT();render(true);planFinished();return}
+    const nb=PLN.blocks[PLN.cur];tSet(nb.k);
+    if(nb.k!=="w"||CFG.autoW)tStart();else TM.run=false;
+    // finished the last session of a task? ask to tick it
+    if(was==="w"&&cb.id&&!S[cb.id]&&!PLN.blocks.slice(PLN.cur).some(b=>b.id===cb.id))setTimeout(()=>toast("خلصت «"+cb.t+"»؟",null,["✓ علّمها منجزة",()=>markDone(cb.id)]),1500);
+    if(was==="w"&&!skip)msg="🍅 جلسة رائعة! +15 XP — استراحة "+nb.m+" دقيقة";
+    else if(nb.k==="w"&&!skip){msg="يلا الجلسة الجاية: "+nb.t;notify("انتهت الاستراحة","الجاية: "+nb.t)}
+  }else{
+    if(was==="w"){const L=TM.n%CFG.every===0;tSet(L?"lb":"b");tStart();if(!skip)msg="🍅 جلسة رائعة! +15 XP — "+(L?"استراحة طويلة ":"استراحة ")+Math.round(TM.dur/60)+" دقيقة"}
+    else{tSet("w");if(CFG.autoW)tStart();else TM.run=false;if(!skip){msg="هيا نرجع للتركيز 💪";notify("انتهت الاستراحة","يلا نرجع للمذاكرة")}}
+  }
+  if(!skip&&was!=="w")chime();
+  if(msg)toast(msg);
   if(navigator.vibrate)try{navigator.vibrate([200,100,200])}catch(e){}
-  saveT();render(true);
-  if(!skip&&TM.m==="b")petOn("focusDone");
+  savePlan();saveT();render(true);
+  if(!skip&&was==="w")petOn("focusDone");
+  else if(!skip&&TM.m==="w"&&!TM.run&&cb)petOn("planNext");
 }
+function markDone(id){if(S[id])return;const s=snap();S[id]=1;save();render(true);toast("✓ أنجزتها!",s);petOn(M.idx>=0&&M.idx<=LAST&&full(M.idx)?"day":"task")}
+function startPlan(bl,start){
+  if(!bl.filter(b=>b.k==="w").length)return toast("اختر جلسة وحدة على الأقل");
+  PLN={d:dk(day0()),start:start||nowHM(),blocks:bl,cur:0,done:[],started:0};savePlan();
+  TM.run=false;tSet(bl[0].k);saveT();
+  const s0=atTime(PLN.start),fut=+s0-Date.now()>2*6e4;
+  if(V!=="focus")go("focus");else render(true);
+  if(!fut)tStart();
+  const ws=bl.filter(b=>b.k==="w"),tot=bl.reduce((a,b)=>a+b.m,0);
+  petOn("planStart",{n:ws.length,end:hm12(new Date(Math.max(+s0,Date.now())+tot*6e4)),fut,at:hm12(s0)});
+}
+function planFinished(){const bl=PLN.blocks,mins=PLN.done.filter(d=>bl[d.i].k==="w"&&!d.skip).reduce((a,d)=>a+bl[d.i].m,0);conf(140);chime();toast("🏆 خلصت خطة اليوم! درست "+durTxt(mins));notify("خلصت خطة اليوم 🏆","درست "+durTxt(mins));petOn("planDone",durTxt(mins))}
 function tDraw(){
   if(TM.run){TM.rem=Math.max(0,Math.ceil((TM.end-Date.now())/1000));if(TM.rem<=0)return tDone()}
-  const s=TM.rem,str=pad(Math.floor(s/60))+":"+pad(s%60),lb=TM.m==="w"?"وقت التركيز":"استراحة ☕";
-  const e=$("#tmT");if(e){e.textContent=str;$("#tmM").textContent=lb;$("#tmR").style.strokeDashoffset=(615.8*(1-s/tlen())).toFixed(1);$("#tmGo").textContent=TM.run?"إيقاف مؤقت":s<tlen()?"استكمل":"ابدأ"}
-  const act=TM.run||s<tlen();$("#mini").classList.toggle("on",act&&V!=="focus");$("#miniT").textContent=(TM.m==="b"?"☕ ":"")+str;
+  const s=TM.rem,str=(s>=3600?Math.floor(s/3600)+":":"")+pad(Math.floor(s%3600/60))+":"+pad(s%60);
+  let lb=TM.m==="w"?"وقت التركيز":TM.m==="lb"?"استراحة طويلة 🌴":"استراحة ☕";
+  if(planOn()&&TM.m==="w")lb="الجلسة "+PLN.blocks.slice(0,PLN.cur+1).filter(b=>b.k==="w").length+" من "+PLN.blocks.filter(b=>b.k==="w").length;
+  if(planOn()&&!PLN.started&&!TM.run&&+atTime(PLN.start)>Date.now())lb="تبدأ الساعة "+hm12(atTime(PLN.start));
+  const e=$("#tmT");if(e){e.textContent=str;$("#tmM").textContent=lb;$("#tmR").style.strokeDashoffset=(615.8*(1-s/tlen())).toFixed(1);$("#tmGo").textContent=TM.run?"إيقاف مؤقت ⏸":s<tlen()?"استكمل ▶":"ابدأ ▶"}
+  const act=TM.run||s<tlen();$("#mini").classList.toggle("on",act&&V!=="focus");$("#miniT").textContent=(TM.m!=="w"?"☕ ":"")+str;
   $("#zenT").textContent=str;$("#zenM").textContent=lb;
   document.title=TM.run?str+" · "+lb:"رحلتك نحو الفاينل";
 }
@@ -628,6 +802,9 @@ document.addEventListener("change",e=>{
   if(t.id==="nm"){NAME=t.value.trim();P("study-name",NAME);toast(NAME?"أهلًا بك يا "+NAME+" 👋":"تم الحفظ");return}
   if(t.id==="nt"){NT[dk(day0())]=t.value;save();toast("📝 تم حفظ الملاحظة");render(true);return}
   if(t.id==="setSnd"){CFG.snd=t.checked?1:0;save();return}
+  if(["cW","cB","cLB","cE","cG"].includes(t.id)){const lim={cW:[1,180,"cw"],cB:[1,60,"cb"],cLB:[1,90,"clb"],cE:[2,8,"every"],cG:[10,900,"goal"]}[t.id],v=Math.round(+t.value)||lim[0];CFG[lim[2]]=Math.max(lim[0],Math.min(lim[1],v));save();if(!TM.run&&!planOn())tReset();render(true);toast("✓ تم الحفظ");return}
+  if(t.id==="cA"){CFG.autoW=t.checked?1:0;save();return}
+  if(["pS","pW","pB","pLB","pE"].includes(t.id)){render(true);return}
   if(t.id==="setPet"){CFG.pet=t.checked?1:0;save();if(!CFG.pet){closeChat();hideBub()}petExpr();return}
   if(t.id==="setPetTalk"){CFG.petTalk=t.checked?1:0;save();return}
   if(t.id==="setRem"){CFG.rem=t.value;save();toast(t.value?"⏰ التذكير الساعة "+t.value:"تم إلغاء التذكير");return}
@@ -642,7 +819,19 @@ document.addEventListener("change",e=>{
     if(M.lvl>before){const sc=[3,5,8].includes(M.lvl);setTimeout(()=>{toast("⭐ ارتفع مستواك إلى "+M.lvl+"!");conf(90);petOn("level",sc)},1600)}
   }else petOn("uncheck");
 });
+function autoPlan(){
+  if(M.idx<0||M.idx>LAST)return toast("الجدول مو شغال الحين");
+  const its=draftItems().filter(x=>!x.late).map(x=>Object.assign(x,{n:1}));
+  if(!its.length)return toast("خلصت مهام اليوم كلها 🎉");
+  const d=new Date();startPlan(buildBlocks(its,0),pad(d.getHours())+":"+pad(d.getMinutes()));
+}
 document.addEventListener("input",e=>{
+  const id=e.target.id,v=+e.target.value;
+  if(["pS","pW","pB","pLB","pE"].includes(id)){
+    if(id==="pS")draft().start=e.target.value;
+    else if(v>0){const lim={pW:[5,180,"cw"],pB:[1,60,"cb"],pLB:[1,90,"clb"],pE:[2,8,"every"]}[id];CFG[lim[2]]=Math.max(lim[0],Math.min(lim[1],Math.round(v)));save();if(!TM.run&&!planOn()){tReset()}}
+    $("#psum").innerHTML=planSummary();return;
+  }
   if(e.target.id==="q"){q=e.target.value.trim();$("#list").innerHTML=planList()}
   if(e.target.id==="pi")palDraw();
 });
@@ -663,7 +852,9 @@ document.addEventListener("click",e=>{
   if(ds.today){const s=snap();move(ds.today,+ds.d,M.idx);save();render(true);toast("⤶ صارت ضمن مهام اليوم",s);return}
   if(ds.del){const s=snap(),i=+ds.d;CU[i]=(CU[i]||[]).filter(c=>c.id!==ds.del);delete S[ds.del];save();render(true);toast("تم الحذف",s);return}
   if(ds.addday!==undefined){const t=prompt("اكتب المهمة الجديدة لـ "+fmt(dt(+ds.addday)));if(t)addTask(+ds.addday,t,sub(t));return}
-  if(ds.pre!==undefined){if(TM.run&&!confirm("المؤقت شغّال، تبي تغيّر المدة؟"))return;CFG.pre=+ds.pre;save();tReset();render(true);return}
+  if(ds.pre!==undefined){if(TM.run&&!confirm("المؤقت شغّال، تبي تغيّر المدة؟"))return;CFG.pre=+ds.pre;CFG.cw=PRE[CFG.pre][0];CFG.cb=PRE[CFG.pre][1];custOpen=false;save();tReset();render(true);return}
+  if(ds.st){const dr=draft(),v=+ds.dv;if(ds.st==="free")dr.free=Math.max(0,Math.min(8,dr.free+v));else dr.items[ds.st]=Math.max(0,Math.min(8,(dr.items[ds.st]||0)+v));render(true);return}
+  if(ds.pdone){markDone(ds.pdone);return}
   if(ds.fs){CFG.fsub=ds.fs;save();render(true);return}
   if(ds.amb){setAmb(ds.amb);return}
   if(ds.acc){CFG.acc=ds.acc;save();applyAcc();openSet();render(true);return}
@@ -671,6 +862,12 @@ document.addEventListener("click",e=>{
   const x=ds.x;if(!x)return;
   ({
     pal:openPal,set:openSet,close:closeOv,th:toggleTheme,
+    cust:()=>{custOpen=!custOpen;render(true)},
+    plGo:()=>startPlan(buildBlocks(draftItems(),draft().free),draft().start),
+    plAuto:autoPlan,
+    plEnd:()=>{if(!confirm("تنهي خطة اليوم؟"))return;PLN=null;savePlan();tReset();render(true);toast("أنهيت الخطة")},
+    plNew:()=>{PLN=null;DR=null;savePlan();tReset();render(true)},
+    toPlanner:()=>{go("focus");setTimeout(()=>{const e=$("#planner");if(e)e.scrollIntoView({block:"start",behavior:"smooth"})},80)},
     pchat:()=>openChat(),pclose:closeChat,pclr:()=>{PET.hist=[];savePet();drawChat();botMsg("صفحة جديدة ✨ وش في بالك؟")},
     qt:()=>{qi++;render(true)},
     rescue,lateToday,seeLate:()=>{tab="late";go("plan")},
@@ -755,7 +952,12 @@ function petOn(type,x){
     case"level":e="love";a="spin";msg="مستواك صار "+M.lvl+"! ⭐ "+(x?"وشوف شكلي الجديد: "+STG[stage()]:"كمّل كذا!");fly("⭐",0,6);break;
     case"badge":e="love";a="dance";msg="وسام جديد: «"+x+"» 🏅 والله إنك قدها!";break;
     case"challenge":e="happy";a="dance";msg="تحدي مكتمل! +30 XP 🎯 "+pick(["وحش!","ما عليك كلام","كذا أحبك 😍"]);break;
-    case"focusStart":e="focus";a="wave";msg=pick(["وضع التركيز ON 🤓 أنا ساكت ومركز معك…","يلا! جوالك بعيد، وأنا أراقب 👀","بالتوفيق، ما راح أزعجك 🤫"]);break;
+    case"focusStart":e="focus";a="wave";
+      if(planOn()&&PLN.blocks[PLN.cur].k==="w"){const b=PLN.blocks[PLN.cur],wi=PLN.blocks.slice(0,PLN.cur+1).filter(x=>x.k==="w").length;msg=`الجلسة ${wi} 🎯 ركّز على: ${b.t}${b.of>1?` (جزء ${b.p} من ${b.of})`:""} — ${b.m} دقيقة، وأنا ساكت 🤫`}
+      else msg=pick(["وضع التركيز ON 🤓 أنا ساكت ومركز معك…","يلا! جوالك بعيد، وأنا أراقب 👀","بالتوفيق، ما راح أزعجك 🤫"]);break;
+    case"planStart":e="happy";a="dance";msg=`خطتك جاهزة! ${x.n} جلسات ${x.fut?"تبدأ الساعة "+x.at+" وأذكرك وقتها ⏰":"وبدأنا الحين 🚀"} وتخلص تقريبًا ${x.end}. يلا!`;break;
+    case"planNext":{const nx=PLN&&PLN.blocks[PLN.cur];e="";a="wave";msg=nx?`خلصت الاستراحة! الجاية: ${nx.t} — اضغط ابدأ لما تكون جاهز 💪`:"";break}
+    case"planDone":feed(30);e="love";a="dance";fly("👑",0,5);msg=`خلصت خطة اليوم كاملة!! درست ${x} 🏆 أنت أسطورة يا ${n}!`;break;
     case"focusDone":feed(15);e="happy";a="dance";msg=pick(["جلسة كاملة! قوم اشرب موية وتمغّط 💧","أحسنت! عقلك يستاهل استراحة ☕","🍅 جلسة ورا جلسة، كذا النجاح!"]);break;
     case"rescue":a="wave";msg="رتّبتها لك، لا تشيل هم 😌 خطوة خطوة.";break;
     case"add":a="wiggle";msg=pick(["سجلتها ✍️ لا تنساها!","تمام، أضفتها لقائمتك 📌"]);break;
@@ -787,7 +989,7 @@ function rNext(){
   const cand=u.length?u:M.late;
   if(!cand.length)return {t:"كل شي خالص اليوم! 👏 إذا عندك طاقة، راجع أضعف مادة عندك.",a:[["💡 اقترح لي","q:suggest"]]};
   const [w]=weakest(),best=cand.find(x=>x.s===w)||cand[0];
-  return {t:`أقترح تبدأ بـ <b>${esc(best.t)}</b> ${SB[best.s][2]}<br>${best.s===w?"لأنها أضعف مادة عندك حاليًا.":"عشان تمشي على الخطة."} خذ ${PRE[CFG.pre][0]} دقيقة تركيز عليها وبعدها استراحة ☕`,a:[["⏱ يلا نبدأ","focus:"+best.s]]};
+  return {t:`أقترح تبدأ بـ <b>${esc(best.t)}</b> ${SB[best.s][2]}<br>${best.s===w?"لأنها أضعف مادة عندك حاليًا.":"عشان تمشي على الخطة."} خذ ${CFG.cw} دقيقة تركيز عليها وبعدها استراحة ☕`,a:[["⏱ يلا نبدأ","focus:"+best.s]]};
 }
 function rProgress(){
   const [w,wp]=weakest();
@@ -813,10 +1015,12 @@ function brain(raw,key){
       addTask(M.idx,m[1],sub(m[1]),true);return {t:`سجلتها في مهام اليوم ✍️<br><b>${esc(m[1])}</b>`,a:[["📋 وش عندي اليوم؟","q:today"]]};
     }
     if(m=(raw||"").trim().match(/^(?:سميك|سمّيك|اسميك|اسمك صار|غير اسمك(?:\s*(?:الى|إلى|ل))?)\s+(.{1,20})/)){PET.name=m[1].trim();savePet();petStatus();return `حلو! من اليوم اسمي <b>${esc(PET.name)}</b> 🥰`}
-    key=has(s,["شكرا","يعطيك","مشكور","تسلم","thank","ثانكس"])?"thanks":has(s,["تعبان","تعب","طفشان","طفش","زهق","خايف","قلق","متوتر","توتر","ضغط","ما اقدر","مقدر","يائس","محبط"])?"stress":has(s,["متاخر","تاخر","فاتني","فاتت"])?"late":has(s,["بكره","بكرا","غدا"])?"tomorrow":has(s,["اضيف","اقترح","نصيحه","انصحني","وش ناقص","وش لازم"])?"suggest":has(s,["اذاكر","ابدا","وش اسوي","ايش اسوي","الحين"])?"next":has(s,["اليوم","وش عندي","مهامي","وش علي","ايش عندي","مهام"])?"today":has(s,["تقدم","ماشي","نسبه","مستواي","مستوي","احصا","كيف انا","وضعي","xp"])?"progress":has(s,["كويز","اختبار","فاينل","امتحان","متي"])?"exam":has(s,["ركز","تركيز","مؤقت","جلسه","بومودورو","تايمر"])?"focus":has(s,["حفز","تحفيز","شجع","ما ابي","مالي خلق","كسل","كسلان","ما لي خلق"])?"motivate":has(s,["نكته","ضحك","طقطق","نكت"])?"joke":has(s,["كيفك","شلونك","كيف حالك","وش اخبارك","علومك"])?"how":has(s,["اسمك","مين انت","من انت","وش انت"])?"name":has(s,["جوعان","اكل","طاقتك","جوع"])?"food":has(s,["نوم","انام","نعسان","سهران"])?"sleep":has(s,["هلا","مرحب","السلام","اهلا","هاي","hi","hello","صباح","مساء"])?"hello":has(s,["احبك","حبيبي","كفو","شاطر"])?"love":"";
+    if(has(s,["خطه","خطتي","جلساتي","جدول اليوم","نظم","رتب يومي","رتب لي","كم جلسه","جلسات"]))key="plan";
+    else key=has(s,["شكرا","يعطيك","مشكور","تسلم","thank","ثانكس"])?"thanks":has(s,["تعبان","تعب","طفشان","طفش","زهق","خايف","قلق","متوتر","توتر","ضغط","ما اقدر","مقدر","يائس","محبط"])?"stress":has(s,["متاخر","تاخر","فاتني","فاتت"])?"late":has(s,["بكره","بكرا","غدا"])?"tomorrow":has(s,["اضيف","اقترح","نصيحه","انصحني","وش ناقص","وش لازم"])?"suggest":has(s,["اذاكر","ابدا","وش اسوي","ايش اسوي","الحين"])?"next":has(s,["اليوم","وش عندي","مهامي","وش علي","ايش عندي","مهام"])?"today":has(s,["تقدم","ماشي","نسبه","مستواي","مستوي","احصا","كيف انا","وضعي","xp"])?"progress":has(s,["كويز","اختبار","فاينل","امتحان","متي"])?"exam":has(s,["ركز","تركيز","مؤقت","جلسه","بومودورو","تايمر"])?"focus":has(s,["حفز","تحفيز","شجع","ما ابي","مالي خلق","كسل","كسلان","ما لي خلق"])?"motivate":has(s,["نكته","ضحك","طقطق","نكت"])?"joke":has(s,["كيفك","شلونك","كيف حالك","وش اخبارك","علومك"])?"how":has(s,["اسمك","مين انت","من انت","وش انت"])?"name":has(s,["جوعان","اكل","طاقتك","جوع"])?"food":has(s,["نوم","انام","نعسان","سهران"])?"sleep":has(s,["هلا","مرحب","السلام","اهلا","هاي","hi","hello","صباح","مساء"])?"hello":has(s,["احبك","حبيبي","كفو","شاطر"])?"love":"";
   }
   PET.talk[dk(day0())]=(PET.talk[dk(day0())]||0)+1;savePet();
   switch(key){
+    case"plan":return rPlan();
     case"today":return rToday();case"tomorrow":return rTomorrow();case"late":return rLate();case"next":return rNext();
     case"progress":return rProgress();case"exam":return rExam();case"suggest":return rSuggest();case"motivate":return rMotivate();
     case"stress":temp("love",3000);return rStress();
@@ -831,6 +1035,15 @@ function brain(raw,key){
     case"love":temp("love",3000);anim("wiggle");fly("💜",0,4);return pick(["وأنا أحبك أكثر 💜 بس أحبك أكثر لما تخلص مهامك 😏","تسلم يا "+n+"! 🥰"]);
   }
   return {t:`ما فهمت عليك 😅 بس أقدر أساعدك في:<ul><li>وش عندي اليوم / بكرة</li><li>وش أذاكر الحين؟</li><li>المتأخر وخطة الإنقاذ</li><li>كيف مستواي؟ ومتى الكويز؟</li><li>اكتب «أضف + المهمة» وأسجلها لك</li></ul>`};
+}
+function rPlan(){
+  if(planOn()){const bl=PLN.blocks,cb=bl[PLN.cur],tm=planTimes(),left=bl.slice(PLN.cur).filter(b=>b.k==="w");
+    return {t:`🗓️ خطتك ماشية:<ul><li>${cb.k==="w"?"الحين: <b>"+esc(cb.t)+"</b>":"الحين استراحة ☕"}</li><li>باقي <b>${left.length}</b> جلسات (${durTxt(left.reduce((a,b)=>a+b.m,0))} مذاكرة)</li><li>تخلص تقريبًا الساعة <b>${hm12(new Date(tm[tm.length-1][1]))}</b></li></ul>`,a:[["⏱ صفحة التركيز","gofocus"]]}}
+  if(planDoneToday())return "خلصت خطة اليوم 🏆 تبي خطة ثانية؟ روح لصفحة التركيز واضغط «خطة جديدة».";
+  const u=M.idx>=0&&M.idx<=LAST?T[M.idx].filter(x=>!S[x.id]):[];
+  if(!u.length)return "ما عندك مهام باقية اليوم 🎉 تقدر تسوي جلسات حرة من صفحة التركيز.";
+  const tot=u.length*CFG.cw+Math.max(0,u.length-1)*CFG.cb;
+  return {t:`أقدر أرتب لك يومك 🦉<br>عندك <b>${u.length}</b> مهام. لو جلسة لكل وحدة (${CFG.cw} د) مع استراحات، تحتاج تقريبًا <b>${durTxt(tot)}</b> وتخلص الساعة <b>${hm12(new Date(Date.now()+tot*6e4))}</b>.<br>تبيني أبدأها الحين؟ أو تخصصها بنفسك (الوقت وعدد الجلسات).`,a:[["⚡ رتّبها وابدأ الحين","autoplan"],["🛠 أخصصها بنفسي","toplanner"]]};
 }
 function greetLine(){
   if(M.idx<0)return "الجدول يبدأ قريب، جهّز نفسك!";if(M.idx>LAST)return "خلص الجدول، بالتوفيق في الفاينل 🎓";
@@ -851,7 +1064,7 @@ function tip(){
 }
 
 /* chat */
-const QUICK=[["📋 وش عندي اليوم؟","today"],["🎯 وش أذاكر الحين؟","next"],["⏰ المتأخر","late"],["📊 كيف مستواي؟","progress"],["💡 وش أضيف؟","suggest"],["⏳ متى الكويز؟","exam"],["🔥 حفزني","motivate"],["😮‍💨 متوتر","stress"],["😂 نكتة","joke"],["🤍 دلّعه","pet"]];
+const QUICK=[["🗓️ رتّب لي يومي","plan"],["📋 وش عندي اليوم؟","today"],["🎯 وش أذاكر الحين؟","next"],["⏰ المتأخر","late"],["📊 كيف مستواي؟","progress"],["💡 وش أضيف؟","suggest"],["⏳ متى الكويز؟","exam"],["🔥 حفزني","motivate"],["😮‍💨 متوتر","stress"],["😂 نكتة","joke"],["🤍 دلّعه","pet"]];
 function msgHTML(m){return `<div class="msg${m.me?" me":""}">${m.t}${m.a&&m.a.length?'<div class="ma">'+m.a.map(a=>`<button data-pa="${esc(a[1])}">${a[0]}</button>`).join("")+"</div>":""}</div>`}
 function drawChat(){$("#pcm").innerHTML=PET.hist.map(msgHTML).join("");$("#pqs").innerHTML=QUICK.map(q=>`<button data-pq="${q[1]}">${q[0]}</button>`).join("");$("#pcm").scrollTop=1e6;petStatus()}
 function botMsg(r){
@@ -868,11 +1081,11 @@ function userSend(text,key){
 }
 function openChat(){chatOpen=true;hideBub();$("#pchat").classList.add("on");drawChat();if(!PET.hist.length)botMsg({t:`هلا ${esc(uname())}! أنا <b>${esc(PET.name)}</b> 🦉 رفيقك لين الفاينل. ${greetLine()}`,a:[["📋 وش عندي اليوم؟","q:today"],["🎯 وش أذاكر؟","q:next"]]});anim("jump");if(matchMedia("(pointer:fine)").matches)setTimeout(()=>$("#pci").focus(),50)}
 function closeChat(){chatOpen=false;$("#pchat").classList.remove("on")}
-const PA={rescue:()=>{rescue()},lateToday:()=>{lateToday()},late:()=>{closeChat();tab="late";go("plan")},stats:()=>{closeChat();go("stats")},tomorrow:()=>botMsg(rTomorrow()),
+const PA={autoplan:()=>{closeChat();autoPlan()},toplanner:()=>{closeChat();go("focus");setTimeout(()=>{const e=$("#planner");if(e)e.scrollIntoView({block:"start",behavior:"smooth"})},80)},gofocus:()=>{closeChat();go("focus")},rescue:()=>{rescue()},lateToday:()=>{lateToday()},late:()=>{closeChat();tab="late";go("plan")},stats:()=>{closeChat();go("stats")},tomorrow:()=>botMsg(rTomorrow()),
   addtj:()=>{if(M.idx<0||M.idx>LAST)return;addTask(M.idx,"حل تجميعات قبل الكويز","ch",true);botMsg("أضفتها لمهام اليوم ✅")}};
 function petAction(a){
   if(a.startsWith("q:")){const q=QUICK.find(x=>x[1]===a.slice(2));return userSend(q?q[0]:a.slice(2),a.slice(2))}
-  if(a.startsWith("focus:")){const s=a.slice(6);if(s)CFG.fsub=s;save();closeChat();if(!TM.run){TM.m="w";TM.rem=s?tlen():600}go("focus");if(!TM.run)tStart();return}
+  if(a.startsWith("focus:")){const s=a.slice(6);if(s)CFG.fsub=s;save();closeChat();if(!TM.run&&!planOn()){TM.m="w";TM.dur=s?blen("w"):600;TM.rem=TM.dur}go("focus");if(!TM.run)tStart();return}
   if(a.startsWith("addrev:")){const s=a.slice(7);if(M.idx<0||M.idx>LAST)return;addTask(M.idx,"مراجعة سريعة: "+SB[s][0],s,true);return botMsg("أضفت «مراجعة سريعة: "+SB[s][0]+"» لمهام اليوم ✅ بالتوفيق!")}
   (PA[a]||(()=>{}))();
 }
@@ -918,7 +1131,9 @@ document.addEventListener("pointermove",e=>{mx=e.clientX;my=e.clientY;wake();if(
 document.addEventListener("keydown",wake);
 /* life loop: idle moves, sleep, tips */
 setInterval(()=>{
-  if(!CFG.pet)return;const n=Date.now();
+  const n=Date.now();
+  if(planOn()&&!PLN.started&&!TM.run&&!PLN.rem&&n>=+atTime(PLN.start)){PLN.rem=1;savePlan();notify("حان وقت خطتك ⏰","الجلسة الأولى: "+(PLN.blocks.find(b=>b.k==="w")||{}).t);toast("⏰ حان وقت أول جلسة!",null,["▶️ ابدأ",()=>{go("focus");tStart()}]);tone(880,0,.3);sleeping=false;say("حان الوقت! ⏰ أول جلسة: "+(PLN.blocks.find(b=>b.k==="w")||{}).t,1);anim("jump")}
+  if(!CFG.pet)return;
   if(!sleeping&&!TM.run&&n-lastAct>180000){sleeping=true;hideBub();petExpr()}
   if(sleeping||tmpE)return;
   const r=Math.random();
