@@ -169,7 +169,7 @@ textarea{width:100%;min-height:70px;margin-top:10px;border:1px solid var(--ln);b
 #mini .pd{width:8px;height:8px;border-radius:50%;background:var(--ok);animation:pu 1.4s infinite}
 @keyframes pu{50%{opacity:.25}}
 /* toast */
-#ts{position:fixed;bottom:96px;left:50%;transform:translateX(-50%) translateY(30px);background:var(--tx);color:var(--bg);padding:9px 10px 9px 18px;border-radius:16px;opacity:0;transition:.3s;pointer-events:none;z-index:60;display:flex;gap:12px;align-items:center;max-width:92vw;font-size:14px;box-shadow:0 12px 30px -10px rgba(0,0,0,.4)}
+#ts{position:fixed;top:70px;left:50%;transform:translateX(-50%) translateY(-20px);background:var(--tx);color:var(--bg);padding:9px 10px 9px 18px;border-radius:16px;opacity:0;transition:.3s;pointer-events:none;z-index:60;display:flex;gap:12px;align-items:center;max-width:92vw;font-size:14px;box-shadow:0 12px 30px -10px rgba(0,0,0,.4)}
 #ts.on{opacity:1;transform:translateX(-50%);pointer-events:auto}
 #ts button{border:0;background:var(--ac);color:#fff;border-radius:10px;padding:4px 12px;font-weight:700;cursor:pointer}
 /* overlays */
@@ -195,11 +195,88 @@ textarea{width:100%;min-height:70px;margin-top:10px;border:1px solid var(--ln);b
 #zenT{font:700 clamp(80px,22vw,180px) "Readex Pro",sans-serif;font-variant-numeric:tabular-nums;line-height:1}
 #zen small{opacity:.6}
 #zenQ{font:400 22px Amiri,serif;opacity:.8;max-width:600px;text-align:center;padding:0 20px}
+/* ===== companion (owl) ===== */
+#pet{position:fixed;left:14px;bottom:84px;width:84px;height:91px;z-index:35;cursor:pointer;filter:drop-shadow(0 8px 14px rgba(40,40,120,.35));transition:transform .2s;user-select:none;-webkit-user-select:none;outline:0}
+#pet:hover{transform:scale(1.06)}#pet:focus-visible{outline:2px solid var(--ac);border-radius:20px}
+#pet.off,#pbub.off,#pchat.off{display:none!important}
+#pet svg{width:100%;height:100%;overflow:visible}
+#pb{transform-origin:60px 122px;animation:bob 3.2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-3px) scale(1.025,.975)}}
+#pet.jump #pb{animation:jump .65s ease}
+@keyframes jump{30%{transform:translateY(-24px) scale(.94,1.08)}60%{transform:translateY(0) scale(1.1,.9)}80%{transform:translateY(-4px)}}
+#pet.dance #pb{animation:dance .5s ease-in-out 4}
+@keyframes dance{25%{transform:rotate(-12deg) translateY(-6px)}75%{transform:rotate(12deg) translateY(-6px)}}
+#pet.shake #pb{animation:shk .2s 4}
+@keyframes shk{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+#pet.wiggle #pb{animation:wig .3s 4}
+@keyframes wig{50%{transform:scale(1.08,.94)}}
+#pet.spin #pb{animation:spin .8s ease}
+@keyframes spin{to{transform:rotate(360deg)}}
+#pet.tilt #pb{animation:tilt 1.6s ease}
+@keyframes tilt{30%,70%{transform:rotate(-10deg)}}
+#wl{transform-origin:26px 66px}#wr{transform-origin:94px 66px}
+#pet.wave #wr{animation:wave .35s ease-in-out 5}
+#pet.dance #wl,#pet.jump #wl{animation:wave2 .35s ease-in-out 3}#pet.dance #wr,#pet.jump #wr{animation:wave .35s ease-in-out 3}
+@keyframes wave{50%{transform:rotate(-42deg)}}@keyframes wave2{50%{transform:rotate(42deg)}}
+.ey{animation:blink 5s infinite}.ey:first-child{transform-origin:44px 58px}.ey:last-child{transform-origin:76px 58px;animation-delay:.02s}
+@keyframes blink{0%,95%,100%{transform:scaleY(1)}97%{transform:scaleY(.08)}}
+.pp{transition:transform .15s}
+#bk2{opacity:0}#pet.talk #bk2{animation:chomp .22s infinite}
+@keyframes chomp{50%{opacity:1;transform:translateY(2px)}}
+.zz text{animation:zz 2s infinite}.zz text:last-child{animation-delay:1s}
+@keyframes zz{0%{opacity:0;transform:translateY(6px)}50%{opacity:1}100%{opacity:0;transform:translateY(-8px)}}
+.glow{animation:pu 2.4s infinite}
+#psv .eh,#psv .es,#psv .el,#psv .ed,#psv .brow,#psv .acc-gl,#psv .acc-st,#psv .acc-cap,#psv .acc-cr,#psv .sweat,#psv .zz,#psv .glow{display:none}
+#psv.happy .eo,#psv.sleep .eo,#psv.love .eo,#psv.dizzy .eo{display:none}
+#psv.happy .eh,#psv.sleep .es,#psv.love .el,#psv.dizzy .ed,#psv.sad .brow,#psv.sad .sweat,#psv.focus .acc-gl,#psv.sleep .zz,#psv.cap .acc-cap,#psv.steth .acc-st,#psv.crown .acc-cr,#psv.crown .glow{display:inline}
+#psv.sleep #pb{animation-duration:5s}
+#pbub{position:fixed;left:14px;bottom:182px;z-index:36;max-width:min(270px,calc(100vw - 28px));background:var(--card);color:var(--tx);border:1px solid var(--ln);border-radius:18px 18px 18px 6px;padding:10px 14px;font-size:14px;line-height:1.7;box-shadow:0 16px 34px -14px rgba(0,0,0,.45);opacity:0;transform:translateY(10px) scale(.95);transform-origin:bottom left;transition:.25s;pointer-events:none;cursor:pointer}
+#pbub.on{opacity:1;transform:none;pointer-events:auto}
+#pbub::after{content:"";position:absolute;bottom:-7px;left:30px;width:12px;height:12px;background:var(--card);border-right:1px solid var(--ln);border-bottom:1px solid var(--ln);transform:rotate(45deg)}
+.pfx{position:fixed;z-index:37;pointer-events:none;font-size:20px;animation:pfx 1.4s ease-out forwards}
+@keyframes pfx{to{transform:translate(var(--dx),-90px) scale(1.3);opacity:0}}
+.pfx.in{animation:pin .8s ease-in forwards}
+@keyframes pin{from{transform:translate(var(--dx),-140px) scale(1.5)}to{transform:translate(0,0) scale(.4);opacity:0}}
+#pchat{position:fixed;left:12px;bottom:182px;z-index:45;width:min(390px,calc(100vw - 24px));height:min(560px,calc(100vh - 260px));background:var(--card);border:1px solid var(--ln);border-radius:24px;box-shadow:0 30px 60px -20px rgba(0,0,0,.55);display:none;flex-direction:column;overflow:hidden;transform-origin:bottom left}
+#pchat.on{display:flex;animation:pop2 .28s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes pop2{from{opacity:0;transform:scale(.85) translateY(20px)}}
+.pch{display:flex;gap:10px;align-items:center;padding:12px 14px;background:radial-gradient(80% 120% at 100% 0%,color-mix(in srgb,var(--ac) 45%,transparent),transparent 60%),linear-gradient(135deg,#5b63e0,#34369e);color:#fff}
+.pch .av{width:44px;height:44px;border-radius:14px;background:rgba(255,255,255,.15);display:grid;place-items:center;font-size:24px;flex:none}
+.pch>div{flex:1;min-width:0}
+.pch b{font:700 17px "El Messiri",serif;display:block;line-height:1.2}
+.pch small{opacity:.85;font-size:12px}
+.pch .ib{color:#fff}.pch .ib:hover{background:rgba(255,255,255,.15);color:#fff}
+.en{height:6px;border-radius:6px;background:rgba(255,255,255,.2);margin-top:5px;max-width:170px;overflow:hidden}.en i{display:block;height:100%;background:linear-gradient(90deg,#ffd166,#7cf0b5);border-radius:6px;transition:width .5s}
+#pcm{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--bg)}
+.msg{max-width:88%;padding:8px 12px;border-radius:16px 16px 16px 4px;background:var(--card);border:1px solid var(--ln);font-size:14px;line-height:1.7;align-self:flex-end;animation:up .25s both;overflow-wrap:anywhere}
+.msg.me{align-self:flex-start;background:var(--ac);color:#fff;border-color:transparent;border-radius:16px 16px 4px 16px}
+.msg ul{margin:4px 0;padding-inline-start:18px}
+.ma{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.ma button{border:1px solid var(--ac);background:transparent;color:var(--tx);border-radius:12px;padding:3px 10px;font-size:12.5px;cursor:pointer}
+.ma button:hover{background:var(--ac);color:#fff}
+.typing{display:flex;gap:4px;padding:12px 14px}.typing i{width:7px;height:7px;border-radius:50%;background:var(--mu);animation:ty 1s infinite}.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes ty{50%{transform:translateY(-4px);opacity:.4}}
+.pqs{display:flex;gap:6px;overflow-x:auto;padding:8px 10px;border-top:1px solid var(--ln);scrollbar-width:none}
+.pqs button{border:1px solid var(--ln);background:var(--card);border-radius:14px;padding:4px 10px;font-size:12.5px;white-space:nowrap;cursor:pointer}
+.pqs button:hover{border-color:var(--ac)}
+#pcf{display:flex;gap:6px;padding:4px 10px 10px}
+#pcf input{flex:1;border:1px solid var(--ln);background:var(--bg);border-radius:14px;padding:9px 12px;outline:0;font-size:14px;min-width:0}
+#pcf input:focus{border-color:#5b63e0}
+#pcf button{width:44px;border:0;border-radius:14px;background:#5b63e0;color:#fff;cursor:pointer;font-size:18px}
+.chl{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:14px;background:var(--bg2);margin:6px 0;font-size:14.5px;transition:.3s}
+.chl .ck{width:24px;height:24px;border-radius:50%;border:2px solid var(--mu);display:grid;place-items:center;font-size:13px;flex:none;color:transparent}
+.chl.ok{background:color-mix(in srgb,var(--ok) 12%,var(--bg2))}
+.chl.ok .ck{background:var(--ok);border-color:var(--ok);color:#fff}
+.chl.ok span{text-decoration:line-through;color:var(--mu)}
+.chl em{margin-inline-start:auto;font-style:normal;font-size:12px;font-weight:700;color:var(--ac);white-space:nowrap}
+.pcard{display:flex;gap:14px;align-items:center}
+.pcard .pav{font-size:40px;width:64px;height:64px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(135deg,#7c8cff,#4b4fd1);flex:none;cursor:pointer}
+@media (max-width:420px){.brand{font-size:17px;white-space:nowrap}.mood button{width:34px;height:36px;font-size:19px}#pet{width:70px;height:76px;bottom:84px;left:8px}#pbub{bottom:166px;left:10px}#pchat{bottom:166px;left:8px;width:calc(100vw - 16px);height:calc(100vh - 240px)}}
 .fx{position:fixed;top:-16px;z-index:80;pointer-events:none;animation:fl linear forwards}
 @keyframes fl{to{transform:translateY(108vh) rotate(720deg);opacity:.3}}
 @media (prefers-reduced-motion:reduce){.fx{display:none}*{animation-duration:.01ms!important;transition:none!important}}
 @media (max-width:420px){#nm{font-size:23px}.ring{width:92px;height:92px}.nav button{min-width:58px;padding:7px 8px}}
-@media print{.top,.nav,#mini,#ts,.ta,.add,.chips,.seg,.srch,.row,.mood{display:none!important}.hero{color:#000;background:none;box-shadow:none}.card,.day{box-shadow:none;break-inside:avoid}body{background:#fff}}
+@media print{#pet,#pbub,#pchat,.top,.nav,#mini,#ts,.ta,.add,.chips,.seg,.srch,.row,.mood{display:none!important}.hero{color:#000;background:none;box-shadow:none}.card,.day{box-shadow:none;break-inside:avoid}body{background:#fff}}
 </style>
 </head>
 <body>
@@ -224,6 +301,44 @@ textarea{width:100%;min-height:70px;margin-top:10px;border:1px solid var(--ln);b
 <div class="ov" id="set"><div class="pnl"><div class="ch2" style="padding:14px 18px 0"><h2>الإعدادات</h2><button class="ib" data-x="close">✕</button></div><div class="setb" id="setb"></div></div></div>
 <div id="zen" data-x="zenoff"><small id="zenM">وقت التركيز</small><div id="zenT">25:00</div><div id="zenQ"></div><small>اضغط في أي مكان للخروج</small></div>
 <input type="file" id="upf" accept="application/json,.json" hidden>
+<!-- companion -->
+<div id="pbub" role="status" aria-live="polite"></div>
+<div id="pet" role="button" tabindex="0" aria-label="رفيقك نبيه، اضغط للسوالف">
+<svg id="psv" viewBox="0 0 120 130" aria-hidden="true">
+<defs><linearGradient id="pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8190ff"/><stop offset="1" stop-color="#4a4ecf"/></linearGradient><radialGradient id="pgl"><stop offset="0" stop-color="#ffd166" stop-opacity=".6"/><stop offset="1" stop-color="#ffd166" stop-opacity="0"/></radialGradient></defs>
+<ellipse class="glow" cx="60" cy="70" rx="60" ry="60" fill="url(#pgl)"/>
+<ellipse cx="60" cy="124" rx="30" ry="5" fill="rgba(0,0,0,.18)"/>
+<g id="pb">
+ <path d="M30 38L22 12L48 28Z" fill="#5d66e6"/><path d="M90 38L98 12L72 28Z" fill="#5d66e6"/>
+ <g id="wl"><path d="M25 60c-11 8-13 30-2 42 7-7 10-24 8-40z" fill="#4245c0"/></g>
+ <g id="wr"><path d="M95 60c11 8 13 30 2 42-7-7-10-24-8-40z" fill="#4245c0"/></g>
+ <path d="M60 22c27 0 40 20 40 48 0 30-17 50-40 50S20 100 20 70c0-28 13-48 40-48z" fill="url(#pg)"/>
+ <ellipse cx="60" cy="93" rx="24" ry="23" fill="#ffedd2"/>
+ <path d="M50 87q4 4 8 0M62 87q4 4 8 0M56 97q4 4 8 0" stroke="#ecc995" stroke-width="2" fill="none" stroke-linecap="round"/>
+ <circle cx="44" cy="58" r="16" fill="#eef0ff"/><circle cx="76" cy="58" r="16" fill="#eef0ff"/>
+ <g class="eo"><g class="ey"><circle cx="44" cy="58" r="11" fill="#fff"/><g class="pp"><circle cx="44" cy="58" r="6.5" fill="#1a1d33"/><circle cx="46.5" cy="55.5" r="2.3" fill="#fff"/></g></g><g class="ey"><circle cx="76" cy="58" r="11" fill="#fff"/><g class="pp"><circle cx="76" cy="58" r="6.5" fill="#1a1d33"/><circle cx="78.5" cy="55.5" r="2.3" fill="#fff"/></g></g></g>
+ <g class="eh" stroke="#1a1d33" stroke-width="3.5" fill="none" stroke-linecap="round"><path d="M36 61q8-10 16 0"/><path d="M68 61q8-10 16 0"/></g>
+ <g class="es" stroke="#1a1d33" stroke-width="3" fill="none" stroke-linecap="round"><path d="M36 58q8 6 16 0"/><path d="M68 58q8 6 16 0"/></g>
+ <g class="el" fill="#ff4d7d"><path d="M44 67l-8-8a5 5 0 0 1 8-6 5 5 0 0 1 8 6z"/><path d="M76 67l-8-8a5 5 0 0 1 8-6 5 5 0 0 1 8 6z"/></g>
+ <g class="ed" stroke="#1a1d33" stroke-width="3" stroke-linecap="round"><path d="M38 52l12 12M50 52l-12 12M70 52l12 12M82 52l-12 12"/></g>
+ <g class="brow" stroke="#2a2e6b" stroke-width="3" stroke-linecap="round"><path d="M34 45l15-5M86 45l-15-5"/></g>
+ <ellipse cx="31" cy="74" rx="6" ry="3.5" fill="#ff8fb1" opacity=".6"/><ellipse cx="89" cy="74" rx="6" ry="3.5" fill="#ff8fb1" opacity=".6"/>
+ <path d="M53 67h14l-7 9z" fill="#ffb03a"/><path id="bk2" d="M56 75h8l-4 5z" fill="#e3891a"/>
+ <g fill="#ffb03a"><ellipse cx="48" cy="119" rx="7" ry="3.5"/><ellipse cx="72" cy="119" rx="7" ry="3.5"/></g>
+ <g class="acc-gl" stroke="#20243f" stroke-width="2.5" fill="rgba(160,200,255,.15)"><circle cx="44" cy="58" r="14"/><circle cx="76" cy="58" r="14"/><path d="M58 57h4" fill="none"/></g>
+ <g class="acc-st" fill="none" stroke="#323858" stroke-width="3" stroke-linecap="round"><path d="M38 76q22 24 44 0"/><path d="M60 88v6"/><circle cx="60" cy="99" r="5" fill="#d3d9e8"/></g>
+ <g class="acc-cap"><path d="M42 22v9q18 8 36 0v-9" fill="#2a2f57"/><path d="M60 7L95 18L60 29L25 18Z" fill="#1d2140"/><path d="M60 18L89 23v14" stroke="#ffd166" stroke-width="2" fill="none"/><circle cx="89" cy="39" r="3.5" fill="#ffd166"/></g>
+ <g class="acc-cr"><path d="M38 28l4-18 9 9 9-14 9 14 9-9 4 18z" fill="#ffcc33" stroke="#e0a400" stroke-width="1.5" stroke-linejoin="round"/><circle cx="60" cy="20" r="2.5" fill="#e0567c"/></g>
+ <g class="sweat"><path d="M95 42q6 9 0 12q-6-3 0-12z" fill="#7cc8ff"/></g>
+</g>
+<g class="zz" fill="#8e9bb5" font-weight="700" font-family="Readex Pro"><text x="92" y="30" font-size="14">z</text><text x="102" y="16" font-size="19">Z</text></g>
+</svg></div>
+<section id="pchat" aria-label="سوالف مع رفيقك">
+ <div class="pch"><div class="av">🦉</div><div><b id="pcn">نبيه</b><small id="pcs">فرخ صغير</small><div class="en" title="الطاقة"><i id="pce"></i></div></div><button class="ib" data-x="pclr" title="مسح المحادثة">🧹</button><button class="ib" data-x="pclose" title="إغلاق">✕</button></div>
+ <div id="pcm"></div>
+ <div class="pqs" id="pqs"></div>
+ <form id="pcf" autocomplete="off"><input id="pci" placeholder="اكتب لي… مثلًا: وش أذاكر الحين؟" maxlength="200" aria-label="رسالة"><button aria-label="إرسال">➤</button></form>
+</section>
 <script>
 /* ===== Data ===== */
 const D=[
@@ -258,7 +373,8 @@ const gs=(k,d)=>{try{const v=localStorage.getItem(k);return v===null?d:v}catch(e
 const P=(k,v)=>{try{localStorage.setItem(k,typeof v==="string"?v:JSON.stringify(v))}catch(e){}};
 const J=(k,d)=>{try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}};
 let S=J("study-final-2026",{}),FS=J("study-focus",{}),FM=J("study-focus-min",{}),NT=J("study-notes",{}),MD=J("study-mood",{}),CU=J("study-custom",{}),MV=J("study-moved",{}),BD=J("study-bd",[]);
-let CFG=Object.assign({acc:"gold",snd:1,rem:"",pre:0,fsub:"ch",lastRem:""},J("study-cfg",{}));
+let CFG=Object.assign({acc:"gold",snd:1,rem:"",pre:0,fsub:"ch",lastRem:"",pet:1,petTalk:1},J("study-cfg",{}));
+let PET=Object.assign({name:"نبيه",food:70,last:Date.now(),talk:{},hist:[]},J("study-pet",{})),CHD=J("study-ch",{});
 let NAME=gs("study-name",""),V=gs("study-view","home"),flt="",tab="up",q="",qi=0,T=[],M={};
 function save(){P("study-final-2026",S);P("study-focus",FS);P("study-focus-min",FM);P("study-notes",NT);P("study-mood",MD);P("study-custom",CU);P("study-moved",MV);P("study-bd",BD);P("study-cfg",CFG)}
 if(gs("study-theme",""))document.documentElement.setAttribute("data-theme",gs("study-theme",""));
@@ -297,7 +413,8 @@ function calc(){
   m.fsTot=0;for(const k in FS)m.fsTot+=FS[k];
   m.fmTot=0;for(const k in FM)m.fmTot+=FM[k];
   m.fT=FS[dk(t0)]||0;
-  m.xp=m.dn*10+m.fullDays*25+m.fsTot*15;
+  m.chN=0;for(const k in CHD)m.chN+=CHD[k].length;
+  m.xp=m.dn*10+m.fullDays*25+m.fsTot*15+m.chN*30;
   m.lvl=Math.floor(Math.sqrt(m.xp/60))+1;
   const a=60*(m.lvl-1)**2,b=60*m.lvl**2;m.xpPct=Math.round((m.xp-a)/(b-a)*100);m.xpNext=b-m.xp;
   LV.forEach(l=>{if(m.pc>=l[0])m.title=l[1]});
@@ -344,7 +461,7 @@ function vHome(){
     h+=`<section class="card"><div class="ch2"><h2>مهام اليوم</h2><span class="pill">${d} / ${ts.length}</span></div><div class="minibar"><i style="width:${ts.length?d/ts.length*100:0}%"></i></div>${ts.map(x=>row(x,m.idx)).join("")||'<p class="mu">ما عندك مهام اليوم، استمتع أو أضف مهمة 👇</p>'}
     <form class="add" id="addf" data-d="${m.idx}"><input id="addt" placeholder="أضف مهمة لليوم…" maxlength="120" aria-label="مهمة جديدة"><select id="adds" aria-label="المادة">${Object.keys(SB).map(s=>`<option value="${s}">${SB[s][2]} ${SB[s][0]}</option>`).join("")}</select><button aria-label="إضافة">+</button></form>
     <div class="mood">كيف طاقتك اليوم؟ ${MOODS.map((e,i)=>`<button data-mood="${i}" class="${MD[k]===i?"on":""}" aria-label="مزاج ${i+1}">${e}</button>`).join("")}</div>
-    <textarea id="nt" placeholder="ملاحظة اليوم: وش تعلمت؟ وش تحتاج تراجعه؟">${esc(NT[k])}</textarea></section>`;
+    <textarea id="nt" placeholder="ملاحظة اليوم: وش تعلمت؟ وش تحتاج تراجعه؟">${esc(NT[k])}</textarea></section>`+vChallenges();
     if(m.idx<LAST){const tm=T[m.idx+1];h+=`<section class="card"><div class="ch2"><h2>بكرة</h2><span class="pill">${DN[dt(m.idx+1).getDay()]} ${fmt(dt(m.idx+1))}</span></div>${tm.map(x=>row(x,m.idx+1)).join("")||'<p class="mu">يوم خفيف 🎉</p>'}</section>`}
   }else h+=`<section class="card"><p class="mu">${m.idx<0?"الجدول يبدأ يوم 2 نوفمبر. جهّز نفسك!":"انتهى الجدول. بالتوفيق في الفاينل! 🎓"}</p></section>`;
   h+=`<div class="grid2"><section class="card"><h2>🎯 وتيرتك</h2><p class="mu">عشان تخلص في الوقت تحتاج تقريبًا</p><div class="big">${m.need} <small style="font-size:15px;color:var(--mu)">مهمة يوميًا</small></div><p class="mu">${m.proj?(m.proj<=dt(LAST)?"✅ بمعدلك الحالي بتخلص قبل الموعد ("+fmt(m.proj)+")":"⚡ بمعدلك الحالي بتخلص "+fmt(m.proj)+"، زِد شوي"):"ابدأ أول مهمة عشان نحسب وتيرتك"}</p></section>
@@ -401,7 +518,7 @@ function badgeCheck(){ // run silently each render so new badges celebrate where
   const m=M,all=k=>m.sc[k]>0&&m.sd[k]===m.sc[k],nc=Object.values(NT).filter(x=>x&&x.trim()).length;
   const B=[["الانطلاقة",m.dn>=1],["ثلاثة أيام",m.best>=3],["أسبوع ناري",m.best>=7],["50 مهمة",m.dn>=50],["100 مهمة",m.dn>=100],["نصف الطريق",m.pc>=50],["سيد الكيمياء",all("ch")],["طبيب المستقبل",all("md")],["متحدث لبق",all("sk")],["English Pro",all("en")],["مركّز",m.fsTot>=4],["ماراثون",m.fmTot>=600],["المدوّن",nc>=5],["المستوى 5",m.lvl>=5],["بومة الليل",!!CFG.owl],["الختام",m.pc===100]];
   const nw=B.filter(b=>b[1]&&!BD.includes(b[0])).map(b=>b[0]);
-  if(nw.length){BD.push(...nw);save();setTimeout(()=>{toast("🏅 وسام جديد: "+nw[0]);conf();chime()},700)}
+  if(nw.length){BD.push(...nw);save();setTimeout(()=>{toast("🏅 وسام جديد: "+nw[0]);conf();chime();petOn("badge",nw[0])},700)}
 }
 
 function vFocus(){
@@ -443,6 +560,7 @@ function tDone(skip){
   }else{TM.m="w";TM.rem=tlen();TM.run=false;if(!skip){chime();toast("هيا نرجع للتركيز 💪");notify("انتهت الاستراحة","يلا نرجع للمذاكرة")}}
   if(navigator.vibrate)try{navigator.vibrate([200,100,200])}catch(e){}
   saveT();render(true);
+  if(!skip&&TM.m==="b")petOn("focusDone");
 }
 function tDraw(){
   if(TM.run){TM.rem=Math.max(0,Math.ceil((TM.end-Date.now())/1000));if(TM.rem<=0)return tDone()}
@@ -463,10 +581,10 @@ function rescue(){
   const s=snap(),start=Math.max(M.idx,0),end=Math.min(LAST,start+6);if(M.idx>LAST)return toast("الجدول انتهى");
   const load={};for(let i=start;i<=end;i++)load[i]=T[i].filter(x=>!S[x.id]).length;
   M.late.forEach(x=>{let b=start;for(let i=start;i<=end;i++)if(load[i]<load[b])b=i;load[b]++;move(x.id,x.d,b)});
-  save();render(true);toast("✨ وزّعت "+M.late.length+" مهام على الأيام الجاية بالتساوي",s);
+  const n=M.late.length;save();render(true);toast("✨ وزّعت "+n+" مهام على الأيام الجاية بالتساوي",s);petOn("rescue");
 }
-function lateToday(){const s=snap(),n=M.late.length;M.late.forEach(x=>move(x.id,x.d,M.idx));save();render(true);toast("نقلت "+n+" مهام لليوم 💪",s)}
-function addTask(d,t,s){t=(t||"").trim();if(!t)return;(CU[d]=CU[d]||[]).push({id:uid(),t,s});save();render(true);ping(50);toast("تمت إضافة المهمة")}
+function lateToday(){const s=snap(),n=M.late.length;M.late.forEach(x=>move(x.id,x.d,M.idx));save();render(true);toast("نقلت "+n+" مهام لليوم 💪",s);petOn("rescue")}
+function addTask(d,t,s,quiet){t=(t||"").trim();if(!t)return;(CU[d]=CU[d]||[]).push({id:uid(),t,s});save();render(true);ping(50);toast("تمت إضافة المهمة");if(!quiet)petOn("add")}
 function exportData(){return {v:2,S,FS,FM,NT,MD,CU,MV,BD,NAME,CFG}}
 function importData(o){if(!o||typeof o!=="object")throw 0;if(o.v===2){S=o.S||{};FS=o.FS||{};FM=o.FM||{};NT=o.NT||{};MD=o.MD||{};CU=o.CU||{};MV=o.MV||{};BD=o.BD||[];NAME=o.NAME||"";CFG=Object.assign(CFG,o.CFG||{});P("study-name",NAME);applyAcc()}else S=o;save();render(true);toast("✅ تمت استعادة التقدم")}
 const enc=o=>btoa(unescape(encodeURIComponent(JSON.stringify(o))));
@@ -479,6 +597,7 @@ function openSet(){
   const th=gs("study-theme","");
   $("#setb").innerHTML=`<h3>لون التطبيق</h3><div class="sw">${Object.keys(ACC).map(k=>`<button data-acc="${k}" style="background:${ACC[k]}" class="${CFG.acc===k?"on":""}" aria-label="${k}"></button>`).join("")}</div>
   <h3>المظهر</h3><div class="seg" style="margin:0">${[["","تلقائي"],["light","نهاري"],["dark","ليلي"]].map(x=>`<button data-th="${x[0]}"${th===x[0]?' class="on"':""}>${x[1]}</button>`).join("")}</div>
+  <h3>رفيقك ${esc(PET.name)} 🦉</h3><label class="tg">إظهار الرفيق<input type="checkbox" id="setPet"${CFG.pet?" checked":""}></label><label class="tg">يسولف ويعطيك نصائح من نفسه<input type="checkbox" id="setPetTalk"${CFG.petTalk?" checked":""}></label>
   <h3>التنبيهات</h3><label class="tg">أصوات الإنجاز<input type="checkbox" id="setSnd"${CFG.snd?" checked":""}></label><label class="tg">تذكير يومي بالمذاكرة (والموقع مفتوح)<input type="time" class="inp" id="setRem" value="${esc(CFG.rem)}"></label><button class="btn sm" data-x="notif">${CFG.notif?"🔔 الإشعارات مفعّلة":"تفعيل إشعارات المتصفح"}</button>
   <h3>النسخ الاحتياطي</h3><div class="row" style="margin:0"><button class="btn sm" data-x="dl">⬇️ تنزيل نسخة (ملف)</button><button class="btn sm" data-x="up">⬆️ استعادة من ملف</button><button class="btn sm" data-x="ex">نسخ كود التقدم</button><button class="btn sm" data-x="im">لصق كود التقدم</button></div>
   <h3>أخرى</h3><div class="row" style="margin:0"><button class="btn sm" data-x="sh">مشاركة</button><button class="btn sm" data-x="pr">طباعة الجدول</button><button class="btn sm" data-x="unmv">إلغاء كل التأجيلات</button><button class="btn sm" data-x="rs" style="color:var(--bad)">مسح العلامات</button></div>
@@ -509,6 +628,8 @@ document.addEventListener("change",e=>{
   if(t.id==="nm"){NAME=t.value.trim();P("study-name",NAME);toast(NAME?"أهلًا بك يا "+NAME+" 👋":"تم الحفظ");return}
   if(t.id==="nt"){NT[dk(day0())]=t.value;save();toast("📝 تم حفظ الملاحظة");render(true);return}
   if(t.id==="setSnd"){CFG.snd=t.checked?1:0;save();return}
+  if(t.id==="setPet"){CFG.pet=t.checked?1:0;save();if(!CFG.pet){closeChat();hideBub()}petExpr();return}
+  if(t.id==="setPetTalk"){CFG.petTalk=t.checked?1:0;save();return}
   if(t.id==="setRem"){CFG.rem=t.value;save();toast(t.value?"⏰ التذكير الساعة "+t.value:"تم إلغاء التذكير");return}
   if(t.id==="upf"&&t.files[0]){const r=new FileReader();r.onload=()=>{try{importData(JSON.parse(r.result));closeOv()}catch(er){toast("الملف غير صالح")}};r.readAsText(t.files[0]);t.value="";return}
   if(!id)return;
@@ -516,10 +637,10 @@ document.addEventListener("change",e=>{
   if(t.checked)S[id]=1;else delete S[id];save();
   const before=M.lvl;render(true);
   if(t.checked){
-    if(!was&&full(i)){chime();conf();toast("🎉 أنجزت يومك كامل، كفو عليك!",s)}
-    else{const ts=T[i];ping(ts.filter(x=>S[x.id]).length/ts.length*100);toast("+10 XP ✓",s)}
-    if(M.lvl>before)setTimeout(()=>{toast("⭐ ارتفع مستواك إلى "+M.lvl+"!");conf(90)},1200);
-  }
+    if(!was&&full(i)){chime();conf();toast("🎉 أنجزت يومك كامل، كفو عليك!",s);petOn("day")}
+    else{const ts=T[i];ping(ts.filter(x=>S[x.id]).length/ts.length*100);toast("+10 XP ✓",s);petOn("task")}
+    if(M.lvl>before){const sc=[3,5,8].includes(M.lvl);setTimeout(()=>{toast("⭐ ارتفع مستواك إلى "+M.lvl+"!");conf(90);petOn("level",sc)},1600)}
+  }else petOn("uncheck");
 });
 document.addEventListener("input",e=>{
   if(e.target.id==="q"){q=e.target.value.trim();$("#list").innerHTML=planList()}
@@ -527,9 +648,11 @@ document.addEventListener("input",e=>{
 });
 document.addEventListener("submit",e=>{if(e.target.id==="addf"){e.preventDefault();addTask(+e.target.dataset.d,$("#addt").value,$("#adds").value)}});
 document.addEventListener("click",e=>{
-  const b=e.target.closest("button,[data-jump],#zen,.ov");if(!b)return;
+  const b=e.target.closest("button,[data-jump],[data-x],.ov");if(!b)return;
   if(b.classList.contains("ov")){if(e.target===b)closeOv();return}
   const ds=b.dataset;
+  if(ds.pa){petAction(ds.pa);return}
+  if(ds.pq){const q=QUICK.find(x=>x[1]===ds.pq);userSend(q[0],ds.pq);return}
   if(ds.v){go(ds.v);return}
   if(ds.jump!==undefined){jump(+ds.jump);return}
   if(ds.pk!==undefined){closeOv();PL[+ds.pk]();return}
@@ -548,6 +671,7 @@ document.addEventListener("click",e=>{
   const x=ds.x;if(!x)return;
   ({
     pal:openPal,set:openSet,close:closeOv,th:toggleTheme,
+    pchat:()=>openChat(),pclose:closeChat,pclr:()=>{PET.hist=[];savePet();drawChat();botMsg("صفحة جديدة ✨ وش في بالك؟")},
     qt:()=>{qi++;render(true)},
     rescue,lateToday,seeLate:()=>{tab="late";go("plan")},
     tgo:()=>TM.run?tPause():tStart(),trs:tReset,tsk:()=>tDone(true),
@@ -565,7 +689,7 @@ document.addEventListener("click",e=>{
 document.addEventListener("keydown",e=>{
   const pal=$("#pal").classList.contains("on");
   if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){e.preventDefault();pal?closeOv():openPal();return}
-  if(e.key==="Escape"){closeOv();zen(0);return}
+  if(e.key==="Escape"){closeOv();zen(0);closeChat();return}
   if(pal){if(e.key==="ArrowDown"){ps=Math.min(ps+1,PL.length-1);palSel();e.preventDefault()}else if(e.key==="ArrowUp"){ps=Math.max(ps-1,0);palSel();e.preventDefault()}else if(e.key==="Enter"&&PL[ps]){e.preventDefault();closeOv();PL[ps]()}return}
   if(/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)||e.ctrlKey||e.metaKey||e.altKey)return;
   const k=e.key.toLowerCase();
@@ -581,8 +705,236 @@ setInterval(()=>{if(!CFG.rem)return;const n=new Date(),hm=pad(n.getHours())+":"+
 /* re-render at midnight so "today" moves */
 let lastDay=dk(day0());setInterval(()=>{if(dk(day0())!==lastDay){lastDay=dk(day0());render(true)}},60000);
 
+/* =====================================================
+   COMPANION — نبيه، البومة الذكية
+   ===================================================== */
+const pet=$("#pet"),psv=$("#psv"),pbub=$("#pbub");
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const STG=["فرخ صغير 🐣","طالب مجتهد 🎓","دكتور المستقبل 🩺","البروفيسور 👑"];
+let tmpE="",tmpH,sleeping=false,lastAct=Date.now(),lastSay=0,chatOpen=false,clicks=[];
+const savePet=()=>{PET.hist=PET.hist.slice(-50);P("study-pet",PET)};
+function petDecay(){const n=Date.now();PET.food=Math.max(0,Math.min(100,PET.food-(n-PET.last)/36e5*3));PET.last=n}
+function feed(v){petDecay();PET.food=Math.min(100,PET.food+v);savePet();petStatus();fly("🍎",1)}
+const stage=()=>M.pc===100||M.lvl>=8?3:M.lvl>=5?2:M.lvl>=3?1:0;
+const uname=()=>NAME||"بطل";
+
+function petExpr(){
+  const st=stage(),h=new Date().getHours();
+  const e=tmpE||(sleeping?"sleep":TM.run&&TM.m==="w"?"focus":PET.food<25?"sad":(h>=2&&h<5)?"sleep":"");
+  psv.setAttribute("class",[e,st===1?"cap":"",st===2?"cap steth":"",st===3?"crown steth":""].join(" "));
+  [pet,pbub,$("#pchat")].forEach(x=>x.classList.toggle("off",!CFG.pet));
+}
+function temp(e,ms){tmpE=e;clearTimeout(tmpH);petExpr();tmpH=setTimeout(()=>{tmpE="";petExpr()},ms||3000)}
+function anim(a){if(!a)return;pet.classList.remove("jump","dance","shake","wiggle","spin","wave","tilt");void pet.offsetWidth;pet.classList.add(a);setTimeout(()=>pet.classList.remove(a),2100)}
+function fly(e,into,n){const r=pet.getBoundingClientRect();for(let i=0;i<(n||1);i++){const s=document.createElement("span");s.className="pfx"+(into?" in":"");s.textContent=e;s.style.left=(r.left+r.width/2-10+(into?0:Math.random()*30-15))+"px";s.style.top=(r.top+r.height*.35)+"px";s.style.setProperty("--dx",(Math.random()*60-30)+"px");s.style.animationDelay=(i*.12)+"s";document.body.appendChild(s);setTimeout(()=>s.remove(),1800)}}
+function petStatus(){petDecay();$("#pcn").textContent=PET.name;$("#pcs").textContent=STG[stage()]+" · الطاقة "+Math.round(PET.food)+"%";$("#pce").style.width=PET.food+"%";pet.setAttribute("aria-label","رفيقك "+PET.name+"، اضغط للسوالف")}
+
+/* speech bubble with typing effect */
+let bubH,typeH;
+function say(html,force){
+  if(!CFG.pet)return;
+  lastSay=Date.now();
+  if(chatOpen){botMsg(html);return}
+  if(!force&&!CFG.petTalk)return;
+  const d=document.createElement("div");d.innerHTML=typeof html==="string"?html:html.t;const txt=d.textContent;
+  clearTimeout(bubH);clearInterval(typeH);pbub.textContent="";pbub.classList.add("on");pet.classList.add("talk");
+  let i=0;typeH=setInterval(()=>{pbub.textContent=txt.slice(0,++i);if(i>=txt.length){clearInterval(typeH);pet.classList.remove("talk")}},24);
+  bubH=setTimeout(hideBub,Math.max(4500,txt.length*70));
+}
+function hideBub(){pbub.classList.remove("on");clearInterval(typeH);pet.classList.remove("talk")}
+
+/* reactions to what the user does */
+function petOn(type,x){
+  if(!M.t0)return;lastAct=Date.now();sleeping=false;
+  const n=uname(),r=M.idx>=0&&M.idx<=LAST?T[M.idx].filter(t=>!S[t.id]).length:0;
+  let e="happy",a="jump",msg="";
+  switch(type){
+    case"task":feed(10);msg=pick(["كفو يا "+n+"! 💪","يمّي! أكلتني مهمة 🍎","واحدة ورا الثانية… كذا الشغل 🔥","شفت؟ ما كانت صعبة 😎","+10 XP! بطني شبع من الفخر 😂","أنت ماكينة إنجاز ⚙️"])+(r?" باقي لك "+r+" اليوم.":"");break;
+    case"day":feed(25);e="love";a="dance";msg=pick(["خلصت يومك كامل!! أنا فخور فيك يا "+n+" 🥳","يوم كامل؟! تستاهل استراحة ملكية 👑","رقصة النصر يا بطل 🕺🦉"]);fly("💖",0,5);break;
+    case"uncheck":e="";a="tilt";msg=pick(["عادي تصير 😅","رجعناها، خذ راحتك 👌"]);break;
+    case"level":e="love";a="spin";msg="مستواك صار "+M.lvl+"! ⭐ "+(x?"وشوف شكلي الجديد: "+STG[stage()]:"كمّل كذا!");fly("⭐",0,6);break;
+    case"badge":e="love";a="dance";msg="وسام جديد: «"+x+"» 🏅 والله إنك قدها!";break;
+    case"challenge":e="happy";a="dance";msg="تحدي مكتمل! +30 XP 🎯 "+pick(["وحش!","ما عليك كلام","كذا أحبك 😍"]);break;
+    case"focusStart":e="focus";a="wave";msg=pick(["وضع التركيز ON 🤓 أنا ساكت ومركز معك…","يلا! جوالك بعيد، وأنا أراقب 👀","بالتوفيق، ما راح أزعجك 🤫"]);break;
+    case"focusDone":feed(15);e="happy";a="dance";msg=pick(["جلسة كاملة! قوم اشرب موية وتمغّط 💧","أحسنت! عقلك يستاهل استراحة ☕","🍅 جلسة ورا جلسة، كذا النجاح!"]);break;
+    case"rescue":a="wave";msg="رتّبتها لك، لا تشيل هم 😌 خطوة خطوة.";break;
+    case"add":a="wiggle";msg=pick(["سجلتها ✍️ لا تنساها!","تمام، أضفتها لقائمتك 📌"]);break;
+    case"pet":e="love";a="wiggle";fly(pick(["💜","💛","🤍","✨"]),0,4);msg=pick(["هههه دغدغة! 🤭","أحبك يا "+n+" 💜","هذا الدلع اللي يحفزني 🥰","ترى أذاكر معك، مو بس أتدلع 😌"]);break;
+    case"dizzy":e="dizzy";a="spin";msg=pick(["دوّختني!! 😵‍💫","بس بس… الدنيا تلف 🌀"]);break;
+  }
+  temp(e,type==="dizzy"?2500:3200);anim(a);if(msg)say(msg);
+}
+
+/* ===== brain ===== */
+const nz=s=>s.replace(/[ً-ْـ]/g,"").replace(/[أإآ]/g,"ا").replace(/ة/g,"ه").replace(/ى/g,"ي").toLowerCase().trim();
+const has=(s,a)=>a.some(w=>s.includes(w));
+const li=x=>`<li>${SB[x.s][2]} ${esc(x.t)}</li>`;
+function weakest(){let w=null,v=2;for(const k in SB){const p=M.sc[k]?M.sd[k]/M.sc[k]:1;if(p<v){v=p;w=k}}return [w,Math.round(v*100)]}
+const JOKES=["قال الإلكترون للبروتون: ليش دايم إيجابي؟ قال: لأنك سلبي معي 😅⚛️","ليش الكتاب زعلان؟ لأن عنده مشاكل كثيرة 📖😂","طالب طب سألوه: وش أكثر عضو تعبت عليه؟ قال: عيني من السهر 👀","الكيمياء مثل العلاقات: إذا ما فيه تفاعل، فيه مشكلة في التركيز 🧪","أنا بومة… بس سهري عشانك مو عشاني 🦉","سألوا الذرة: متأكدة إنك فقدتي إلكترون؟ قالت: إيه، أنا positive ⚡","المذاكرة قبل الاختبار بليلة مثل الشاحن السريع: يعطيك 20% وتطفي الصبح 🔋"];
+function rToday(){
+  if(M.idx<0)return "الجدول يبدأ 2 نوفمبر، استعد! 🚀";if(M.idx>LAST)return "خلص الجدول! بالتوفيق في الفاينل 🎓";
+  const ts=T[M.idx],u=ts.filter(x=>!S[x.id]);
+  if(!u.length)return {t:"خلصت كل مهام اليوم 🎉 تبي تتقدم شوي من بكرة؟",a:[["وريني بكرة","tomorrow"],["💡 وش أضيف؟","q:suggest"]]};
+  return {t:`عندك اليوم <b>${u.length}</b> من ${ts.length} مهام باقية:<ul>${u.map(li).join("")}</ul>`+(M.late.length?`وعندك <b>${M.late.length}</b> متأخرة 👀`:"يلا نبدأ؟"),a:[["⏱ ابدأ جلسة تركيز","focus:"+u[0].s],...(M.late.length?[["⏰ المتأخر","q:late"]]:[])]};
+}
+function rTomorrow(){if(M.idx<-1||M.idx>=LAST)return "ما فيه بكرة بالجدول 😄";const i=M.idx+1,ts=T[i];return ts.length?`بكرة (${DN[dt(i).getDay()]} ${fmt(dt(i))}) عندك:<ul>${ts.map(li).join("")}</ul>تقدر تبدأ فيها من الحين وتكسب تحدي 😉`:"بكرة فاضي! استمتع 🎉"}
+function rLate(){
+  if(!M.late.length)return "ما عندك ولا مهمة متأخرة. كفو عليك! 🏆";
+  return {t:`عندك <b>${M.late.length}</b> مهام متأخرة:<ul>${M.late.slice(0,5).map(li).join("")}</ul>${M.late.length>5?"وغيرها…<br>":""}لا تضغط نفسك، أقدر أوزعها لك بذكاء 👇`,a:[["✨ خطة إنقاذ","rescue"],["انقلها لليوم","lateToday"],["وريني إياها","late"]]};
+}
+function rNext(){
+  const u=M.idx>=0&&M.idx<=LAST?T[M.idx].filter(x=>!S[x.id]):[];
+  const cand=u.length?u:M.late;
+  if(!cand.length)return {t:"كل شي خالص اليوم! 👏 إذا عندك طاقة، راجع أضعف مادة عندك.",a:[["💡 اقترح لي","q:suggest"]]};
+  const [w]=weakest(),best=cand.find(x=>x.s===w)||cand[0];
+  return {t:`أقترح تبدأ بـ <b>${esc(best.t)}</b> ${SB[best.s][2]}<br>${best.s===w?"لأنها أضعف مادة عندك حاليًا.":"عشان تمشي على الخطة."} خذ ${PRE[CFG.pre][0]} دقيقة تركيز عليها وبعدها استراحة ☕`,a:[["⏱ يلا نبدأ","focus:"+best.s]]};
+}
+function rProgress(){
+  const [w,wp]=weakest();
+  return {t:`📊 وضعك يا ${esc(uname())}:<ul><li>أنجزت <b>${M.dn}</b> من ${M.tot} (${M.pc}%)</li><li>مستواك <b>${M.lvl}</b> — ${M.xp} XP</li><li>سلسلتك 🔥 ${M.st} يوم (أفضل: ${M.best})</li><li>جلسات التركيز: ${M.fsTot} (${M.fmTot} دقيقة)</li><li>أضعف مادة: ${SB[w][0]} (${wp}%)</li></ul>تحتاج تقريبًا <b>${M.need}</b> مهام يوميًا عشان تخلص بالوقت. ${M.pc>=50?"أنت ماشي صح 💪":"نقدر نسويها، بس لازم الاستمرار 🔥"}`,a:[["📈 الإحصائيات","stats"]]};
+}
+function rExam(){const nx=EV.find(e=>e.d>new Date());if(!nx)return "خلصت كل المواعيد. الحين وقت الفاينل، بالتوفيق! 🎓";const d=Math.ceil((nx.d-new Date())/864e5);return `أقرب شي: <b>${nx.n}</b> (${nx.x}) بعد <b>${d}</b> يوم ⏳<ul>${EV.map(e=>`<li>${e.n}: ${fmt(e.d)}</li>`).join("")}</ul>${d<=5?"قربت! ركّز على المراجعة وحل التجميعات 📚":"عندك وقت كافي إذا مشيت على الخطة 😌"}`}
+function rSuggest(){
+  const [w,wp]=weakest(),out=[["➕ أضف مراجعة "+SB[w][0],"addrev:"+w]];
+  let t=`💡 اقتراحي لك:<ul><li><b>${SB[w][0]}</b> أضعف مادة عندك (${wp}%)، أضف لها جلسة مراجعة سريعة اليوم.</li>`;
+  const nx=EV.find(e=>e.d>new Date());if(nx&&(nx.d-new Date())/864e5<8){t+=`<li>${nx.n} قريب! حل تجميعات ${nx.x}.</li>`;out.push(["➕ حل تجميعات","addtj"])}
+  if(!(NT[dk(day0())]||"").trim())t+="<li>اكتب ملاحظة اليوم: وش فهمت ووش ما فهمت 📝</li>";
+  if(!M.fT)t+="<li>ولا جلسة تركيز اليوم، خلنا نسوي وحدة على الأقل ⏱</li>";
+  return {t:t+"</ul>",a:out};
+}
+function rMotivate(){const n=esc(uname());return pick([`${n}، أنت أنجزت ${M.dn} مهمة لين الحين. هذا مو شي بسيط! كل مهمة تقربك من الدكتور اللي تبي تصيره 🩺`,`تخيل نفسك بعد الفاينل مرتاح وفخور… هذا الشعور يبدأ من مهمة وحدة الحين 🔥`,`ما يحتاج تكون متحمس، يحتاج تبدأ بس. 10 دقايق وبعدها قرر 😉`,`${Q[Math.floor(Math.random()*Q.length)]} 💪`])+"<br>"+(M.idx>=0&&M.idx<=LAST&&!full(M.idx)?"يلا وش رايك نبدأ جلسة؟":"")}
+function rStress(){const k=dk(day0());return {t:`أفهمك يا ${esc(uname())} 🤍 الضغط طبيعي، ومعناه إنك تهتم.<br>خذ نفس معي: <b>شهيق 4 ثواني… احبسه 4… زفير 6</b> 🌬️ كررها 3 مرات.<br>بعدها نبدأ بخطوة صغيرة: <b>10 دقايق بس</b> على أسهل مهمة. اتفقنا؟`,a:[["⏱ 10 دقايق بس","focus:"],["✨ رتب المتأخر","rescue"]]}}
+function rHow(){petDecay();return PET.food>70?pick(["أنا مرة تمام وشبعان 😋 شكرًا لأنك تنجز!","فل الفل! وأنت كيفك؟ 🦉"]):PET.food>30?"تمام الحمد لله… بس لو تخلص مهمة أكون أحسن 😄":"جوعاااان 😢 كل مهمة تخلصها = وجبة لي 🍎"}
+function brain(raw,key){
+  const s=nz(raw||""),n=esc(uname()),h=new Date().getHours();let m;
+  if(!key){
+    if(m=(raw||"").trim().match(/^(?:أضف|اضف|ضيف|زيد|سجل|سجّل|ذكرني)\s*[:،]?\s*(.{2,})/)){
+      if(M.idx<0||M.idx>LAST)return "الجدول مو شغال الحين 🙃";
+      addTask(M.idx,m[1],sub(m[1]),true);return {t:`سجلتها في مهام اليوم ✍️<br><b>${esc(m[1])}</b>`,a:[["📋 وش عندي اليوم؟","q:today"]]};
+    }
+    if(m=(raw||"").trim().match(/^(?:سميك|سمّيك|اسميك|اسمك صار|غير اسمك(?:\s*(?:الى|إلى|ل))?)\s+(.{1,20})/)){PET.name=m[1].trim();savePet();petStatus();return `حلو! من اليوم اسمي <b>${esc(PET.name)}</b> 🥰`}
+    key=has(s,["شكرا","يعطيك","مشكور","تسلم","thank","ثانكس"])?"thanks":has(s,["تعبان","تعب","طفشان","طفش","زهق","خايف","قلق","متوتر","توتر","ضغط","ما اقدر","مقدر","يائس","محبط"])?"stress":has(s,["متاخر","تاخر","فاتني","فاتت"])?"late":has(s,["بكره","بكرا","غدا"])?"tomorrow":has(s,["اضيف","اقترح","نصيحه","انصحني","وش ناقص","وش لازم"])?"suggest":has(s,["اذاكر","ابدا","وش اسوي","ايش اسوي","الحين"])?"next":has(s,["اليوم","وش عندي","مهامي","وش علي","ايش عندي","مهام"])?"today":has(s,["تقدم","ماشي","نسبه","مستواي","مستوي","احصا","كيف انا","وضعي","xp"])?"progress":has(s,["كويز","اختبار","فاينل","امتحان","متي"])?"exam":has(s,["ركز","تركيز","مؤقت","جلسه","بومودورو","تايمر"])?"focus":has(s,["حفز","تحفيز","شجع","ما ابي","مالي خلق","كسل","كسلان","ما لي خلق"])?"motivate":has(s,["نكته","ضحك","طقطق","نكت"])?"joke":has(s,["كيفك","شلونك","كيف حالك","وش اخبارك","علومك"])?"how":has(s,["اسمك","مين انت","من انت","وش انت"])?"name":has(s,["جوعان","اكل","طاقتك","جوع"])?"food":has(s,["نوم","انام","نعسان","سهران"])?"sleep":has(s,["هلا","مرحب","السلام","اهلا","هاي","hi","hello","صباح","مساء"])?"hello":has(s,["احبك","حبيبي","كفو","شاطر"])?"love":"";
+  }
+  PET.talk[dk(day0())]=(PET.talk[dk(day0())]||0)+1;savePet();
+  switch(key){
+    case"today":return rToday();case"tomorrow":return rTomorrow();case"late":return rLate();case"next":return rNext();
+    case"progress":return rProgress();case"exam":return rExam();case"suggest":return rSuggest();case"motivate":return rMotivate();
+    case"stress":temp("love",3000);return rStress();
+    case"joke":anim("wiggle");return pick(JOKES);
+    case"focus":return {t:"جاهز؟ اختر المادة وأشغّل لك المؤقت ⏱",a:Object.keys(SB).map(k=>[SB[k][2]+" "+SB[k][0],"focus:"+k])};
+    case"thanks":anim("wave");return pick(["العفو يا "+n+" 🤍 أنا هنا دايم","ولا يهمك! كمّل وأنا معك 💪"]);
+    case"how":return rHow();
+    case"name":return `أنا <b>${esc(PET.name)}</b> 🦉 بومتك الذكية! أرافقك لين الفاينل، أذكرك وأحفزك وأكبر معك: كل ما ارتفع مستواك أتطور (قبعة تخرج 🎓 ← سماعة طبيب 🩺 ← تاج 👑).<br>تبي تغير اسمي؟ اكتب: <b>سمّيك + الاسم</b>`;
+    case"food":petDecay();return `طاقتي الحين <b>${Math.round(PET.food)}%</b> ${PET.food>60?"😋":"🥺"}<br>أكلي = إنجازك: كل مهمة 🍎 +10، يوم كامل +25، جلسة تركيز +15.`;
+    case"sleep":return h>=23||h<5?"روح نم يا "+n+"! 😴 المخ يثبت المعلومات وقت النوم، والسهر يضيع اللي ذاكرته.":"النوم مهم، بس الحين وقت إنجاز 😄 خذ قيلولة 20 دقيقة إذا تحتاج.";
+    case"hello":anim("wave");return `هلا والله يا ${n}! 👋 `+greetLine();
+    case"love":temp("love",3000);anim("wiggle");fly("💜",0,4);return pick(["وأنا أحبك أكثر 💜 بس أحبك أكثر لما تخلص مهامك 😏","تسلم يا "+n+"! 🥰"]);
+  }
+  return {t:`ما فهمت عليك 😅 بس أقدر أساعدك في:<ul><li>وش عندي اليوم / بكرة</li><li>وش أذاكر الحين؟</li><li>المتأخر وخطة الإنقاذ</li><li>كيف مستواي؟ ومتى الكويز؟</li><li>اكتب «أضف + المهمة» وأسجلها لك</li></ul>`};
+}
+function greetLine(){
+  if(M.idx<0)return "الجدول يبدأ قريب، جهّز نفسك!";if(M.idx>LAST)return "خلص الجدول، بالتوفيق في الفاينل 🎓";
+  const r=T[M.idx].filter(x=>!S[x.id]).length;
+  return r?`عندك اليوم ${r} ${r>2?"مهام":"مهمة"}${M.late.length?` و${M.late.length} متأخرة`:""}. اضغط علي ونسولف 🦉`:"خلصت مهام اليوم! أنت أسطورة 🏆";
+}
+function tip(){
+  const n=uname(),h=new Date().getHours(),u=M.idx>=0&&M.idx<=LAST?T[M.idx].filter(x=>!S[x.id]):[],[w,wp]=weakest(),nx=EV.find(e=>e.d>new Date());
+  const o=[];
+  if(u.length)o.push(`يا ${n}، وش رايك تخلص «${u[0].t}»؟ 👀`,`باقي لك ${u.length} اليوم… جلسة وحدة وتخلص منها ⏱`);
+  if(M.late.length)o.push(`عندك ${M.late.length} متأخرة، اضغط علي وأرتبها لك ✨`);
+  if(PET.food<35)o.push("جوعان 🥺 خلص مهمة وأكلني 🍎");
+  if(wp<M.pc)o.push(`${SB[w][0]} متأخرة شوي (${wp}%)، تبي تضيف لها مراجعة؟`);
+  if(nx)o.push(`باقي ${Math.ceil((nx.d-new Date())/864e5)} يوم على ${nx.n} ⏳`);
+  if(h>=0&&h<4)o.push("الوقت متأخر… النوم جزء من المذاكرة 😴");
+  o.push("اشرب موية 💧 مخك 75% ماء!","عدّل جلستك وارفع راسك 🧘","تذكر: الاستمرار أهم من الكمال ✨");
+  return pick(o);
+}
+
+/* chat */
+const QUICK=[["📋 وش عندي اليوم؟","today"],["🎯 وش أذاكر الحين؟","next"],["⏰ المتأخر","late"],["📊 كيف مستواي؟","progress"],["💡 وش أضيف؟","suggest"],["⏳ متى الكويز؟","exam"],["🔥 حفزني","motivate"],["😮‍💨 متوتر","stress"],["😂 نكتة","joke"],["🤍 دلّعه","pet"]];
+function msgHTML(m){return `<div class="msg${m.me?" me":""}">${m.t}${m.a&&m.a.length?'<div class="ma">'+m.a.map(a=>`<button data-pa="${esc(a[1])}">${a[0]}</button>`).join("")+"</div>":""}</div>`}
+function drawChat(){$("#pcm").innerHTML=PET.hist.map(msgHTML).join("");$("#pqs").innerHTML=QUICK.map(q=>`<button data-pq="${q[1]}">${q[0]}</button>`).join("");$("#pcm").scrollTop=1e6;petStatus()}
+function botMsg(r){
+  const o=typeof r==="string"?{t:r}:r,box=$("#pcm");
+  const ty=document.createElement("div");ty.className="msg typing";ty.innerHTML="<i></i><i></i><i></i>";box.appendChild(ty);box.scrollTop=1e6;pet.classList.add("talk");
+  setTimeout(()=>{ty.remove();PET.hist.push({t:o.t,a:o.a||null});savePet();box.insertAdjacentHTML("beforeend",msgHTML(o));box.scrollTop=1e6;pet.classList.remove("talk")},450+Math.min(900,o.t.length*4));
+}
+function userSend(text,key){
+  if(!text.trim())return;lastAct=Date.now();
+  PET.hist.push({me:1,t:esc(text)});savePet();$("#pcm").insertAdjacentHTML("beforeend",msgHTML({me:1,t:esc(text)}));$("#pcm").scrollTop=1e6;
+  if(key==="pet"){petOn("pet");return}
+  const r=brain(text,key);botMsg(r);
+  if((PET.talk[dk(day0())]||0)===3)setTimeout(()=>render(true),1500);
+}
+function openChat(){chatOpen=true;hideBub();$("#pchat").classList.add("on");drawChat();if(!PET.hist.length)botMsg({t:`هلا ${esc(uname())}! أنا <b>${esc(PET.name)}</b> 🦉 رفيقك لين الفاينل. ${greetLine()}`,a:[["📋 وش عندي اليوم؟","q:today"],["🎯 وش أذاكر؟","q:next"]]});anim("jump");if(matchMedia("(pointer:fine)").matches)setTimeout(()=>$("#pci").focus(),50)}
+function closeChat(){chatOpen=false;$("#pchat").classList.remove("on")}
+const PA={rescue:()=>{rescue()},lateToday:()=>{lateToday()},late:()=>{closeChat();tab="late";go("plan")},stats:()=>{closeChat();go("stats")},tomorrow:()=>botMsg(rTomorrow()),
+  addtj:()=>{if(M.idx<0||M.idx>LAST)return;addTask(M.idx,"حل تجميعات قبل الكويز","ch",true);botMsg("أضفتها لمهام اليوم ✅")}};
+function petAction(a){
+  if(a.startsWith("q:")){const q=QUICK.find(x=>x[1]===a.slice(2));return userSend(q?q[0]:a.slice(2),a.slice(2))}
+  if(a.startsWith("focus:")){const s=a.slice(6);if(s)CFG.fsub=s;save();closeChat();if(!TM.run){TM.m="w";TM.rem=s?tlen():600}go("focus");if(!TM.run)tStart();return}
+  if(a.startsWith("addrev:")){const s=a.slice(7);if(M.idx<0||M.idx>LAST)return;addTask(M.idx,"مراجعة سريعة: "+SB[s][0],s,true);return botMsg("أضفت «مراجعة سريعة: "+SB[s][0]+"» لمهام اليوم ✅ بالتوفيق!")}
+  (PA[a]||(()=>{}))();
+}
+
+/* daily challenges */
+const CHL=[
+ {id:"f2",t:"سوّ جلستين تركيز",ok:()=>M.fT>=2},
+ {id:"all",t:"خلّص كل مهام اليوم",ok:()=>M.idx>=0&&M.idx<=LAST&&T[M.idx].length&&full(M.idx)},
+ {id:"note",t:"اكتب ملاحظة اليوم",ok:()=>!!(NT[dk(day0())]||"").trim()},
+ {id:"mood",t:"سجّل مزاجك اليوم",ok:()=>MD[dk(day0())]!==undefined},
+ {id:"chat",t:()=>"سولف مع "+PET.name+" 3 مرات",ok:()=>(PET.talk[dk(day0())]||0)>=3},
+ {id:"nolate",t:"صفّر المهام المتأخرة",ok:()=>!M.late.length},
+ {id:"f1",t:"جلسة تركيز وحدة على الأقل",ok:()=>M.fT>=1},
+ {id:"tm",t:"أنجز مهمة من بكرة مقدمًا",ok:()=>M.idx>=0&&M.idx<LAST&&T[M.idx+1].some(x=>S[x.id])}];
+function todayCh(){if(M.idx<0||M.idx>LAST)return[];const i=M.idx*3;return [CHL[i%8],CHL[(i+3)%8],CHL[(i+5)%8]]}
+function checkCh(){
+  const k=dk(day0()),done=CHD[k]=CHD[k]||[],nw=todayCh().filter(c=>c.ok()&&!done.includes(c.id));
+  if(!nw.length)return;nw.forEach(c=>done.push(c.id));P("study-ch",CHD);
+  setTimeout(()=>{toast("🎯 تحدي مكتمل: "+(typeof nw[0].t==="function"?nw[0].t():nw[0].t)+" +30 XP");conf(50);petOn("challenge");render(true)},900);
+}
+function vChallenges(){
+  const cs=todayCh();if(!cs.length)return "";const k=dk(day0()),done=CHD[k]||[];
+  return `<section class="card"><div class="ch2"><h2>🎯 تحديات اليوم</h2><span class="pill">${cs.filter(c=>done.includes(c.id)).length} / ${cs.length}</span></div>${cs.map(c=>`<div class="chl${done.includes(c.id)?" ok":""}"><span class="ck">✓</span><span>${typeof c.t==="function"?esc(c.t()):c.t}</span><em>+30 XP</em></div>`).join("")}
+  <div class="pcard" style="margin-top:12px"><div class="pav" data-x="pchat">🦉</div><div><b>${esc(PET.name)}</b> <span class="pill">${STG[stage()]}</span><p class="mu" style="margin:2px 0">كل ما ارتفع مستواك يتطور رفيقك. سولف معه، بيقولك وش عندك ووش تضيف 💬</p></div></div></section>`;
+}
+
+/* pet events */
+pet.addEventListener("click",()=>{
+  const n=Date.now();clicks=clicks.filter(t=>n-t<1500);clicks.push(n);
+  if(clicks.length>=5){clicks=[];petOn("dizzy");return}
+  if(sleeping){sleeping=false;petExpr();anim("jump");say(pick(["ها؟! كنت مغمض عيوني بس 😳","صحّيتني! يلا نكمل 💪"]),1);return}
+  chatOpen?closeChat():openChat();
+});
+pet.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();chatOpen?closeChat():openChat()}});
+pbub.addEventListener("click",openChat);
+$("#pcf").addEventListener("submit",e=>{e.preventDefault();e.stopPropagation();const v=$("#pci").value;$("#pci").value="";userSend(v)});
+/* eyes follow the pointer */
+let mx=0,my=0,rf=0;
+function setPupils(x,y){psv.querySelectorAll(".pp").forEach(p=>p.style.transform=`translate(${x.toFixed(1)}px,${y.toFixed(1)}px)`)}
+function look(){rf=0;const r=pet.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height*.45,dx=mx-cx,dy=my-cy,d=Math.hypot(dx,dy)||1,k=Math.min(3.5,d/50);setPupils(dx/d*k,dy/d*k)}
+function wake(){lastAct=Date.now();if(sleeping){sleeping=false;petExpr();if(!chatOpen&&Math.random()<.5)say(pick(["ها؟! كنت مغمض عيوني بس 😳","صحيت! يلا نكمل 💪","أهلين! رجعت؟ 🦉"]))}}
+document.addEventListener("pointermove",e=>{mx=e.clientX;my=e.clientY;wake();if(!rf)rf=requestAnimationFrame(look)},{passive:true});
+document.addEventListener("keydown",wake);
+/* life loop: idle moves, sleep, tips */
+setInterval(()=>{
+  if(!CFG.pet)return;const n=Date.now();
+  if(!sleeping&&!TM.run&&n-lastAct>180000){sleeping=true;hideBub();petExpr()}
+  if(sleeping||tmpE)return;
+  const r=Math.random();
+  if(r<.12)anim(pick(["wave","tilt","wiggle"]));
+  else if(r<.3){setPupils(Math.random()*7-3.5,Math.random()*5-2.5);setTimeout(look,1300)}
+  if(CFG.petTalk&&!chatOpen&&!TM.run&&document.visibilityState==="visible"&&n-lastSay>240000&&n-lastAct<60000){say(tip());anim("wave")}
+},7000);
+setInterval(()=>{petDecay();savePet();petStatus();petExpr()},60000);
+
+/* hook companion into the app */
+const _render=render;render=function(keep){_render(keep);petExpr();checkCh()};
+const _tStart=tStart;tStart=function(){const w=TM.m==="w"&&!TM.run;_tStart();if(w)petOn("focusStart")};
+
 if(TM.run&&TM.end<=Date.now())TM.rem=0;
-render();
+render();petStatus();
+setTimeout(()=>{const h=new Date().getHours(),gr=h<5?"سهران؟":h<12?"صباح الخير":h<18?"هلا":"مساء الخير";anim("jump");say(`${gr} يا ${uname()}! 👋 ${greetLine()}`,1)},1200);
 </script>
 </body>
 </html>
