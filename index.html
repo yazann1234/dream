@@ -150,6 +150,30 @@ textarea{width:100%;min-height:70px;margin-top:10px;border:1px solid var(--ln);b
 .odots{display:flex;gap:6px;margin-top:18px}.odots i{width:8px;height:8px;border-radius:9px;background:rgba(255,255,255,.3);transition:.3s}.odots i.on{width:26px;background:var(--ac)}
 .obb{display:flex;gap:10px;margin-top:16px;justify-content:center}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+
+@keyframes sh{to{background-position:-200% 0}}@keyframes flipin{from{transform:rotateY(90deg);opacity:0}}
+body{background:radial-gradient(900px 420px at 100% -10%,color-mix(in srgb,var(--ac) 16%,transparent),transparent),radial-gradient(700px 400px at 0% 30%,color-mix(in srgb,var(--ok) 8%,transparent),transparent),var(--bg);background-attachment:fixed}
+.brand{background:linear-gradient(90deg,var(--tx),var(--ac));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero{position:relative;overflow:hidden}.hero>*{position:relative;z-index:1}.hero::after{content:"";position:absolute;width:230px;height:230px;border-radius:50%;background:var(--ac);filter:blur(60px);opacity:.25;top:-90px;left:-60px;animation:orb 8s ease-in-out infinite}
+.xp i{background:linear-gradient(90deg,var(--ac),#fff9,var(--ac))!important;background-size:200% 100%;animation:sh 2.5s linear infinite}
+.card{box-shadow:0 10px 30px -22px rgba(0,0,0,.4);border-radius:22px}.card h2 i{color:var(--ac);margin-inline-end:6px}.card h2 i.fire{color:#f0803c}
+.nav button{min-width:56px;padding:6px 8px}
+.jt{position:relative;height:10px;border-radius:9px;background:var(--bg2);margin:26px 4px 12px}.jf{position:absolute;top:0;right:0;height:100%;border-radius:9px;background:linear-gradient(90deg,var(--ok),var(--ac));animation:gw 1.2s .3s both}
+.jt u{position:absolute;top:-3px;width:2px;height:16px;background:var(--ln)}.jm{position:absolute;top:-24px;color:var(--ac);font-size:19px;animation:flo 1.4s ease-in-out infinite}.je{position:absolute;left:-2px;top:-24px;color:var(--mu)}
+.tp.ok{border-color:var(--ok)}.tp.ok input{text-decoration:line-through;color:var(--mu)}
+.hb{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.hb button{border:1px solid var(--ln);background:var(--bg2);border-radius:16px;padding:10px 2px;font-size:12px;color:var(--mu);cursor:pointer;display:flex;flex-direction:column;gap:6px;align-items:center;transition:.25s}.hb i{font-size:20px}.hb button.on{background:var(--ok);color:#fff;border-color:var(--ok);transform:translateY(-2px)}
+.dq{font:600 18px "El Messiri",serif;color:var(--ac);margin:8px 0;line-height:1.9}
+.wk4{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;text-align:center;font-size:12px;color:var(--mu)}.wk4 b{display:block;font:700 21px "Readex Pro",sans-serif;color:var(--ac)}
+.fcd{min-height:170px;border-radius:22px;padding:18px;margin:8px 0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;text-align:center;cursor:pointer;font-size:19px;font-weight:600;color:#fff;background:linear-gradient(150deg,var(--h1),var(--h2));animation:flipin .45s both}.fcd.bk{background:linear-gradient(150deg,var(--ok),#14746b)}.fcd small,.fcd em{font-size:12px;opacity:.7;font-style:normal;font-weight:400}
+#zx{display:none;position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:12px;z-index:40}.zen #zx{display:block}
+.zen .top,.zen .nav,.zen #mini,.zen .g2,.zen .chips,.zen main>section.card:not(.fc){display:none}.zen .tring{width:min(340px,86vw);margin-top:60px}
+
+.lc{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center}.lc div{background:var(--bg2);border-radius:16px;padding:10px 0}.lc b{display:block;font:700 26px "Readex Pro",sans-serif;color:var(--ac);font-variant-numeric:tabular-nums}.lc small{color:var(--mu);font-size:11px}
+.smt{display:flex;gap:12px;align-items:center}.smt i{font-size:22px;color:var(--ac)}.smt p{margin:0}
+.wp{display:flex;align-items:center;gap:8px;margin:9px 0;font-size:13px}.wp span{width:70px;color:var(--mu)}.wp .bar{height:8px;border-radius:8px;background:var(--bg2);overflow:hidden;flex:1}.wp .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--ok),var(--ac));animation:gw 1s both}
+.cfs{display:flex;gap:4px}.cfs button{width:22px;height:22px;border-radius:8px;border:1px solid var(--ln);background:var(--bg2);cursor:pointer;transition:.2s}.cfs button.on{background:var(--ac);border-color:var(--ac)}
+.pcard{display:flex;flex-direction:column;align-items:center;gap:4px;width:100%;margin:8px 0;padding:14px;border-radius:20px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;cursor:pointer;font:inherit;transition:.25s}.pcard i{font-size:26px;color:var(--ac)}.pcard b{font-size:18px}.pcard small{opacity:.75}.pcard.on{border-color:var(--ac);background:color-mix(in srgb,var(--ac) 30%,transparent);transform:scale(1.02)}
+@media print{.top,.nav,#mini,.chips,.seg,.srch,.btn,.fx,#ts,#zx{display:none!important}body{background:#fff!important;color:#000!important}.card{box-shadow:none!important}}
 @media (prefers-reduced-motion:reduce){.fx{display:none}*{transition:none!important}}
 </style>
 </head>
@@ -159,15 +183,17 @@ textarea{width:100%;min-height:70px;margin-top:10px;border:1px solid var(--ln);b
 <main id="app"></main>
 </div>
 <button id="mini" data-v="focus"><span id="miniT">25:00</span></button>
-<nav class="nav" aria-label="التنقل"><button data-v="home"><b><i class='fas fa-house'></i></b>اليوم</button><button data-v="plan"><b><i class='fas fa-calendar-days'></i></b>الجدول</button><button data-v="stats"><b><i class='fas fa-chart-column'></i></b>إنجازاتي</button><button data-v="focus"><b><i class='fas fa-stopwatch'></i></b>التركيز</button></nav>
+<nav class="nav" aria-label="التنقل"><button data-v="home"><b><i class='fas fa-house'></i></b>اليوم</button><button data-v="plan"><b><i class='fas fa-calendar-days'></i></b>الجدول</button><button data-v="stats"><b><i class='fas fa-chart-column'></i></b>إنجازاتي</button><button data-v="focus"><b><i class='fas fa-stopwatch'></i></b>التركيز</button><button data-v="cards"><b><i class='fas fa-layer-group'></i></b>مراجعة</button></nav>
 <div id="ts" role="status" aria-live="polite"></div>
+<button id="zx" class="btn" data-x="zen"><i class="fas fa-compress"></i> خروج</button>
 <div class="ob" id="ob"></div>
 <div class="ov" id="set"><div class="pnl" id="setb"></div></div>
 <input type="file" id="upf" accept=".json" hidden>
 <script>
 /* ===== بيانات الجدول (من ملف PDF) — كل يوم: [الصباح، العصر، الليل] ===== */
+const PL=(()=>{try{return localStorage.getItem("f26plan")||"B"}catch(e){return "B"}})(),SX=PL==="A"?"a":"";
 const d=(m,a,n)=>[m||[],a||[],n||[]];
-const P=[
+const PB=[
 /*22 أحد*/d(["ch|Chapter 8","ch|حل التجميعات"],["md|Chapter 8 / 9","md|حل التجميعات"],["gn|دراسة جزئية الميد للمادة الضعيف فيها"]),
 /*23 اثنين*/d(["ch|Chapter 9","ch|حل التجميعات"],["md|Chapter 10","md|حل التجميعات"]),
 /*24 ثلاثاء*/d(["ch|Chapter 10","ch|حل التجميعات"],["md|Chapter 11","md|حل التجميعات"]),
@@ -194,21 +220,48 @@ const P=[
 /*15*/d(["en|English"]),
 d(),d(),d(),d()/* 16–19: أيام فاضية للمراجعة الحرة */
 ];
-const N=P.length,LAST=N-1;
-const SB={ch:["الكيمياء","#4f8cff","<i class='fas fa-flask'></i>"],md:["مبادئ طبية","#e0567c","<i class='fas fa-stethoscope'></i>"],en:["English","#1fa597","<i class='fas fa-language'></i>"],sk:["مهارات اتصال","#8b6cf0","<i class='fas fa-comments'></i>"],gn:["عام","#c9a24f","<i class='fas fa-star'></i>"]};
+const PA=[
+d(["ph|Chapter 5: Lecture 3 + 4","ph|حل التجميعات"],["bi|Chapter 8","bi|حل التجميعات"],["gn|دراسة جزئية الميد للمادة الضعيف فيها"]),
+d(["ph|Chapter 6: Lecture 1"],["bi|Chapter 9"]),
+d(["ph|Chapter 6: Lecture 2 + 3"],["bi|Chapter 9","bi|مراجعة Chapter 8"]),
+d(["ph|Chapter 4: Lecture 1 + 2","ph|حل التجميعات"],["bi|Chapter 10","bi|مراجعة Chapter 9 / 8"]),
+d(["ph|Chapter 4: Lecture 3 + 4","ph|حل التجميعات"],["bi|Chapter 11: Nervous System"]),
+d(["en|English Chapter 12"],["bi|Chapter 12: Endocrine System"]),
+d(["en|English Chapter 12"],["bi|مراجعة (2) Quiz: Chapter 6 + 7"],["bi|مراجعة (2) Quiz: Chapter 8 + 9"]),
+d(["bi|مراجعة (2) Quiz"],["en|English Chapter 13"]),
+d(["bi|Chapter 13: Reproductive System"]),
+d(["ph|مراجعة Chapter 2 / 1"],["en|English Chapter 13"]),
+d(["bi|Chapter 14"]),
+d(["bi|Chapter 15"]),
+d(["ph|مراجعة Chapter 3","ph|مراجعة سريعة Chapter 1 / 2"],["en|مراجعة Chapter 12 + 13"]),
+d(["bi|Revision: Chapter 1 – 5"],["bi|Revision: Chapter 6 – 9"]),
+d(["ph|مراجعة Chapter 5 + 4","ph|نص Chapter 5 لجزئية الكويز الثاني"],["en|English Chapter 14"]),
+d(["bi|مراجعة Chapter 11 + 10"]),
+d(["ph|مراجعة Chapter 6 + 5"]),
+d(["bi|Chapter 12"]),
+d(["bi|Chapter 13 + 14 + 15"]),
+d(["ph|مراجعة كامل المسائل الحسابية لجزئية ما بعد الميد تيرم"],["ph|مراجعة كامل الشباتر من الملخص"]),
+d(["bi|مراجعة كامل المادة مع الرسومات والتجميعات"]),
+d(["ph|مراجعة كامل المادة من الملخص"]),
+d(["bi|مراجعة كامل المادة"]),
+d(["en|English"]),
+d(),d(),d(),d()
+];
+const P=PL==="A"?PA:PB;const N=P.length,LAST=N-1;
+const SB=PL==="A"?{ph:["فيزياء","#4f8cff","<i class='fas fa-atom'></i>"],bi:["أحياء","#e0567c","<i class='fas fa-dna'></i>"],en:["English","#1fa597","<i class='fas fa-language'></i>"],gn:["عام","#c9a24f","<i class='fas fa-star'></i>"]}:{ch:["الكيمياء","#4f8cff","<i class='fas fa-flask'></i>"],md:["مبادئ طبية","#e0567c","<i class='fas fa-stethoscope'></i>"],en:["English","#1fa597","<i class='fas fa-language'></i>"],sk:["مهارات اتصال","#8b6cf0","<i class='fas fa-comments'></i>"],gn:["عام","#c9a24f","<i class='fas fa-star'></i>"]};
 const SL=[["الصباح","<i class='fas fa-cloud-sun'></i>"],["العصر","<i class='fas fa-sun'></i>"],["الليل","<i class='fas fa-moon'></i>"]];
-const WK=[[0,"الأسبوع 4: 22 – 28 نوفمبر"],[7,"الأسبوع 5: 29 نوفمبر – 5 ديسمبر · كويز مبادئ طبية (9/10/11)"],[14,"الأسبوع 6: 6 – 12 ديسمبر · آخر أسبوع قبل الفاينل"],[21,"الأسبوع 7: 13 – 19 ديسمبر"]];
+const WK=[[0,"الأسبوع 4: 22 – 28 نوفمبر"],[7,(PL==="A"?"الأسبوع 5: 29 نوفمبر – 5 ديسمبر · كويز الأحياء (6 – 9)":"الأسبوع 5: 29 نوفمبر – 5 ديسمبر · كويز مبادئ طبية (9/10/11)")],[14,"الأسبوع 6: 6 – 12 ديسمبر · آخر أسبوع قبل الفاينل"],[21,"الأسبوع 7: 13 – 19 ديسمبر"]];
 const DN=["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"],MN=["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"];
 const MOODS=["<i class='fas fa-face-tired'></i>","<i class='fas fa-face-frown'></i>","<i class='fas fa-face-meh'></i>","<i class='fas fa-face-smile'></i>","<i class='fas fa-fire'></i>"];
-const ACC=["#c9a24f","#4f8cff","#1fa597","#e0567c","#8b6cf0","#f0803c"];
+const ACC=["#c9a24f","#4f8cff","#1fa597","#e0567c","#8b6cf0","#f0803c","#2bb3d6","#9bcf3f"];
 const Q=["الاستمرار أهم من الكمال.","التعب مؤقت والإنجاز يبقى.","ابدأ بما تستطيع وستزداد قدرتك.","ساعة تركيز حقيقية تساوي ثلاث ساعات تشتت.","افهم، لخّص، ثم اختبر نفسك.","يوم سيئ لا يفسد خطة جيدة؛ عد غدًا أقوى."];
 /* ===== أدوات ===== */
 const $=s=>document.querySelector(s),pad=n=>("0"+n).slice(-2);
 const J=(k,v)=>{try{const x=localStorage.getItem(k);return x?JSON.parse(x):v}catch(e){return v}};
 const Wt=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
-let S=J("f26s",{}),F=J("f26f",{}),C=J("f26c",{}),MV=J("f26m",{}),NT=J("f26n",{}),MD=J("f26d",{}),FM=J("f26fm",{}),FD=J("f26fd",{}),FS=J("f26fs",{}),BD=J("f26b",[]),ST=J("f26st",{});
+let S=J("f26s"+SX,{}),F=J("f26f"+SX,{}),C=J("f26c"+SX,{}),MV=J("f26m"+SX,{}),NT=J("f26n",{}),MD=J("f26d",{}),FM=J("f26fm",{}),FD=J("f26fd",{}),FS=J("f26fs",{}),BD=J("f26b",[]),ST=J("f26st",{}),EX=Object.assign({hb:{},tp:{},ch:{},fc:[],cf:{},mk:[],jr:{},rw:[["ساعة راحة بدون ذنب",300],["قهوة أو مشوار مع الأصحاب",800],["وجبتك المفضلة",1500],["هدية لنفسك",3000]]},J("f26ex",{}));let QZ=null,pick="",lastRem="";try{pick=localStorage.getItem("f26plan")||""}catch(e){}let fi=0,ff=0,NZ=0,NS=null;const RK=["مبتدئ","متحمس","منضبط","مثابر","متمكن","محترف","نخبة","أسطورة"];
 let CFG=Object.assign({acc:ACC[0],goal:120,w:25,b:5,quiz:"2026-11-29",name:"",dream:"",ob:0,theme:"",snd:1},J("f26cfg",{}));
-const save=()=>{Wt("f26s",S);Wt("f26f",F);Wt("f26c",C);Wt("f26m",MV);Wt("f26n",NT);Wt("f26d",MD);Wt("f26fm",FM);Wt("f26fd",FD);Wt("f26fs",FS);Wt("f26b",BD);Wt("f26cfg",CFG);Wt("f26st",ST)};
+const save=()=>{Wt("f26s"+SX,S);Wt("f26f"+SX,F);Wt("f26c"+SX,C);Wt("f26m"+SX,MV);Wt("f26n",NT);Wt("f26d",MD);Wt("f26fm",FM);Wt("f26fd",FD);Wt("f26fs",FS);Wt("f26b",BD);Wt("f26cfg",CFG);Wt("f26st",ST);Wt("f26ex",EX)};
 const esc=s=>String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 const dt=i=>new Date(2026,10,22+i),fmt=x=>x.getDate()+" "+MN[x.getMonth()];
 const day0=()=>{const n=new Date();return new Date(n.getFullYear(),n.getMonth(),n.getDate())};
@@ -237,7 +290,7 @@ function calc(){
   m.st=st;m.best=Math.max(+(J("f26best",0)),st);Wt("f26best",m.best);
   m.fsT=0;for(const k in FS)m.fsT+=FS[k];m.fmT=0;for(const k in FM)m.fmT+=FM[k];
   m.fToday=FD[dk(t0)]||0;m.sToday=FS[dk(t0)]||0;
-  m.xp=m.dn*10+m.fd*25+m.fsT*15;m.lvl=Math.floor(Math.sqrt(m.xp/50))+1;
+  m.xp=m.dn*10+m.fd*25+m.fsT*15+Object.keys(EX.ch).length*20+Object.values(EX.hb).filter(h=>Object.keys(h).length>=4).length*10;m.lvl=Math.floor(Math.sqrt(m.xp/50))+1;
   const a=50*(m.lvl-1)**2,b=50*m.lvl**2;m.xpPc=Math.round((m.xp-a)/(b-a)*100);
   m.flag=[];T.forEach((_,i)=>all(i).forEach(x=>{if(F[x.id])m.flag.push(Object.assign({d:i},x))}));
   const rem=m.tot-m.dn,dl=Math.max(1,LAST-Math.max(idx,0)+1);m.need=Math.ceil(rem/dl);
@@ -259,7 +312,7 @@ function slots(i,withAdd){
   return T[i].map((ls,k)=>{if(!ls.length&&!withAdd)return "";const d=ls.filter(x=>S[x.id]).length;
     return `<div class="sl"><span>${SL[k][1]} ${SL[k][0]}</span><small>${ls.length?d+" / "+ls.length:"فاضي"}</small></div>${ls.length?`<div class="mb"><i style="width:${d/ls.length*100}%"></i></div>`:""}${ls.map(x=>row(x,i)).join("")}`}).join("");
 }
-function events(){const [y,m,dd]=CFG.quiz.split("-").map(Number);return [{n:"كويز مبادئ طبية (9/10/11)",d:new Date(y,m-1,dd),k:"quiz"},{n:"نهاية الخطة والانطلاق للفاينل",d:new Date(2026,11,20),k:"end"}]}
+function events(){const [y,m,dd]=CFG.quiz.split("-").map(Number);return [{n:PL==="A"?"كويز الأحياء (Chapter 6 – 9)":"كويز مبادئ طبية (9/10/11)",d:new Date(y,m-1,dd),k:"quiz"},{n:"نهاية الخطة والانطلاق للفاينل",d:new Date(2026,11,20),k:"end"}]}
 const pd=(x,n)=>new Date(x.getFullYear(),x.getMonth(),x.getDate()-n);
 function dstreak(){let n=0,x=day0();if(!ST[dk(x)])x=pd(x,1);while(ST[dk(x)]){n++;x=pd(x,1)}return n}
 function vStreak(){const t=day0(),k=dk(t),n=dstreak(),bs=Math.max(+J("f26bs",0),n);Wt("f26bs",bs);const W=[];for(let i=6;i>=0;i--)W.push(pd(t,i));
@@ -268,11 +321,11 @@ function vEvents(){const n=new Date(),L=events().filter(e=>e.d>n);if(!L.length)r
 function vDream(){return `<section class="card"><div class="ch"><h2><i class='fas fa-heart'></i> حلمي وسبب اجتهادي</h2></div><input id="dm" class="inp" style="width:100%" maxlength="90" placeholder="اكتب حلمك وسبب اجتهادك…" value="${esc(CFG.dream)}"><p class="mu">فرحة أهلك بنجاحك تستاهل كل ساعة تعب.</p></section>`}
 function vHome(){
   const m=M,t0=m.t0,hr=new Date().getHours(),gr=hr<5?"سهران؟ لا تنسَ النوم":hr<12?"صباح الخير":hr<18?"طاب يومك":"مساء الخير";
-  let h=`<section class="hero"><div class="hg"><div class="hl"><div class="gr">${gr}، ${DN[t0.getDay()]} ${fmt(t0)}</div><input id="nm" placeholder="اكتب اسمك هنا" value="${esc(CFG.name)}" aria-label="الاسم"><span class="lv">المستوى ${m.lvl} <i class='fas fa-star'></i></span><div class="xp"><i style="width:${m.xpPc}%"></i></div></div>${ring(m.pc,104,46,8,"var(--ac)",`<text x="52" y="60" text-anchor="middle" fill="#fff" font-size="24" font-weight="700">${m.pc}%</text>`)}</div>
+  let h=`<section class="hero"><div class="hg"><div class="hl"><div class="gr">${gr}، ${DN[t0.getDay()]} ${fmt(t0)}</div><input id="nm" placeholder="اكتب اسمك هنا" value="${esc(CFG.name)}" aria-label="الاسم"><span class="lv">المستوى ${m.lvl} · ${RK[Math.min(m.lvl-1,7)]} <i class='fas fa-star'></i></span><div class="xp"><i style="width:${m.xpPc}%"></i></div></div>${ring(m.pc,104,46,8,"var(--ac)",`<text x="52" y="60" text-anchor="middle" fill="#fff" font-size="24" font-weight="700">${m.pc}%</text>`)}</div>
   <div class="st"><div><b data-cu="${m.dn}">${m.dn}</b>مهمة منجزة</div><div><b>${m.st}<i class='fas fa-fire'></i></b>أيام متتالية</div><div><b>${durTxt(m.fToday)}</b>تركيز اليوم</div><div><b data-cu="${m.left}">${m.left}</b>يوم للنهاية</div></div></section>`;
-  h+=vStreak();const nx=events().find(e=>e.d>new Date());
+  h+=vSmart();h+=vStreak();h+=vJourney();h+=vLive();h+=vTop();const nx=events().find(e=>e.d>new Date());
   if(nx)h+=`<section class="card"><div class="ch"><h2><i class='fas fa-hourglass-half'></i> ${nx.n}</h2><span class="pill">${fmt(nx.d)}</span></div><div class="cd"><div><b id="c0">0</b>يوم</div><div><b id="c1">0</b>ساعة</div><div><b id="c2">0</b>دقيقة</div><div><b id="c3">0</b>ثانية</div></div></section>`;
-  h+=vEvents();
+  h+=vEvents();h+=vTomorrow();h+=vWeeksP();
   if(m.late.length)h+=`<section class="card warn"><div class="ch"><h2><i class='fas fa-triangle-exclamation'></i> ${m.late.length} مهام متأخرة</h2></div><p class="mu">لا تشيل هم، نرتبها لك بدون ضغط.</p><div class="row"><button class="btn pr" data-x="rescue"><i class='fas fa-wand-magic-sparkles'></i> وزّعها على الأيام الجاية</button><button class="btn" data-x="lateToday">انقلها لليوم</button><button class="btn" data-x="seeLate">استعرضها</button></div></section>`;
   if(m.idx>=0&&m.idx<=LAST){
     const a=all(m.idx),dn=a.filter(x=>S[x.id]).length,k=dk(t0);
@@ -284,7 +337,7 @@ function vHome(){
     if(m.idx<LAST)h+=`<section class="card"><div class="ch"><h2>بكرة</h2><span class="pill">${DN[dt(m.idx+1).getDay()]} ${fmt(dt(m.idx+1))}</span></div>${all(m.idx+1).length?slots(m.idx+1):'<p class="mu">يوم خفيف</p>'}</section>`;
   }else h+=`<section class="card"><p class="mu">${m.idx<0?"الجدول يبدأ يوم 22 نوفمبر.":"انتهى الجدول. بالتوفيق في الفاينل! <i class='fas fa-graduation-cap'></i>"}</p></section>`;
   h+=`<div class="g2"><section class="card"><h2><i class='fas fa-bullseye'></i> وتيرتك</h2><p class="mu">عشان تخلص بالوقت تحتاج تقريبًا</p><div class="big">${m.need} <small style="font-size:14px;color:var(--mu)">مهمة يوميًا</small></div></section><section class="card"><h2><i class='fas fa-quote-right'></i> كلمة اليوم</h2><p class="mu" style="font-size:16px">${Q[(t0.getDate()+qi)%Q.length]}</p><button class="btn sm" data-x="qt">كلمة أخرى</button></section></div>`;
-  h+=vDream();
+  h+=vChallenge();h+=vHabits();h+=vJournal();h+=vRewards();h+=vDream();h+=vLetter();
   return h;
 }
 function planList(){
@@ -300,10 +353,10 @@ function planList(){
   return any?h:`<p class="empty">${tab==="late"?"ما عندك أي مهمة متأخرة!":"لا توجد مهام هنا. جرّب «الكل»."}</p>`;
 }
 function vPlan(){
-  return `<div class="srch"><input id="q" value="${esc(q)}" placeholder="ابحث في المهام… مثلًا Chapter 8" aria-label="بحث"></div><div class="chips"><button data-f=""${flt?"":' class="on"'}>كل المواد</button>${Object.keys(SB).map(k=>`<button data-f="${k}"${flt===k?' class="on"':""}>${SB[k][2]} ${SB[k][0]}</button>`).join("")}</div><div class="seg"><button data-tab="up"${tab==="up"?' class="on"':""}>القادم</button><button data-tab="late"${tab==="late"?' class="on"':""}>المتأخر${M.late.length?" ("+M.late.length+")":""}</button><button data-tab="all"${tab==="all"?' class="on"':""}>الكل</button></div><div id="list">${planList()}</div>`;
+  return `<div class="ch" style="margin:0 0 8px"><span class="pill">${PL==="A"?"خطة A":"خطة B"}</span><button class="btn sm" data-x="prt"><i class="fas fa-print"></i> طباعة</button></div><div class="srch"><input id="q" value="${esc(q)}" placeholder="ابحث في المهام… مثلًا Chapter 8" aria-label="بحث"></div><div class="chips"><button data-f=""${flt?"":' class="on"'}>كل المواد</button>${Object.keys(SB).map(k=>`<button data-f="${k}"${flt===k?' class="on"':""}>${SB[k][2]} ${SB[k][0]}</button>`).join("")}</div><div class="seg"><button data-tab="up"${tab==="up"?' class="on"':""}>القادم</button><button data-tab="late"${tab==="late"?' class="on"':""}>المتأخر${M.late.length?" ("+M.late.length+")":""}</button><button data-tab="all"${tab==="all"?' class="on"':""}>الكل</button></div><div id="list">${planList()}</div>`;
 }
 function vStats(){
-  const m=M;let h=`<section class="card"><div class="ch"><h2>المواد</h2><span class="pill">${m.dn} / ${m.tot}</span></div><div class="sub4">`;
+  const m=M;let h=vWeek()+vConf()+vCalc()+`<section class="card"><div class="ch"><h2>المواد</h2><span class="pill">${m.dn} / ${m.tot}</span></div><div class="sub4">`;
   for(const k in SB){if(!m.sc[k])continue;const p=Math.round(m.sd[k]/m.sc[k]*100);h+=`<div>${ring(p,80,32,8,SB[k][1],`<text x="40" y="46" text-anchor="middle" fill="currentColor" font-size="16" font-weight="700">${p}%</text>`,"var(--bg2)")}${SB[k][2]} ${SB[k][0]}<br>${m.sd[k]} من ${m.sc[k]}</div>`}
   h+=`</div></section><section class="card"><div class="ch"><h2>خريطة الإنجاز</h2><span class="pill">أفضل سلسلة: ${m.best} <i class='fas fa-fire'></i></span></div><div class="hm">${["ح","ن","ث","ر","خ","ج","س"].map(x=>`<span>${x}</span>`).join("")}`;
   T.forEach((_,i)=>{const a=all(i),d=a.filter(x=>S[x.id]).length,r=a.length?d/a.length:0,l=!d?0:r<.5?1:r<1?2:3,md=MD[dk(dt(i))];h+=`<i class="l${l}${i>m.idx?" fu":""}${i===m.idx?" td":""}" data-jump="${i}" title="${DN[dt(i).getDay()]} ${fmt(dt(i))}: ${d}/${a.length}">${md!==undefined?MOODS[md]:dt(i).getDate()}</i>`});
@@ -312,13 +365,14 @@ function vStats(){
   h+=`</section><section class="card"><h2><i class='fas fa-chart-line'></i> آخر 7 أيام</h2>`;
   const ds=[];for(let i=6;i>=0;i--){const x=new Date(+day0()-i*864e5);ds.push([x,FD[dk(x)]||0])}const m2=Math.max(CFG.goal,...ds.map(x=>x[1]));
   h+=`<div style="display:flex;gap:6px;height:120px;align-items:flex-end">${ds.map(([x,v])=>`<div style="flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;font-size:10.5px;color:var(--mu)" title="${durTxt(v)}"><i style="width:100%;height:${v/m2*100}%;min-height:3px;border-radius:8px 8px 3px 3px;background:${v>=CFG.goal?"var(--ok)":"var(--ac)"}"></i>${DN[x.getDay()].slice(0,3)}</div>`).join("")}</div><p class="mu">الأخضر = حققت هدفك (${durTxt(CFG.goal)})</p></section></div>`;
-  const al=k=>m.sc[k]>0&&m.sd[k]===m.sc[k],B=[["<i class='fas fa-seedling'></i>","الانطلاقة",m.dn>=1],["<i class='fas fa-fire'></i>","3 أيام متتالية",m.best>=3],["<i class='fas fa-book'></i>","25 مهمة",m.dn>=25],["<i class='fas fa-bullseye'></i>","50 مهمة",m.dn>=50],["<i class='fas fa-circle-half-stroke'></i>","نصف الطريق",m.pc>=50],["<i class='fas fa-flask'></i>","سيد الكيمياء",al("ch")],["<i class='fas fa-stethoscope'></i>","طبيب المستقبل",al("md")],["<i class='fas fa-language'></i>","English Pro",al("en")],["<i class='fas fa-comments'></i>","متحدث لبق",al("sk")],["<i class='fas fa-stopwatch'></i>","5 ساعات تركيز",m.fmT>=300],["<i class='fas fa-star'></i>","المستوى 5",m.lvl>=5],["<i class='fas fa-trophy'></i>","الختام",m.pc===100]];
+  const al=k=>m.sc[k]>0&&m.sd[k]===m.sc[k],B=[["<i class='fas fa-seedling'></i>","الانطلاقة",m.dn>=1],["<i class='fas fa-fire'></i>","3 أيام متتالية",m.best>=3],["<i class='fas fa-book'></i>","25 مهمة",m.dn>=25],["<i class='fas fa-bullseye'></i>","50 مهمة",m.dn>=50],["<i class='fas fa-circle-half-stroke'></i>","نصف الطريق",m.pc>=50],["<i class='fas fa-flask'></i>","سيد الكيمياء",al("ch")],["<i class='fas fa-stethoscope'></i>","طبيب المستقبل",al("md")],["<i class='fas fa-language'></i>","English Pro",al("en")],["<i class='fas fa-comments'></i>","متحدث لبق",al("sk")],["<i class='fas fa-stopwatch'></i>","5 ساعات تركيز",m.fmT>=300],["<i class='fas fa-star'></i>","المستوى 5",m.lvl>=5],["<i class='fas fa-trophy'></i>","الختام",m.pc===100],["<i class='fas fa-fire'></i>","ستريك أسبوع",dstreak()>=7],["<i class='fas fa-bolt'></i>","3 تحديات",Object.keys(EX.ch).length>=3],["<i class='fas fa-layer-group'></i>","10 بطاقات",EX.fc.length>=10],["<i class='fas fa-heart-pulse'></i>","عادات ذهبية",Object.values(EX.hb).some(h=>Object.keys(h).length>=4)]];
   h+=`<section class="card"><div class="ch"><h2>أوسمتك</h2><span class="pill">${B.filter(x=>x[2]).length} / ${B.length}</span></div><div class="bd">${B.map(x=>`<div class="${x[2]?"on":""}"><b>${x[0]}</b>${x[1]}</div>`).join("")}</div></section>`;
   return h;
 }
-function badgeCheck(){const m=M,al=k=>m.sc[k]>0&&m.sd[k]===m.sc[k],B=[["الانطلاقة",m.dn>=1],["3 أيام",m.best>=3],["25 مهمة",m.dn>=25],["50 مهمة",m.dn>=50],["نصف الطريق",m.pc>=50],["سيد الكيمياء",al("ch")],["طبيب المستقبل",al("md")],["English Pro",al("en")],["متحدث لبق",al("sk")],["5 ساعات",m.fmT>=300],["المستوى 5",m.lvl>=5],["الختام",m.pc===100]],nw=B.filter(b=>b[1]&&!BD.includes(b[0])).map(b=>b[0]);if(nw.length){BD.push(...nw);save();if(BD.length>nw.length)setTimeout(()=>{toast("وسام جديد: "+nw[0]);conf();chime()},600)}}
+function badgeCheck(){const m=M,al=k=>m.sc[k]>0&&m.sd[k]===m.sc[k],B=[["الانطلاقة",m.dn>=1],["3 أيام",m.best>=3],["25 مهمة",m.dn>=25],["50 مهمة",m.dn>=50],["نصف الطريق",m.pc>=50],["سيد الكيمياء",al("ch")],["طبيب المستقبل",al("md")],["English Pro",al("en")],["متحدث لبق",al("sk")],["5 ساعات",m.fmT>=300],["المستوى 5",m.lvl>=5],["الختام",m.pc===100],["ستريك أسبوع",dstreak()>=7],["3 تحديات",Object.keys(EX.ch).length>=3],["10 بطاقات",EX.fc.length>=10],["عادات ذهبية",Object.values(EX.hb).some(h=>Object.keys(h).length>=4)]],nw=B.filter(b=>b[1]&&!BD.includes(b[0])).map(b=>b[0]);if(nw.length){BD.push(...nw);save();if(BD.length>nw.length)setTimeout(()=>{toast("وسام جديد: "+nw[0]);conf();chime()},600)}}
 /* ===== التركيز ===== */
 let TM=Object.assign({m:"w",rem:CFG.w*60,dur:CFG.w*60,end:0,run:false,sub:"ch"},J("f26tm",{}));
+if(!SB[TM.sub])TM.sub=Object.keys(SB)[0];
 const len=m=>(m==="w"?CFG.w:CFG.b)*60,saveT=()=>Wt("f26tm",TM);
 function tStart(){TM.end=Date.now()+TM.rem*1e3;TM.run=true;saveT();tone(660,0,.15);tDraw()}
 function tPause(){TM.rem=Math.max(0,Math.ceil((TM.end-Date.now())/1e3));TM.run=false;saveT();tDraw()}
@@ -341,25 +395,26 @@ function vFocus(){
   <div class="seg">${[[25,5],[50,10],[90,20]].map(p=>`<button data-pre="${p[0]},${p[1]}"${CFG.w===p[0]&&CFG.b===p[1]?' class="on"':""}>${p[0]} / ${p[1]}</button>`).join("")}</div>
   <div class="tring"><svg viewBox="0 0 220 220"><circle cx="110" cy="110" r="98" fill="none" stroke="var(--bg2)" stroke-width="12"/><circle id="tmR" cx="110" cy="110" r="98" fill="none" stroke="${SB[TM.sub][1]}" stroke-width="12" stroke-linecap="round" stroke-dasharray="615.8" stroke-dashoffset="0" transform="rotate(-90 110 110)"/></svg><div class="in"><div class="mu" id="tmM"></div><div id="tmT">00:00</div><div class="mu">${SB[TM.sub][2]} ${SB[TM.sub][0]}</div></div></div>
   <div class="ctl"><button class="btn" data-x="trs">إعادة</button><button class="btn pr" id="tmGo" data-x="tgo">ابدأ</button><button class="btn" data-x="tsk">تخطي <i class='fas fa-forward-step'></i></button></div></section>
+  <section class="card"><div class="ch"><h2><i class='fas fa-headphones'></i> أجواء التركيز</h2><button class="btn sm" data-x="zen"><i class='fas fa-expand'></i> وضع الانغماس</button></div><div class="seg" style="margin:0">${[["0","بدون"],["1","مطر"],["2","هدوء"]].map(x=>`<button data-nz="${x[0]}"${NZ===+x[0]?' class="on"':""}>${x[1]}</button>`).join("")}</div></section>
   <div class="g2"><section class="card"><h2><i class='fas fa-bullseye'></i> هدف اليوم</h2><div class="big">${durTxt(fm)} <small style="font-size:14px;color:var(--mu)">من ${durTxt(CFG.goal)}</small></div><div class="mb" style="margin-top:8px"><i style="width:${gp}%"></i></div><p class="mu">${gp>=100?"حققت هدفك! <i class='fas fa-trophy'></i>":"باقي "+durTxt(CFG.goal-fm)}</p></section><section class="card"><h2><i class='fas fa-bolt'></i> جلسات اليوم</h2><div class="big">${M.sToday}</div><p class="mu">${"<i class='fas fa-bolt'></i>".repeat(Math.min(M.sToday,12))||"ابدأ أول جلسة!"}</p></section></div>`;
 }
 /* ===== العرض ===== */
-function render(keep){const y=scrollY;M=calc();badgeCheck();$("#app").innerHTML=V==="plan"?vPlan():V==="stats"?vStats():V==="focus"?vFocus():vHome();document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("on",b.dataset.v===V));if(keep)scrollTo(0,y);tDraw();tickCD();if(ANIM){cu();ANIM=0}}
-const ORD=["home","plan","stats","focus"];let ANIM=0;
-function go(v){const d=ORD.indexOf(v)-ORD.indexOf(V),a=$("#app");V=v;Wt("f26v",v);ANIM=1;a.className="in "+(d<0?"b":"f");render();scrollTo(0,0);setTimeout(()=>a.className="",1000)}
+function render(keep){const y=scrollY;M=calc();badgeCheck();$("#app").innerHTML=V==="plan"?vPlan():V==="stats"?vStats():V==="focus"?vFocus():V==="cards"?(QZ?vQuiz():vCards()+vMistakes()):vHome();document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("on",b.dataset.v===V));if(keep)scrollTo(0,y);tDraw();tickCD();liveTick();if(ANIM){cu();ANIM=0}}
+const ORD=["home","plan","stats","focus","cards"];let ANIM=0;
+function go(v){const d=ORD.indexOf(v)-ORD.indexOf(V),a=$("#app");document.body.classList.remove("zen");V=v;Wt("f26v",v);ANIM=1;a.className="in "+(d<0?"b":"f");render();scrollTo(0,0);setTimeout(()=>a.className="",1000)}
 function nav(n){const i=ORD.indexOf(V)+n;if(i>=0&&i<ORD.length)go(ORD[i])}
 function cu(){document.querySelectorAll("[data-cu]").forEach(e=>{const n=+e.dataset.cu,t0=performance.now();(function f(t){const p=Math.min(1,(t-t0)/900);e.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(t0)})}
 let tx0=0,ty0=0;document.addEventListener("touchstart",e=>{tx0=e.touches[0].clientX;ty0=e.touches[0].clientY},{passive:true});
 document.addEventListener("touchend",e=>{if($("#ob").classList.contains("on")||$("#set").classList.contains("on")||e.target.closest("input,textarea,.chips,.hm"))return;const t=e.changedTouches[0],dx=t.clientX-tx0,dy=t.clientY-ty0;if(Math.abs(dx)>80&&Math.abs(dy)<45)nav(dx<0?1:-1)},{passive:true});
 function tickCD(){const nx=events().find(e=>e.d>new Date());if(!nx||!$("#c0"))return;const s=Math.floor((nx.d-new Date())/1e3);[Math.floor(s/86400),Math.floor(s%86400/3600),Math.floor(s%3600/60),s%60].forEach((x,i)=>{const e=$("#c"+i);if(e)e.textContent=x})}
-setInterval(()=>{if(TM.run)tDraw();tickCD()},250);
+setInterval(()=>{if(TM.run)tDraw();tickCD();liveTick()},250);
 /* ===== إجراءات ===== */
 function move(id,from,to){if(id[0]==="x"){const a=C[from]||[],k=a.findIndex(c=>c.id===id);if(k<0)return;const [c]=a.splice(k,1);(C[to]=C[to]||[]).push(c)}else{const o=+id.split("_")[0];if(to===o)delete MV[id];else MV[id]=to}}
 function rescue(){const s=snap(),st=Math.max(M.idx,0),en=Math.min(LAST,st+6),ld={};for(let i=st;i<=en;i++)ld[i]=all(i).filter(x=>!S[x.id]).length;M.late.forEach(x=>{let b=st;for(let i=st;i<=en;i++)if(ld[i]<ld[b])b=i;ld[b]++;move(x.id,x.d,b)});const n=M.late.length;save();render(true);toast("وزّعت "+n+" مهام على الأيام الجاية",s)}
 function lateToday(){const s=snap(),n=M.late.length;M.late.forEach(x=>move(x.id,x.d,M.idx));save();render(true);toast("نقلت "+n+" مهام لليوم",s)}
 function addTask(i,t,s,k){t=(t||"").trim();if(!t)return;(C[i]=C[i]||[]).push({id:uid(),t,s,k:+k||0});save();render(true);tone(520,0,.15);toast("تمت إضافة المهمة")}
-function exportData(){return {v:3,S,F,C,MV,NT,MD,FM,FD,FS,BD,CFG,ST}}
-function importData(o){if(!o||o.v!==3)throw 0;S=o.S||{};F=o.F||{};C=o.C||{};MV=o.MV||{};NT=o.NT||{};MD=o.MD||{};FM=o.FM||{};FD=o.FD||{};FS=o.FS||{};BD=o.BD||[];ST=o.ST||{};CFG=Object.assign(CFG,o.CFG||{});save();applyTheme();render(true);toast("تمت استعادة التقدم")}
+function exportData(){return {v:3,S,F,C,MV,NT,MD,FM,FD,FS,BD,CFG,ST,EX}}
+function importData(o){if(!o||o.v!==3)throw 0;S=o.S||{};F=o.F||{};C=o.C||{};MV=o.MV||{};NT=o.NT||{};MD=o.MD||{};FM=o.FM||{};FD=o.FD||{};FS=o.FS||{};BD=o.BD||[];ST=o.ST||{};EX=Object.assign({hb:{},tp:{},ch:{},fc:[],cf:{},mk:[],jr:{},rw:[["ساعة راحة بدون ذنب",300],["قهوة أو مشوار مع الأصحاب",800],["وجبتك المفضلة",1500],["هدية لنفسك",3000]]},o.EX||{});CFG=Object.assign(CFG,o.CFG||{});save();applyTheme();render(true);toast("تمت استعادة التقدم")}
 function dl(){const b=new Blob([JSON.stringify(exportData())],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="final-plan-"+dk(day0())+".json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
 function jump(i){V="plan";tab="all";flt="";q="";render();const e=$("#d"+i);if(e)e.scrollIntoView({block:"center"})}
 function openSet(){
@@ -369,6 +424,8 @@ function openSet(){
   <h3>الهدف اليومي للتركيز (دقيقة)</h3><input type="number" class="inp" id="sg" min="10" max="900" step="10" value="${CFG.goal}">
   <h3>المؤقت: التركيز / الاستراحة (دقيقة)</h3><div class="row" style="margin:0"><input type="number" class="inp" id="sw" min="1" max="180" value="${CFG.w}" style="width:90px"><input type="number" class="inp" id="sbk" min="1" max="60" value="${CFG.b}" style="width:90px"></div>
   <h3>الصوت</h3><label><input type="checkbox" id="ssn"${CFG.snd?" checked":""}> أصوات الإنجاز والمؤقت</label>
+  <h3>خطة المذاكرة</h3><div class="row" style="margin:0"><button class="btn sm" data-plan="A"><i class="fas fa-atom"></i> خطة A</button><button class="btn sm" data-plan="B"><i class="fas fa-flask"></i> خطة B</button><span class="mu" id="plcur"></span></div>
+  <h3>تذكير يومي</h3><div class="row" style="margin:0"><input type="time" id="rmt" class="inp"></div>
   <h3>الجولة التعريفية</h3><div class="row" style="margin:0"><button class="btn sm" data-x="tour"><i class="fas fa-route"></i> إعادة الجولة</button></div>
   <h3>النسخ الاحتياطي</h3><div class="row" style="margin:0"><button class="btn sm" data-x="dl"><i class='fas fa-download'></i> تنزيل نسخة</button><button class="btn sm" data-x="up"><i class='fas fa-upload'></i> استعادة من ملف</button><button class="btn sm" data-x="unmv">إلغاء التأجيلات</button><button class="btn sm" data-x="rs" style="color:var(--bad)">مسح العلامات</button></div>
   <div class="row"><button class="btn pr" data-x="close">تم</button></div>`;
@@ -376,24 +433,61 @@ function openSet(){
 }
 const closeOv=()=>$("#set").classList.remove("on");
 
+
+const CHL=["ذاكر 25 دقيقة بدون جوال","لخّص آخر درس في 5 أسطر","اشرح درس اليوم بصوت عالٍ","حل 10 أسئلة من التجميعات","اكتب 5 مصطلحات جديدة وراجعها","راجع كل المهام المعلّمة بالعلم","نم قبل الساعة 11 الليلة","ابدأ يومك بأصعب مهمة"];
+const HBL=[["w","ماء","droplet"],["s","نوم كافي","bed"],["e","حركة","dumbbell"],["p","جوال بعيد","mobile-screen-button"]];
+function vJourney(){const p=Math.max(0,Math.min(100,(M.idx+1)/N*100));return `<section class="card"><div class="ch"><h2><i class='fas fa-route'></i> شريط الرحلة</h2><span class="pill">اليوم ${Math.min(Math.max(M.idx+1,0),N)} من ${N}</span></div><div class="jt"><i class="jf" style="width:${p}%"></i>${WK.map(w=>`<u style="right:${w[0]/N*100}%"></u>`).join("")}<i class="fas fa-person-running jm" style="right:calc(${p}% - 12px)"></i><i class="fas fa-flag-checkered je"></i></div><p class="mu">باقي ${M.left} يوم على نهاية الخطة. كل يوم تذاكر فيه يقربك من حلمك.</p></section>`}
+function vTop(){const o=EX.tp[dk(day0())]||{t:"",d:0};return `<section class="card tp${o.d?" ok":""}"><div class="ch"><h2><i class='fas fa-crosshairs'></i> المهمة الأهم اليوم</h2></div><div class="add" style="margin:0"><input id="tpi" placeholder="وش أهم شيء لازم تنجزه اليوم؟" maxlength="90" value="${esc(o.t)}"><button data-x="tpd" aria-label="تم" style="background:${o.d?"var(--ok)":"var(--ac)"}"><i class='fas fa-check'></i></button></div></section>`}
+function vChallenge(){const t=day0(),d=EX.ch[dk(t)];return `<section class="card"><div class="ch"><h2><i class='fas fa-bolt'></i> تحدي اليوم</h2><span class="pill">+20 XP</span></div><p style="font-size:16px;margin:4px 0">${CHL[(t.getDate()+t.getMonth())%CHL.length]}</p>${d?'<p class="mu"><i class="fas fa-circle-check" style="color:var(--ok)"></i> أنجزت التحدي</p>':'<button class="btn pr" data-x="chl"><i class="fas fa-check"></i> أنجزته</button>'}</section>`}
+function vHabits(){const h=EX.hb[dk(day0())]||{},n=Object.keys(h).length;return `<section class="card"><div class="ch"><h2><i class='fas fa-heart-pulse'></i> عادات اليوم</h2><span class="pill">${n} / 4</span></div><div class="hb">${HBL.map(x=>`<button data-hb="${x[0]}" class="${h[x[0]]?"on":""}"><i class='fas fa-${x[2]}'></i>${x[1]}</button>`).join("")}</div></section>`}
+function vLetter(){const o=M.idx>=LAST-1;return `<section class="card"><div class="ch"><h2><i class='fas fa-envelope-open-text'></i> رسالة لنفسي</h2><span class="pill">${o?"مفتوحة":"تنفتح قبل الفاينل"}</span></div>${o&&CFG.letter?`<p class="dq">${esc(CFG.letter)}</p>`:`<textarea id="lt" placeholder="اكتب رسالة لنفسك تقرأها قبل الفاينل…">${esc(CFG.letter||"")}</textarea>`}</section>`}
+function vWeek(){const t=day0();let a=0,f=0,hd=0,bd=["-",0];for(let i=0;i<7;i++){const x=pd(t,i),k=dk(x),v=FD[k]||0;if(ST[k])a++;f+=v;if(v>bd[1])bd=[DN[x.getDay()],v];if(Object.keys(EX.hb[k]||{}).length>=4)hd++}
+return `<section class="card"><div class="ch"><h2><i class='fas fa-file-lines'></i> تقرير الأسبوع</h2><button class="btn sm" data-x="shr"><i class='fas fa-share-nodes'></i> مشاركة</button></div><div class="wk4"><div><b data-cu="${a}">${a}</b>أيام نشطة</div><div><b>${durTxt(f)}</b>تركيز</div><div><b>${bd[0]}</b>أفضل يوم</div><div><b data-cu="${hd}">${hd}</b>عادات كاملة</div></div></section>`}
+function vCards(){const L=EX.fc,c=L[fi];return `<section class="card"><div class="ch"><h2><i class='fas fa-layer-group'></i> بطاقات المراجعة</h2><span class="pill">${L.length}</span></div>${L.length>1?'<button class="btn pr" data-x="qzs" style="margin-bottom:6px"><i class="fas fa-graduation-cap"></i> اختبرني</button>':""}${c?`<div class="fcd${ff?" bk":""}" data-x="flip"><small>${ff?"الجواب":"السؤال"} · ${fi+1} / ${L.length}</small><div>${esc(ff?c.a:c.q)}</div><em>اضغط لقلب البطاقة</em></div><div class="ctl"><button class="btn" data-x="fp" aria-label="السابقة"><i class='fas fa-arrow-right'></i></button><button class="btn" data-x="fsh"><i class='fas fa-shuffle'></i> عشوائي</button><button class="btn" data-x="fdel" aria-label="حذف"><i class='fas fa-trash'></i></button><button class="btn pr" data-x="fn" aria-label="التالية"><i class='fas fa-arrow-left'></i></button></div>`:'<p class="mu">ما عندك بطاقات. اكتب سؤال وجوابه وراجعها قبل الاختبار.</p>'}<form class="add" id="fcf"><input id="fcq" placeholder="السؤال أو المصطلح" maxlength="120"><input id="fca" placeholder="الجواب" maxlength="160"><button aria-label="إضافة">+</button></form></section>`}
+function noise(k){if(NS){try{NS.stop()}catch(e){}NS=null}NZ=k;if(!k)return;try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();const n=AC.sampleRate*2,b=AC.createBuffer(1,n,AC.sampleRate),d=b.getChannelData(0);let l=0;for(let i=0;i<n;i++){const w=Math.random()*2-1;l=(l+.02*w)/1.02;d[i]=k===1?w:l*3.5}const s=AC.createBufferSource(),f=AC.createBiquadFilter(),g=AC.createGain();s.buffer=b;s.loop=true;f.type="lowpass";f.frequency.value=k===1?1800:600;g.gain.value=k===1?.05:.25;s.connect(f).connect(g).connect(AC.destination);s.start();NS=s}catch(e){}}
+
+function vLive(){const n=new Date(),e=events().find(x=>x.d>n);if(!e)return "";return `<section class="card"><div class="ch"><h2><i class='fas fa-hourglass-half'></i> ${e.n}</h2></div><div class="lc" id="lvc" data-t="${+e.d}"></div></section>`}
+function liveTick(){const e=$("#lvc");if(!e)return;const s=Math.max(0,Math.floor((+e.dataset.t-Date.now())/1e3));e.innerHTML=[[Math.floor(s/86400),"يوم"],[Math.floor(s%86400/3600),"ساعة"],[Math.floor(s%3600/60),"دقيقة"],[s%60,"ثانية"]].map(x=>`<div><b>${pad(x[0])}</b><small>${x[1]}</small></div>`).join("")}
+function vSmart(){const m=M,h=new Date().getHours();let t,ic="lightbulb";const wk=Object.keys(SB).filter(k=>m.sc[k]).map(k=>[k,m.sd[k]/m.sc[k]]).sort((a,b)=>a[1]-b[1])[0];
+ if(m.late.length>=5){t="عندك "+m.late.length+" مهام متأخرة. افتح «المتأخر» ووزّعها قبل لا تتراكم.";ic="triangle-exclamation"}
+ else if(h>=20&&!ST[dk(day0())]){t="الساعة تعدّت 8 مساءً وما ثبّتّ ستريك اليوم. أنجز مهمة وحدة وحافظ على سلسلتك.";ic="fire"}
+ else if(wk&&wk[1]<.5&&m.dn>3){t="أضعف مادة عندك الحين: "+SB[wk[0]][0]+". خصّص لها أول جلسة تركيز اليوم.";ic="bullseye"}
+ else t=Q[new Date().getDate()%Q.length];
+ return `<section class="card smt"><i class="fas fa-${ic}"></i><p>${t}</p></section>`}
+function vTomorrow(){const i=M.idx+1;if(i<0||i>LAST)return "";const L=all(i);return `<section class="card"><div class="ch"><h2><i class='fas fa-forward'></i> جدول بكرة</h2><span class="pill">${DN[dt(i).getDay()]} ${fmt(dt(i))}</span></div>${L.length?L.map(x=>`<div class="ev"><i class='fas fa-circle' style="color:${(SB[x.s]||[0,"var(--ac)"])[1]};font-size:9px"></i><div>${esc(x.t)}<small>${SB[x.s]?SB[x.s][0]:""}</small></div></div>`).join(""):'<p class="mu">يوم فاضي للمراجعة الحرة.</p>'}</section>`}
+function vWeeksP(){return `<section class="card"><div class="ch"><h2><i class='fas fa-chart-simple'></i> تقدم الأسابيع</h2></div>${WK.map((w,k)=>{const a=w[0],b=k<WK.length-1?WK[k+1][0]:N;let c=0,d=0;for(let j=a;j<b;j++){const L=all(j);c+=L.length;d+=L.filter(x=>S[x.id]).length}const p=c?Math.round(d/c*100):0;return `<div class="wp"><span>${w[1].split(":")[0]}</span><div class="bar"><i style="width:${p}%"></i></div><b>${p}%</b></div>`}).join("")}</section>`}
+function vRewards(){const x=M.xp;return `<section class="card"><div class="ch"><h2><i class='fas fa-gift'></i> مكافآتي</h2><span class="pill">${x} XP</span></div>${EX.rw.map((r,i)=>`<div class="ev"><i class='fas fa-${x>=r[1]?"unlock":"lock"}' style="color:${x>=r[1]?"var(--ok)":"var(--mu)"}"></i><div>${esc(r[0])}<small>${x>=r[1]?"مفتوحة، استمتع فيها":"باقي "+(r[1]-x)+" XP"}</small></div><button class="ib" data-rw="${i}" aria-label="حذف"><i class='fas fa-xmark'></i></button></div>`).join("")}<form class="add" id="rwf"><input id="rwt" placeholder="مكافأة جديدة" maxlength="50"><input id="rwx" type="number" min="50" placeholder="XP" style="max-width:80px"><button aria-label="إضافة">+</button></form></section>`}
+function vJournal(){const k=dk(day0()),L=Object.keys(EX.jr).filter(x=>x!==k&&EX.jr[x]).slice(-3).reverse();return `<section class="card"><div class="ch"><h2><i class='fas fa-book-open'></i> يومياتي</h2></div><textarea id="jr" placeholder="وش أنجزت اليوم؟ وش تعلمت؟ وش تبي تحسّنه بكرة؟">${esc(EX.jr[k]||"")}</textarea>${L.map(x=>`<p class="mu"><b>${x}</b>: ${esc(EX.jr[x]).slice(0,90)}</p>`).join("")}</section>`}
+function vMistakes(){return `<section class="card"><div class="ch"><h2><i class='fas fa-book-skull'></i> دفتر الأخطاء</h2><span class="pill">${EX.mk.length}</span></div>${EX.mk.map((x,i)=>`<div class="ev"><i class='fas fa-circle-exclamation' style="color:${SB[x.s]?SB[x.s][1]:"var(--bad)"}"></i><div>${esc(x.t)}<small>${SB[x.s]?SB[x.s][0]:""}</small></div><button class="ib" data-mk="${i}" aria-label="أتقنتها"><i class='fas fa-check'></i></button></div>`).join("")||'<p class="mu">اكتب أي سؤال غلطت فيه عشان ما تكرره، وعلّم عليه لما تتقنه.</p>'}<form class="add" id="mkf"><select id="mks">${Object.keys(SB).map(k=>`<option value="${k}">${SB[k][0]}</option>`).join("")}</select><input id="mkt" placeholder="الخطأ أو المعلومة الصحيحة" maxlength="140"><button aria-label="إضافة">+</button></form></section>`}
+function vQuiz(){const L=EX.fc;if(QZ.i>=QZ.o.length){const p=Math.round(QZ.ok/QZ.o.length*100);return `<section class="card"><div class="ch"><h2><i class='fas fa-flag-checkered'></i> النتيجة</h2></div><div class="sr"><b data-cu="${p}">${p}</b><span>% · ${QZ.ok} من ${QZ.o.length}</span></div><div class="ctl"><button class="btn pr" data-x="qzs"><i class='fas fa-rotate'></i> أعد الاختبار</button><button class="btn" data-x="qzx">خروج</button></div></section>`}const c=L[QZ.o[QZ.i]];return `<section class="card"><div class="ch"><h2><i class='fas fa-graduation-cap'></i> اختبرني</h2><span class="pill">${QZ.i+1} / ${QZ.o.length}</span></div><div class="fcd${QZ.r?" bk":""}"><div>${esc(QZ.r?c.a:c.q)}</div></div>${QZ.r?`<div class="ctl"><button class="btn" data-x="qzn"><i class='fas fa-xmark'></i> ما عرفتها</button><button class="btn pr" data-x="qzy"><i class='fas fa-check'></i> عرفتها</button></div>`:'<button class="btn pr" data-x="qzr">اعرض الجواب</button>'}</section>`}
+function vConf(){const L=Object.keys(EX.cf).filter(k=>SB[k]).sort((a,b)=>EX.cf[a]-EX.cf[b]);return `<section class="card"><div class="ch"><h2><i class='fas fa-gauge-high'></i> ثقتي بكل مادة</h2></div>${Object.keys(SB).filter(k=>M.sc[k]).map(k=>`<div class="ev"><i class='fas fa-circle' style="color:${SB[k][1]};font-size:10px"></i><div>${SB[k][0]}</div><div class="cfs">${[1,2,3,4,5].map(n=>`<button data-cf="${k},${n}" class="${(EX.cf[k]||0)>=n?"on":""}" aria-label="${n}"></button>`).join("")}</div></div>`).join("")}<p class="mu">${L.length?"ركّز أكثر على: "+SB[L[0]][0]:"قيّم نفسك بصدق، وأعطِ الأضعف وقتًا أكثر."}</p></section>`}
+function vCalc(){const c=CFG.cc||{e:"",w:40,t:90},n=c.e===""?"":Math.max(0,(+c.t-+c.e)/(+c.w)*100).toFixed(1);return `<section class="card"><div class="ch"><h2><i class='fas fa-calculator'></i> حاسبة الدرجات</h2></div><div class="g2"><label class="mu">درجتك الحالية<input class="inp" id="cce" type="number" value="${c.e}" placeholder="مثلًا 50"></label><label class="mu">وزن الفاينل %<input class="inp" id="ccw" type="number" value="${c.w}"></label></div><label class="mu">الدرجة الكلية المستهدفة<input class="inp" id="cct" type="number" value="${c.t}"></label>${n!==""?`<p class="dq">تحتاج ${n}% في الفاينل ${+n>100?"(صعبة، خفّض الهدف)":""}</p>`:""}</section>`}
+function planStep(){const C2=(k,t,d,ic)=>`<button class="pcard${pick===k?" on":""}" data-pk="${k}"><i class="fas fa-${ic}"></i><b>${t}</b><small>${d}</small></button>`;return `<div class="obi"><i class="fas fa-map hat"></i></div><h1>اختر خطتك</h1><p>تقدر تبدلها لاحقًا من الإعدادات، ولكل خطة تقدمها المنفصل.</p>${C2("A","خطة A","فيزياء + أحياء + English","atom")}${C2("B","خطة B","كيمياء + مبادئ طبية + English + مهارات اتصال","flask")}`}
+setInterval(()=>{const n=new Date(),hm=pad(n.getHours())+":"+pad(n.getMinutes()),k=dk(day0())+hm;if(CFG.rem&&hm===CFG.rem&&lastRem!==k){lastRem=k;toast("وقت مذاكرتك. ابدأ بأول مهمة اليوم");chime();try{if(Notification.permission==="granted")new Notification("رحلتك نحو الفاينل",{body:"وقت مذاكرتك. لا تكسر الستريك."})}catch(e){}}},20000);
 /* ===== الترحيب ===== */
 let obi=0;
 function obView(i){
  if(i===0)return `<div class="obi"><i class="fas fa-graduation-cap hat"></i></div><h1>أهلًا بك في رحلتك نحو الفاينل</h1><p>جدول مرتب، ستريك يومي، وتركيز بدون تشتت. خلنا نوريك كل شيء في دقيقة.</p><input id="obn" class="inp" placeholder="اكتب اسمك" maxlength="24" value="${esc(CFG.name)}">`;
- if(i===1){const W2=WK.map((w,k)=>{const a=w[0],b=k<WK.length-1?WK[k+1][0]:N;let c=0;for(let j=a;j<b;j++)c+=all(j).length;return [w[1].split("·")[0],c]}),mx=Math.max(1,...W2.map(x=>x[1]));
+ if(i===1)return planStep();
+ if(i===2){const W2=WK.map((w,k)=>{const a=w[0],b=k<WK.length-1?WK[k+1][0]:N;let c=0;for(let j=a;j<b;j++)c+=all(j).length;return [w[1].split("·")[0],c]}),mx=Math.max(1,...W2.map(x=>x[1]));
   return `<div class="obi"><i class="fas fa-calendar-days hat"></i></div><h1>جدولك باختصار</h1><p>${N} يوم و${M.tot} مهمة، موزعة على الصباح والعصر والليل.</p><div class="obl">${W2.map((x,k)=>`<div style="--i:${k}"><span>${x[0]}</span><div class="bar"><i style="width:${x[1]/mx*100}%"></i></div><small>${x[1]}</small></div>`).join("")}</div><div class="chs">${Object.keys(SB).filter(k=>M.sc[k]).map(k=>`<span style="--c:${SB[k][1]}">${SB[k][2]} ${SB[k][0]}</span>`).join("")}</div>`}
- if(i===2){const n=new Date(),E=events().filter(e=>e.d>n),s=Math.max(M.idx,0),D=[];for(let j=s;j<Math.min(N,s+3);j++)D.push(j);
+ if(i===3){const n=new Date(),E=events().filter(e=>e.d>n),s=Math.max(M.idx,0),D=[];for(let j=s;j<Math.min(N,s+3);j++)D.push(j);
   return `<div class="obi"><i class="fas fa-bell hat"></i></div><h1>مواعيد الكويزات القادمة</h1><div class="obl">${E.map((e,k)=>`<div style="--i:${k}"><span style="width:auto;flex:1"><b>${e.n}</b><br><small>${DN[e.d.getDay()]} ${fmt(e.d)}</small></span><b>${Math.ceil((e.d-n)/864e5)} يوم</b></div>`).join("")}</div><p>أيامك الجاية:</p><div class="obl">${D.map((j,k)=>`<div style="--i:${k+2}"><span style="width:92px"><b>${DN[dt(j).getDay()]}</b> ${fmt(dt(j))}</span><small style="flex:1;text-align:start">${all(j).slice(0,2).map(x=>esc(x.t)).join(" · ")||"مراجعة حرة"}</small></div>`).join("")}</div>`}
  return `<div class="obi"><i class="fas fa-rocket hat"></i></div><h1>ليش تجتهد؟</h1><div class="mt"><i class="fas fa-fire"></i><span>اجتهد الحين، تعبك مؤقت وفرحتك تبقى.</span></div><div class="mt"><i class="fas fa-heart"></i><span>فرّح أهلك، لحظة نجاحك تستاهل كل ساعة.</span></div><div class="mt"><i class="fas fa-star"></i><span>حلمك قريب، وكل مهمة تنجزها خطوة له.</span></div><input id="obd" class="inp" maxlength="90" placeholder="اكتب حلمك (اختياري)" value="${esc(CFG.dream)}">`}
-function obDraw(){$("#obc").innerHTML=obView(obi);$("#obd2").innerHTML=[0,1,2,3].map(i=>`<i class="${i===obi?"on":""}"></i>`).join("");$("#obb").innerHTML=(obi?'<button class="btn" data-x="obp"><i class="fas fa-arrow-right"></i> رجوع</button>':'<button class="btn" data-x="obf">تخطي</button>')+(obi<3?'<button class="btn pr" data-x="obn">التالي <i class="fas fa-arrow-left"></i></button>':'<button class="btn pr" data-x="obf">ابدأ رحلتي <i class="fas fa-rocket"></i></button>')}
-function obShow(){obi=0;$("#ob").innerHTML='<i class="orb o1"></i><i class="orb o2"></i><i class="orb o3"></i><div class="obc" id="obc"></div><div class="odots" id="obd2"></div><div class="obb" id="obb"></div>';$("#ob").classList.add("on");obDraw()}
+function obDraw(){$("#obc").innerHTML=obView(obi);$("#obd2").innerHTML=[0,1,2,3,4].map(i=>`<i class="${i===obi?"on":""}"></i>`).join("");$("#obb").innerHTML=(obi?'<button class="btn" data-x="obp"><i class="fas fa-arrow-right"></i> رجوع</button>':'<button class="btn" data-x="obf">تخطي</button>')+(obi<4?'<button class="btn pr" data-x="obn">التالي <i class="fas fa-arrow-left"></i></button>':'<button class="btn pr" data-x="obf">ابدأ رحلتي <i class="fas fa-rocket"></i></button>')}
+function obShow(){obi=(()=>{try{return +sessionStorage.getItem("f26ob")||0}catch(e){return 0}})();try{sessionStorage.removeItem("f26ob")}catch(e){}$("#ob").innerHTML='<i class="orb o1"></i><i class="orb o2"></i><i class="orb o3"></i><div class="obc" id="obc"></div><div class="odots" id="obd2"></div><div class="obb" id="obb"></div>';$("#ob").classList.add("on");obDraw()}
 function obSave(){const a=$("#obn"),b=$("#obd");if(a)CFG.name=a.value.trim();if(b)CFG.dream=b.value.trim();save()}
-function obGo(n){obSave();obi=Math.max(0,Math.min(3,obi+n));obDraw()}
+function obGo(n){obSave();if(n>0&&obi===1){if(!pick){toast("اختر خطتك أولًا");return}try{localStorage.setItem("f26plan",pick)}catch(e){}if(pick!==PL){try{sessionStorage.setItem("f26ob","2")}catch(e){}location.reload();return}}obi=Math.max(0,Math.min(4,obi+n));obDraw()}
 function obFin(){obSave();CFG.ob=1;save();$("#ob").classList.remove("on");go("home");conf(80);chime();toast((CFG.name?"يلا يا "+CFG.name+"، ":"")+"ابدأ أول مهمة وثبّت ستريكك")}
 /* ===== الأحداث ===== */
 document.addEventListener("change",e=>{
   const t=e.target,id=t.dataset&&t.dataset.id;
   if(t.id==="nm"){CFG.name=t.value.trim();save();toast(CFG.name?"أهلًا بك يا "+CFG.name+"":"تم الحفظ");return}
+  if(t.id==="jr"){const k=dk(day0());EX.jr[k]=t.value.trim();if(EX.jr[k])ST[k]=1;save();toast("حفظت يومياتك");return}
+  if(t.id==="rmt"){CFG.rem=t.value;save();try{Notification.requestPermission()}catch(e){}toast("حفظت وقت التذكير");return}
+  if(t.id==="cce"||t.id==="ccw"||t.id==="cct"){CFG.cc={e:$("#cce").value,w:$("#ccw").value||40,t:$("#cct").value||90};save();render(true);return}
+  if(t.id==="tpi"){const k=dk(day0()),o=EX.tp[k]=EX.tp[k]||{t:"",d:0};o.t=t.value.trim();save();toast("حفظت مهمتك الأهم");return}
+  if(t.id==="lt"){CFG.letter=t.value.trim();save();toast("حفظت رسالتك");return}
   if(t.id==="dm"){CFG.dream=t.value.trim();save();toast("تم حفظ حلمك");return}
   if(t.id==="nt"){NT[dk(day0())]=t.value;save();toast("تم حفظ الملاحظة");return}
   if(t.id==="sq"&&t.value){CFG.quiz=t.value;save();render(true);return}
@@ -407,7 +501,8 @@ document.addEventListener("change",e=>{
   if(t.checked){if(!was&&full(i)){chime();conf();toast("أنجزت يومك كامل، كفو!",s)}else{tone(520+M.pc*4,0,.15);toast("+10 XP",s)}}
 });
 document.addEventListener("input",e=>{if(e.target.id==="q"){q=e.target.value.trim();$("#list").innerHTML=planList()}});
-document.addEventListener("submit",e=>{if(e.target.id==="addf"){e.preventDefault();addTask(+e.target.dataset.d,$("#addt").value,$("#adds").value,$("#addk").value)}});
+document.addEventListener("submit",e=>{if(e.target.id==="rwf"){e.preventDefault();const t=$("#rwt").value.trim(),x=+$("#rwx").value;if(t&&x>0){EX.rw.push([t,x]);EX.rw.sort((a,b)=>a[1]-b[1]);save();render(true)}return}
+if(e.target.id==="mkf"){e.preventDefault();const t=$("#mkt").value.trim();if(t){EX.mk.unshift({s:$("#mks").value,t});save();render(true);toast("سجّلت الخطأ")}return}if(e.target.id==="fcf"){e.preventDefault();const q=$("#fcq").value.trim(),a=$("#fca").value.trim();if(q&&a){EX.fc.push({q,a});fi=EX.fc.length-1;ff=0;save();render(true);toast("أضفت البطاقة")}return}if(e.target.id==="addf"){e.preventDefault();addTask(+e.target.dataset.d,$("#addt").value,$("#adds").value,$("#addk").value)}});
 document.addEventListener("click",e=>{
   const b=e.target.closest("button,[data-jump],.ov");if(!b)return;
   if(b.classList.contains("ov")){if(e.target===b)closeOv();return}
@@ -421,6 +516,13 @@ document.addEventListener("click",e=>{
   if(ds.mv){const s=snap(),i=+ds.d,to=Math.min(LAST,Math.max(i,M.idx)+1);move(ds.mv,i,to);save();render(true);toast("تأجّلت إلى "+DN[dt(to).getDay()]+" "+fmt(dt(to)),s);return}
   if(ds.del){const s=snap(),i=+ds.d;C[i]=(C[i]||[]).filter(c=>c.id!==ds.del);delete S[ds.del];save();render(true);toast("تم الحذف",s);return}
   if(ds.addday!==undefined){const t=prompt("اكتب المهمة الجديدة ليوم "+fmt(dt(+ds.addday)));if(t)addTask(+ds.addday,t,"gn",0);return}
+  if(ds.pk){pick=ds.pk;document.querySelectorAll(".pcard").forEach(b=>b.classList.toggle("on",b.dataset.pk===pick));return}
+  if(ds.plan){if(ds.plan!==PL&&confirm("تبديل الخطة؟ لكل خطة تقدمها المنفصل.")){try{localStorage.setItem("f26plan",ds.plan)}catch(e){}location.reload()}return}
+  if(ds.rw!==undefined){EX.rw.splice(+ds.rw,1);save();render(true);return}
+  if(ds.mk!==undefined){EX.mk.splice(+ds.mk,1);ST[dk(day0())]=1;save();render(true);toast("ممتاز، أتقنتها");return}
+  if(ds.cf){const a=ds.cf.split(",");EX.cf[a[0]]=+a[1];save();render(true);return}
+  if(ds.hb){const k=dk(day0()),h=EX.hb[k]=EX.hb[k]||{};if(h[ds.hb])delete h[ds.hb];else{h[ds.hb]=1;ST[k]=1}save();render(true);if(Object.keys(h).length>=4){conf(40);chime();toast("أكملت عادات اليوم")}return}
+  if(ds.nz!==undefined){noise(+ds.nz);render(true);return}
   if(ds.pre){const p=ds.pre.split(",").map(Number);CFG.w=p[0];CFG.b=p[1];save();tReset();render(true);return}
   if(ds.fs){TM.sub=ds.fs;saveT();render(true);return}
   if(ds.acc){CFG.acc=ds.acc;save();applyTheme();openSet();render(true);return}
@@ -428,7 +530,10 @@ document.addEventListener("click",e=>{
   const x=ds.x;if(!x)return;
   ({set:openSet,close:closeOv,
     th:()=>{CFG.theme=document.documentElement.getAttribute("data-theme")==="dark"||(!CFG.theme&&matchMedia("(prefers-color-scheme:dark)").matches)?"light":"dark";save();applyTheme()},
-    qt:()=>{qi++;render(true)},obn:()=>obGo(1),obp:()=>obGo(-1),obf:obFin,tour:()=>{closeOv();obShow()},chk:()=>{ST[dk(day0())]=1;save();render(true);conf();chime();toast("ثبّتّ ستريك "+dstreak()+" يوم")},rescue,lateToday,seeLate:()=>{tab="late";go("plan")},
+    qt:()=>{qi++;render(true)},prt:()=>window.print(),qzs:()=>{QZ={o:EX.fc.map((_,i)=>i).sort(()=>Math.random()-.5),i:0,ok:0,r:0};render(true)},qzr:()=>{QZ.r=1;render(true)},qzy:()=>{QZ.ok++;QZ.i++;QZ.r=0;if(QZ.i>=QZ.o.length){ST[dk(day0())]=1;save();conf(40);chime()}render(true)},qzn:()=>{QZ.i++;QZ.r=0;render(true)},qzx:()=>{QZ=null;render(true)},zen:()=>document.body.classList.toggle("zen"),flip:()=>{ff=!ff;render(true)},fn:()=>{fi=(fi+1)%EX.fc.length;ff=0;render(true)},fp:()=>{fi=(fi-1+EX.fc.length)%EX.fc.length;ff=0;render(true)},fsh:()=>{fi=Math.floor(Math.random()*EX.fc.length);ff=0;render(true)},fdel:()=>{EX.fc.splice(fi,1);fi=0;ff=0;save();render(true)},
+    tpd:()=>{const k=dk(day0()),o=EX.tp[k]=EX.tp[k]||{t:"",d:0};if(!o.t){toast("اكتب مهمتك أولًا");return}o.d=o.d?0:1;if(o.d){ST[k]=1;conf(30);chime()}save();render(true)},
+    chl:()=>{const k=dk(day0());EX.ch[k]=1;ST[k]=1;save();render(true);conf(50);chime();toast("تحدي اليوم تم! +20 XP")},
+    shr:()=>{const t="رحلتي نحو الفاينل: "+M.pc+"% إنجاز، ستريك "+dstreak()+" يوم، المستوى "+M.lvl+"، تركيز "+durTxt(M.fmT);if(navigator.share)navigator.share({text:t}).catch(()=>{});else{try{navigator.clipboard.writeText(t);toast("نسخت تقدمك")}catch(e){toast(t)}}},obn:()=>obGo(1),obp:()=>obGo(-1),obf:obFin,tour:()=>{closeOv();obShow()},chk:()=>{ST[dk(day0())]=1;save();render(true);conf();chime();toast("ثبّتّ ستريك "+dstreak()+" يوم")},rescue,lateToday,seeLate:()=>{tab="late";go("plan")},
     tgo:()=>TM.run?tPause():tStart(),trs:tReset,tsk:()=>tDone(true),
     dl,up:()=>$("#upf").click(),
     unmv:()=>{if(!confirm("ترجع كل المهام المؤجلة لأيامها الأصلية؟"))return;const s=snap();MV={};save();render(true);toast("رجعت كل المهام لأماكنها",s)},
@@ -438,7 +543,7 @@ document.addEventListener("click",e=>{
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeOv();if(/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)||$("#ob").classList.contains("on"))return;if(e.key==="ArrowLeft")nav(1);if(e.key==="ArrowRight")nav(-1)});
 let lastDay=dk(day0());setInterval(()=>{if(dk(day0())!==lastDay){lastDay=dk(day0());render(true)}},60000);
 if(TM.run&&TM.end<=Date.now())TM.rem=0;
-ANIM=1;$("#app").className="in f";render();setTimeout(()=>$("#app").className="",1000);if(!CFG.ob)setTimeout(obShow,300);
+ANIM=1;$("#app").className="in f";render();setTimeout(()=>$("#app").className="",1000);const _pc=$("#plcur");if(_pc)_pc.textContent="الحالية: "+PL;const _rm=$("#rmt");if(_rm)_rm.value=CFG.rem||"";if(!CFG.ob)setTimeout(obShow,300);
 </script>
 </body>
 </html>
